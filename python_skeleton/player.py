@@ -22,7 +22,6 @@ class Player(Bot):
 
         Returns:
         Nothing.
-        hola
         '''
         pass
 
