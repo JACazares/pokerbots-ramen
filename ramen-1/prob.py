@@ -30,9 +30,9 @@ def get_playable_hole_cards(prob_table):
     for c1 in deck:
         for c2 in deck:
             if c1.suit == c2.suit:
-                playable.append([c1, c2])
+                playable.append([str(c1), str(c2)])
             elif prob_table[(c1.rank, c2.rank)] >= 0.5:
-                playable.append([c1, c2])
+                playable.append([str(c1), str(c2)])
 
     return playable
 

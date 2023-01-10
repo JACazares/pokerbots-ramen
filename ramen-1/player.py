@@ -105,7 +105,6 @@ class Player(Bot):
                 return CallAction()
             return FoldAction()                     #fold bad hands
         else:
-
             if CheckAction in legal_actions: #check if possible
                 return CheckAction()
             return CallAction()
