@@ -135,7 +135,7 @@ class Player(Bot):
                 my_action = RaiseAction(max_raise) #GO ALL IN!!!
                 net_cost += max_cost
             
-            elif CallAction in legal_actions[i]: # check-call
+            elif CallAction in legal_actions: # check-call
                 my_action = CallAction()
                 net_cost += continue_cost
 
