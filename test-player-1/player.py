@@ -92,7 +92,7 @@ class Player(Bot):
             min_cost = min_raise - my_pip  # the cost of a minimum bet/raise
             max_cost = max_raise - my_pip  # the cost of a maximum bet/raise
 
-        print(f'my cards {my_cards}, board {board_cards}, street {street}')
+        print(f'my cards {my_cards}, opp cards {opp_cards}, board {board_cards}, street {street}')
         print(f'legal actions {legal_actions}')
 
         if CheckAction in legal_actions:  # check-call

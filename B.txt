@@ -1,10 +1,10 @@
-my cards ['9s', 'Jc'], board [], street 0
+my cards ['Ad', 'Qd'], opp cards [], board [], street 0
 legal actions {<class 'skeleton.actions.RaiseAction'>, <class 'skeleton.actions.CheckAction'>}
-my cards ['9s', 'Jc'], board ['3s', '5c', 'Qd'], street 3
+my cards ['Ad', 'Qd'], opp cards [], board ['3c', '5c', 'Td'], street 3
 legal actions {<class 'skeleton.actions.RaiseAction'>, <class 'skeleton.actions.CheckAction'>}
-my cards ['9s', 'Jc'], board ['3s', '5c', 'Qd', 'Ad'], street 4
+my cards ['Ad', 'Qd'], opp cards [], board ['3c', '5c', 'Td', 'Ah'], street 4
 legal actions {<class 'skeleton.actions.RaiseAction'>, <class 'skeleton.actions.CheckAction'>}
-my cards ['9s', 'Jc'], board ['3s', '5c', 'Qd', 'Ad', '4h'], street 5
+my cards ['Ad', 'Qd'], opp cards [], board ['3c', '5c', 'Td', 'Ah', '9h'], street 5
 legal actions {<class 'skeleton.actions.RaiseAction'>, <class 'skeleton.actions.CheckAction'>}
-my cards ['9s', 'Jc'], board ['3s', '5c', 'Qd', 'Ad', '4h', '2c'], street 6
+my cards ['Ad', 'Qd'], opp cards [], board ['3c', '5c', 'Td', 'Ah', '9h', 'Ac'], street 6
 legal actions {<class 'skeleton.actions.RaiseAction'>, <class 'skeleton.actions.CheckAction'>}

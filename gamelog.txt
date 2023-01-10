@@ -3,25 +3,25 @@
 Round #1, A (0), B (0)
 A posts the blind of 1
 B posts the blind of 2
-A dealt [4d 7s]
-B dealt [9s Jc]
+A dealt [8s Th]
+B dealt [Ad Qd]
 A calls
 B checks
-Flop [3s 5c Qd], A (2), B (2)
+Flop [3c 5c Td], A (2), B (2)
 B checks
 A checks
-Turn [3s 5c Qd Ad], A (2), B (2)
+Turn [3c 5c Td Ah], A (2), B (2)
 B checks
 A checks
-River [3s 5c Qd Ad 4h], A (2), B (2)
+River [3c 5c Td Ah 9h], A (2), B (2)
 B checks
 A checks
-Run [3s 5c Qd Ad 4h 2c], A (2), B (2)
+Run [3c 5c Td Ah 9h Ac], A (2), B (2)
 B checks
 A checks
-A shows [4d 7s]
-B shows [9s Jc]
-A awarded 0
-B awarded 0
+A shows [8s Th]
+B shows [Ad Qd]
+A awarded -2
+B awarded 2
 
-Final, B (0), A (0)
+Final, B (2), A (-2)
