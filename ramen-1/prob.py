@@ -36,5 +36,5 @@ def get_playable_hole_cards(prob_table):
 
     return playable
 
-prob_table = return_probabilities([], [])
-print(get_playable_hole_cards(prob_table))
+#prob_table = return_probabilities([], [])
+#print(get_playable_hole_cards(prob_table))
