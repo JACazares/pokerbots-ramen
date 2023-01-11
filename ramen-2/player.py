@@ -74,7 +74,16 @@ class Player(Bot):
         big_blind = bool(active)  # True if you are the big blind
         self.opp_contribution=0
         self.my_contribution=0
-        pass
+        self.iwon=False
+        rounds_remaining=NUM_ROUNDS-round_num+1
+        if((big_blind and round_num%2==0) or (not big_blind and round_num%2==1)): #you are A
+            pairs_remaining=(rounds_remaining-rounds_remaining%2)//2
+            if(pairs_remaining*3+2*(round_num%2)<my_bankroll):
+                self.iwon=True
+        else: 
+            pairs_remaining=(rounds_remaining-rounds_remaining%2)//2
+            if(pairs_remaining*3+(round_num%2)<my_bankroll):
+                self.iwon=True
 
     def handle_round_over(self, game_state, terminal_state, active):
         '''
@@ -123,7 +132,14 @@ class Player(Bot):
             min_raise, max_raise = round_state.raise_bounds()  # the smallest and largest numbers of chips for a legal bet/raise
             min_cost = min_raise - my_pip  # the cost of a minimum bet/raise
             max_cost = max_raise - my_pip  # the cost of a maximum bet/raise
-        #preflop_strategy   
+
+        #IWON function: 
+        if(self.iwon):
+            if(CheckAction in legal_actions):
+                return CheckAction()
+            return FoldAction()
+        
+        #preflop_strategy
         if(street==0):
             strength = monte_carlo_sim(my_cards)
             if(strength > 0.5 and RaiseAction in legal_actions):
