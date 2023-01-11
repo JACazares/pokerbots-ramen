@@ -39,7 +39,9 @@ if __name__ == "__main__":
     n = len(deck.cards)
     strength = {}
     for i in range(n):
-        for j in range(i+1, n):
+        for j in range(n):
+            if i == j:
+                continue
             strength[(str(deck.cards[i]), str(deck.cards[j]))] = \
                 monte_carlo_sim([str(deck.cards[i]), str(deck.cards[j])])
     
