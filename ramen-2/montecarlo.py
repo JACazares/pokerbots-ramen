@@ -1,6 +1,6 @@
 import eval7
 
-def monte_carlo_sim(hole, board=[], iters=100):
+def monte_carlo_sim(hole, board=[], iters=1000):
     '''
     
     '''
@@ -35,12 +35,13 @@ def monte_carlo_sim(hole, board=[], iters=100):
     return strength / iters
 
 if __name__ == "__main__":
-    strong_hand = ["As", "Ah"]
-    mid_hand = ["Ad", "4d"]
-    weak_hand_red = ["2d", "9d"]
-    weak_hand_black = ["2s", "9s"]
-
-    print(f'With a strong     hand, strength= {monte_carlo_sim(strong_hand)}')
-    print(f'With a mid        hand, strength= {monte_carlo_sim(mid_hand)}')
-    print(f'With a weak RED   hand, strength= {monte_carlo_sim(weak_hand_red)}')
-    print(f'With a weak BLACK hand, strength= {monte_carlo_sim(weak_hand_black)}')
+    deck = eval7.Deck()
+    n = len(deck.cards)
+    strength = {}
+    for i in range(n):
+        for j in range(i+1, n):
+            strength[(str(deck.cards[i]), str(deck.cards[j]))] = \
+                monte_carlo_sim([str(deck.cards[i]), str(deck.cards[j])])
+    
+    print(strength)
+    pass
