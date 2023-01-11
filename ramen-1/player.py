@@ -7,6 +7,7 @@ from skeleton.states import NUM_ROUNDS, STARTING_STACK, BIG_BLIND, SMALL_BLIND
 from skeleton.bot import Bot
 from skeleton.runner import parse_args, run_bot
 from prob import*
+from montecarlo import *
 import eval7
 
 class Player(Bot):
@@ -124,6 +125,10 @@ class Player(Bot):
             max_cost = max_raise - my_pip  # the cost of a maximum bet/raise
         #preflop_strategy   
         if(street==0):
+            strength = monte_carlo_sim(my_cards)
+            if(strength > 0.5 and RaiseAction in legal_actions):
+                return RaiseAction(int(strength*my_stack/8))
+
             if CheckAction in legal_actions: #check if possible
                 return CheckAction()
             if(my_cards in get_playable_hole_cards(self.prob_table, self.all_hands)):   #call good hands 

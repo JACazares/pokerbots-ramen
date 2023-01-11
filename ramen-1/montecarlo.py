@@ -1,6 +1,6 @@
 import eval7
 
-def monte_carlo_sim(hole, board=[], iters=5000):
+def monte_carlo_sim(hole, board=[], iters=100):
     '''
     
     '''
