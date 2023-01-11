@@ -7,7 +7,7 @@ from skeleton.states import NUM_ROUNDS, STARTING_STACK, BIG_BLIND, SMALL_BLIND
 from skeleton.bot import Bot
 from skeleton.runner import parse_args, run_bot
 from prob import*
-
+import eval7
 
 class Player(Bot):
     '''
@@ -30,6 +30,30 @@ class Player(Bot):
         self.prob_table = return_probabilities([], [])
         self.all_hands=get_all_hands()
 
+    def evaluate_p(self, hole, board):
+        deck=eval7.Deck()
+        hole_card=[eval7.Card(card) for card in hole]
+        board_card=[eval7.Card(card) for card in board]
+        for card in hole_card:
+            deck.cards.remove(card)
+        for card in board_card:
+            deck.cards.remove(card)
+        score=0
+        iterations=0
+        #can possibly be replaced by opponent's range
+        for c1 in deck.cards:
+            for c2 in deck.cards:
+                if(c1!=c2):
+                    iterations+=1
+                    my_score=eval7.evaluate(hole_card+board_card)
+                    opp_score=eval7.evaluate([c1, c2]+board_card)
+                    if(my_score>opp_score):
+                        score+=2
+                    elif(my_score==opp_score):
+                        score+=1
+        p=score/iterations
+        return p
+                
     def handle_new_round(self, game_state, round_state, active):
         '''
         Called when a new round starts. Called NUM_ROUNDS times.
@@ -106,12 +130,19 @@ class Player(Bot):
                 return CallAction()
             return FoldAction()                     #fold bad hands
         else:
-            if CheckAction in legal_actions: #check if possible
-                return CheckAction()
-            return CallAction()
+            p=self.evaluate_p(my_cards, board_cards)
+            pot_total=my_contribution+opp_contribution
+            pot_odds=continue_cost/(pot_total+continue_cost)
+            if(p<pot_odds):
+                return FoldAction()
+            else:
+                raise_amount=(p-pot_odds)*(max_raise-min_raise)+min_raise
+                if(raise_amount<min_raise):
+                    if(CheckAction in legal_actions):
+                        return CheckAction()
+                    return CallAction()
+                return RaiseAction(raise_amount)
 
         
-
-
 if __name__ == '__main__':
     run_bot(Player(), parse_args())
