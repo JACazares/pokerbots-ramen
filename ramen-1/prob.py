@@ -27,11 +27,12 @@ def return_probabilities(board, street):
 def get_playable_hole_cards(prob_table, possible_hands):
     deck = eval7.Deck()
     playable = []
-    for c1, c2 in possible_hands:
-        if c1.suit == c2.suit:
-            playable.append([str(c1), str(c2)])
-        elif prob_table[(c1.rank, c2.rank)] >= 0.5:
-            playable.append([str(c1), str(c2)])
+    possible_hands=[[eval7.Card(card1), eval7.Card(card2)] for card1, card2 in possible_hands]
+    for c in possible_hands:
+        if c[0].suit == c[1].suit:
+            playable.append([str(c[0]), str(c[1])])
+        elif prob_table[(c[0].rank, c[1].rank)] >= 0.5:
+            playable.append([str(c[0]), str(c[1])])
 
     return playable
 

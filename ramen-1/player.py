@@ -28,7 +28,7 @@ class Player(Bot):
         self.opp_contribution=0
         self.my_contribution=0
         self.prob_table = return_probabilities([], [])
-        self.all_hands=get_all_hands()
+        self.all_hands=get_all_hands(self.prob_table)
 
     def evaluate_p(self, hole, board):
         deck=eval7.Deck()
@@ -51,7 +51,7 @@ class Player(Bot):
                         score+=2
                     elif(my_score==opp_score):
                         score+=1
-        p=score/iterations
+        p=score/(2*iterations)
         return p
                 
     def handle_new_round(self, game_state, round_state, active):
@@ -131,17 +131,25 @@ class Player(Bot):
             return FoldAction()                     #fold bad hands
         else:
             p=self.evaluate_p(my_cards, board_cards)
+            print(p)
             pot_total=my_contribution+opp_contribution
             pot_odds=continue_cost/(pot_total+continue_cost)
             if(p<pot_odds):
                 return FoldAction()
             else:
-                raise_amount=(p-pot_odds)*(max_raise-min_raise)+min_raise
-                if(raise_amount<min_raise):
+                if(RaiseAction in legal_actions):
+                    raise_amount=int((p-pot_odds)*(max_raise-min_raise)+min_raise)
+                    raise_amount=min(max_raise, raise_amount)
+                    raise_amount=min(my_stack, raise_amount)
+                    if(raise_amount<min_raise):
+                        if(CheckAction in legal_actions):
+                            return CheckAction()
+                        return CallAction()
+                    return RaiseAction(raise_amount)
+                else: 
                     if(CheckAction in legal_actions):
                         return CheckAction()
                     return CallAction()
-                return RaiseAction(raise_amount)
 
         
 if __name__ == '__main__':
