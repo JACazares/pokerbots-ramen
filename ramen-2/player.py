@@ -28,7 +28,9 @@ class Player(Bot):
         '''
         self.opp_contribution=0
         self.my_contribution=0
-        self.prob_table = return_probabilities([], [])
+        with open('prob_table.txt') as f:
+            hand_data = f.read()
+        self.prob_table = eval(hand_data)
         self.all_hands=get_all_hands(self.prob_table)
 
     def evaluate_p(self, hole, board):
@@ -141,10 +143,6 @@ class Player(Bot):
         
         #preflop_strategy
         if(street==0):
-            strength = monte_carlo_sim(my_cards)
-            if(strength > 0.5 and RaiseAction in legal_actions):
-                return RaiseAction(int(strength*my_stack/8))
-
             if CheckAction in legal_actions: #check if possible
                 return CheckAction()
             if(my_cards in get_playable_hole_cards(self.prob_table, self.all_hands)):   #call good hands 
