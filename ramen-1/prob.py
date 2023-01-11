@@ -24,17 +24,25 @@ def return_probabilities(board, street):
     return prob
 
 # return a list of playable cards, according to a probability table
-def get_playable_hole_cards(prob_table):
+def get_playable_hole_cards(prob_table, possible_hands):
     deck = eval7.Deck()
     playable = []
-    for c1 in deck:
-        for c2 in deck:
-            if c1.suit == c2.suit:
-                playable.append([str(c1), str(c2)])
-            elif prob_table[(c1.rank, c2.rank)] >= 0.5:
-                playable.append([str(c1), str(c2)])
+    for c1, c2 in possible_hands:
+        if c1.suit == c2.suit:
+            playable.append([str(c1), str(c2)])
+        elif prob_table[(c1.rank, c2.rank)] >= 0.5:
+            playable.append([str(c1), str(c2)])
 
     return playable
+
+def get_all_hands(prob_table):
+    deck = eval7.Deck()
+    all_hands = []
+    for c1 in deck:
+        for c2 in deck:
+            all_hands.append([str(c1), str(c2)])
+
+    return all_hands
 
 #prob_table = return_probabilities([], [])
 #print(get_playable_hole_cards(prob_table))

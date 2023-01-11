@@ -28,6 +28,7 @@ class Player(Bot):
         self.opp_contribution=0
         self.my_contribution=0
         self.prob_table = return_probabilities([], [])
+        self.all_hands=get_all_hands()
 
     def handle_new_round(self, game_state, round_state, active):
         '''
@@ -101,7 +102,7 @@ class Player(Bot):
         if(street==0):
             if CheckAction in legal_actions: #check if possible
                 return CheckAction()
-            if(my_cards in get_playable_hole_cards(self.prob_table)):   #call good hands 
+            if(my_cards in get_playable_hole_cards(self.prob_table, self.all_hands)):   #call good hands 
                 return CallAction()
             return FoldAction()                     #fold bad hands
         else:
