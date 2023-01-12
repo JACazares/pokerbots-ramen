@@ -26,12 +26,13 @@ class Player(Bot):
         Nothing.
         hola
         '''
-        self.opp_contribution=0
-        self.my_contribution=0
+        self.opp_contribution = 0
+        self.my_contribution = 0
         with open('prob_table.txt') as f:
             hand_data = f.read()
         self.prob_table = eval(hand_data)
-        self.all_hands=get_all_hands(self.prob_table)
+        self.all_hands = get_all_hands(self.prob_table)
+        self.playable_hole_cards = get_playable_hole_cards(self.prob_table, self.all_hands)
 
     def evaluate_p(self, hole, board):
         deck=eval7.Deck()
@@ -145,7 +146,7 @@ class Player(Bot):
         if(street==0):
             if CheckAction in legal_actions: #check if possible
                 return CheckAction()
-            if(my_cards in get_playable_hole_cards(self.prob_table, self.all_hands)):   #call good hands 
+            if(my_cards in self.playable_hole_cards):   #call good hands 
                 return CallAction()
             return FoldAction()                     #fold bad hands
         else:
