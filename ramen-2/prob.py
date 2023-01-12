@@ -1,10 +1,13 @@
 import eval7
 
+
 # return a list of playable cards, according to a probability table
 def get_playable_hole_cards(prob_table, possible_hands):
+    PLAYABLE_THRESHOLD=0.4
+
     playable = []
     for c1, c2 in possible_hands:
-        if prob_table[(c1, c2)] >= 0.4:
+        if prob_table[(c1, c2)] >= PLAYABLE_THRESHOLD:
             playable.append([c1, c2])
 
     return playable

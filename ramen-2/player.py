@@ -9,6 +9,10 @@ from skeleton.runner import parse_args, run_bot
 from prob import*
 from montecarlo import *
 import eval7
+import random
+
+def get_strength(prob_table, hole):
+    return prob_table[(hole[0], hole[1])]
 
 class Player(Bot):
     '''
@@ -26,13 +30,15 @@ class Player(Bot):
         Nothing.
         hola
         '''
+        self.PLAYABLE_THRESHOLD=0.4
+        self.RAISEABLE_THRESHOLD=0.55
         self.opp_contribution = 0
         self.my_contribution = 0
         with open('prob_table.txt') as f:
             hand_data = f.read()
         self.prob_table = eval(hand_data)
         self.all_hands = get_all_hands(self.prob_table)
-        self.playable_hole_cards = get_playable_hole_cards(self.prob_table, self.all_hands)
+        #self.playable_hole_cards = get_playable_hole_cards(self.prob_table, self.all_hands)
 
     def evaluate_p(self, hole, board):
         deck=eval7.Deck()
@@ -142,13 +148,53 @@ class Player(Bot):
                 return CheckAction()
             return FoldAction()
         
+        BAD_PREFLOP_CALL_THRESHOLD=0.95
+        BAD_PREFLOP_RAISE_THRESHOLD=0.995
+        MED_PREFLOP_RAISE_THRESHOLD=0.8
+        GOOD_PREFLOP_RAISE_THRESHOLD=0.2
         #preflop_strategy
         if(street==0):
-            if CheckAction in legal_actions: #check if possible
-                return CheckAction()
-            if(my_cards in self.playable_hole_cards):   #call good hands 
-                return CallAction()
-            return FoldAction()                     #fold bad hands
+            strength=get_strength(self.prob_table, my_cards)
+            if(strength<self.PLAYABLE_THRESHOLD):   #fold bad hands most of the time
+                r=random.random()
+                if(r<BAD_PREFLOP_CALL_THRESHOLD): 
+                    if CheckAction in legal_actions: 
+                        return CheckAction()
+                    return FoldAction()  
+                elif(r>BAD_PREFLOP_RAISE_THRESHOLD):
+                    if RaiseAction in legal_actions:
+                        return RaiseAction(min(3*min_raise, max_raise))
+                    if CheckAction in legal_actions: 
+                        return CheckAction()
+                    return CallAction() 
+                else: 
+                    if CheckAction in legal_actions: 
+                        return CheckAction()
+                    return CallAction()  
+            elif(strength<self.RAISEABLE_THRESHOLD):  #Call(most of the time) or raise medium hands
+                r=random.random()
+                if(r<MED_PREFLOP_RAISE_THRESHOLD):
+                    if CheckAction in legal_actions: 
+                        return CheckAction()
+                    return CallAction() 
+                else:
+                    if RaiseAction in legal_actions:
+                        return RaiseAction(min(3*min_raise, max_raise))
+                    if CheckAction in legal_actions: 
+                        return CheckAction()
+                    return CallAction() 
+            else:           #raise (most of the time) or call good hands
+                r=random.random()
+                if(r<GOOD_PREFLOP_RAISE_THRESHOLD):
+                    if CheckAction in legal_actions: 
+                        return CheckAction()
+                    return CallAction() 
+                else:
+                    if RaiseAction in legal_actions:
+                        return RaiseAction(min(3*min_raise, max_raise))
+                    if CheckAction in legal_actions: 
+                        return CheckAction()
+                    return CallAction() 
         else:
             p=self.evaluate_p(my_cards, board_cards)
             print(p)
