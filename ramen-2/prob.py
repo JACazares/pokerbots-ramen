@@ -1,4 +1,5 @@
 import eval7
+import pandas as pd
 
 # return a list of playable cards, according to a probability table
 def get_playable_hole_cards(prob_table, possible_hands):
@@ -25,5 +26,5 @@ if __name__ == "__main__":
     prob_table = eval(hand_data)
 
     prob = pd.DataFrame(prob_table.values())
-    print(prob.quantile(0.25))
+    print(prob.quantile(0.15))
     # get_playable_hole_cards(prob_table)
