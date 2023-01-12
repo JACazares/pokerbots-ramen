@@ -11,6 +11,18 @@ from montecarlo import *
 import eval7
 import random
 
+def CheckFold(legal_actions):
+    if CheckAction in legal_actions: 
+        return CheckAction()
+    return FoldAction()
+
+def CheckCall(legal_actions):
+    if CheckAction in legal_actions: 
+        return CheckAction()
+    return CallAction() 
+
+
+
 class Player(Bot):
     '''
     A pokerbot.
@@ -130,43 +142,31 @@ class Player(Bot):
             if(strength<self.PLAYABLE_THRESHOLD):   #fold bad hands most of the time
                 r=random.random()
                 if(r<BAD_PREFLOP_CALL_THRESHOLD): 
-                    if CheckAction in legal_actions: 
-                        return CheckAction()
-                    return FoldAction()  
+                    return CheckFold(legal_actions)  
                 elif(r>BAD_PREFLOP_RAISE_THRESHOLD):
                     if RaiseAction in legal_actions:
                         return RaiseAction(min(3*min_raise, max_raise))
-                    if CheckAction in legal_actions: 
-                        return CheckAction()
-                    return CallAction() 
+                    return CheckFold(legal_actions) 
                 else: 
-                    if CheckAction in legal_actions: 
-                        return CheckAction()
-                    return CallAction()  
+                    return CheckCall(legal_actions)  
             elif(strength<self.RAISEABLE_THRESHOLD):  #Call(most of the time) or raise medium hands
                 r=random.random()
                 if(r<MED_PREFLOP_RAISE_THRESHOLD):
-                    if CheckAction in legal_actions: 
-                        return CheckAction()
-                    return CallAction() 
+                    return CheckCall(legal_actions)
                 else:
                     if RaiseAction in legal_actions:
                         return RaiseAction(min(3*min_raise, max_raise))
-                    if CheckAction in legal_actions: 
-                        return CheckAction()
-                    return CallAction() 
+                    return CheckCall(legal_actions) 
             else:           #raise (most of the time) or call good hands
                 r=random.random()
                 if(r<GOOD_PREFLOP_RAISE_THRESHOLD):
-                    if CheckAction in legal_actions: 
-                        return CheckAction()
-                    return CallAction() 
+                    return CheckCall(legal_actions) 
                 else:
                     if RaiseAction in legal_actions:
                         return RaiseAction(min(3*min_raise, max_raise))
-                    if CheckAction in legal_actions: 
-                        return CheckAction()
-                    return CallAction() 
+                    return CheckCall(legal_actions) 
+
+        #post flop strategy
         else:
             p=monte_carlo_sim(my_cards, board_cards, iters=1000)
             print(p)
@@ -180,14 +180,10 @@ class Player(Bot):
                     raise_amount=min(max_raise, raise_amount)
                     raise_amount=min(my_stack, raise_amount)
                     if(raise_amount<min_raise):
-                        if(CheckAction in legal_actions):
-                            return CheckAction()
-                        return CallAction()
+                        return CheckCall(legal_actions)
                     return RaiseAction(raise_amount)
                 else: 
-                    if(CheckAction in legal_actions):
-                        return CheckAction()
-                    return CallAction()
+                    return CheckCall(legal_actions)
 
         
 if __name__ == '__main__':
