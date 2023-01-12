@@ -204,10 +204,11 @@ class Player(Bot):
                 return FoldAction()
             else:
                 if(RaiseAction in legal_actions):
-                    raise_amount=int(((p-pot_odds)**2)*(max_raise-min_raise)+min_raise)
+                    raise_amount=int(((p-pot_odds)**2)*(max_raise-min_raise))
+                    raise_amount=max(min_raise, raise_amount)
                     raise_amount=min(max_raise, raise_amount)
                     raise_amount=min(my_stack, raise_amount)
-                    if(raise_amount<min_raise or p<=0.5):
+                    if(p<=0.55):
                         if(CheckAction in legal_actions):
                             return CheckAction()
                         return CallAction()
