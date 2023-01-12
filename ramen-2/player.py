@@ -196,18 +196,18 @@ class Player(Bot):
                         return CheckAction()
                     return CallAction() 
         else:
-            p=monte_carlo_sim(my_cards, board_cards, iters=1000)
-            print(p)
+            p=monte_carlo_sim(my_cards, board_cards, iters=500)
+            print(game_state.round_num, p)
             pot_total=my_contribution+opp_contribution
             pot_odds=continue_cost/(pot_total+continue_cost)
             if(p<pot_odds):
                 return FoldAction()
             else:
                 if(RaiseAction in legal_actions):
-                    raise_amount=int((p-pot_odds)*(max_raise-min_raise)+min_raise)
+                    raise_amount=int(((p-pot_odds)**2)*(max_raise-min_raise)+min_raise)
                     raise_amount=min(max_raise, raise_amount)
                     raise_amount=min(my_stack, raise_amount)
-                    if(raise_amount<min_raise):
+                    if(raise_amount<min_raise or p<=0.5):
                         if(CheckAction in legal_actions):
                             return CheckAction()
                         return CallAction()
