@@ -1,141 +1,247 @@
-1 0.837
- in round 1 raise 277, max_raise=398, min_raise=2, my_stack=398
-2 0.73
- in round 2 raise 398, max_raise=398, min_raise=398, my_stack=398
-2 0.749
-2 0.927
-3 0.913
- in round 3 raise 321, max_raise=388, min_raise=2, my_stack=388
-4 0.665
- in round 4 raise 212, max_raise=398, min_raise=212, my_stack=398
-4 0.641
- in round 4 raise 104, max_raise=186, min_raise=104, my_stack=186
-4 0.659
- in round 4 raise 34, max_raise=82, min_raise=34, my_stack=82
-4 0.62
- in round 4 raise 78, max_raise=82, min_raise=78, my_stack=48
-4 0.645
- in round 4 raise 4, max_raise=4, min_raise=4, my_stack=4
-5 0.394
- in round 5 raise 61, max_raise=398, min_raise=2, my_stack=398
-5 0.434
-6 0.447
- in round 6 raise 164, max_raise=388, min_raise=164, my_stack=388
-6 0.346
- in round 6 raise 306, max_raise=306, min_raise=306, my_stack=306
-6 0.2
- in round 6 raise 116, max_raise=132, min_raise=116, my_stack=132
-7 0.635
- in round 7 raise 155, max_raise=388, min_raise=2, my_stack=388
-7 0.626
- in round 7 raise 388, max_raise=388, min_raise=388, my_stack=233
-7 0.539
-7 0.533
-8 0.287
-9 0.333
- in round 9 raise 42, max_raise=388, min_raise=2, my_stack=388
-9 0.388
-10 0.375
-11 0.296
- in round 11 raise 34, max_raise=398, min_raise=2, my_stack=398
-11 0.308
-14 0.57
- in round 14 raise 320, max_raise=398, min_raise=320, my_stack=398
-14 0.464
- in round 14 raise 46, max_raise=78, min_raise=46, my_stack=78
-14 0.209
- in round 14 raise 24, max_raise=55, min_raise=24, my_stack=55
-15 0.316
- in round 15 raise 39, max_raise=398, min_raise=2, my_stack=398
-15 0.345
-16 0.642
- in round 16 raise 398, max_raise=398, min_raise=398, my_stack=398
-16 0.602
-16 0.502
-16 0.428
-16 0.377
-16 0.16
-17 0.441
- in round 17 raise 77, max_raise=398, min_raise=2, my_stack=398
-17 0.447
-18 0.379
-19 0.814
- in round 19 raise 255, max_raise=388, min_raise=2, my_stack=388
-20 0.443
-21 0.273
- in round 21 raise 29, max_raise=398, min_raise=2, my_stack=398
-21 0.3
-22 0.694
- in round 22 raise 338, max_raise=398, min_raise=338, my_stack=398
-22 0.729
- in round 22 raise 40, max_raise=60, min_raise=40, my_stack=60
-22 0.655
- in round 22 raise 16, max_raise=20, min_raise=16, my_stack=20
-22 0.896
- in round 22 raise 4, max_raise=4, min_raise=4, my_stack=4
-23 0.705
- in round 23 raise 196, max_raise=398, min_raise=2, my_stack=398
-23 0.757
- in round 23 raise 398, max_raise=398, min_raise=398, my_stack=202
-23 0.684
-23 0.545
-23 0.509
-23 0.647
-24 0.523
- in round 24 raise 206, max_raise=388, min_raise=206, my_stack=388
-24 0.446
- in round 24 raise 110, max_raise=285, min_raise=110, my_stack=285
-24 0.472
- in round 24 raise 38, max_raise=230, min_raise=38, my_stack=230
-24 0.184
-25 0.512
- in round 25 raise 103, max_raise=398, min_raise=2, my_stack=398
-25 0.519
- in round 25 raise 398, max_raise=398, min_raise=398, my_stack=398
-25 0.49
- in round 25 raise 46, max_raise=196, min_raise=2, my_stack=196
-25 0.442
- in round 25 raise 162, max_raise=196, min_raise=162, my_stack=196
-25 0.492
- in round 25 raise 27, max_raise=115, min_raise=2, my_stack=115
-25 0.488
- in round 25 raise 74, max_raise=115, min_raise=74, my_stack=115
-25 0.327
- in round 25 raise 8, max_raise=78, min_raise=2, my_stack=78
-25 0.34
- in round 25 raise 56, max_raise=78, min_raise=56, my_stack=78
-26 0.441
-28 0.348
-29 0.384
- in round 29 raise 58, max_raise=398, min_raise=2, my_stack=398
-29 0.389
-31 0.693
- in round 31 raise 190, max_raise=398, min_raise=2, my_stack=398
-32 0.486
-33 0.646
- in round 33 raise 161, max_raise=388, min_raise=2, my_stack=388
-33 0.636
- in round 33 raise 388, max_raise=388, min_raise=388, my_stack=227
-33 0.927
-33 0.824
-33 0.752
-33 0.641
-33 0.519
-33 0.718
-34 0.482
-35 0.597
- in round 35 raise 141, max_raise=398, min_raise=2, my_stack=398
-35 0.599
- in round 35 raise 398, max_raise=398, min_raise=398, my_stack=257
-35 0.539
-35 0.583
-36 0.307
-37 0.285
- in round 37 raise 32, max_raise=398, min_raise=2, my_stack=398
-37 0.294
-38 0.777
- in round 38 raise 388, max_raise=388, min_raise=388, my_stack=388
-38 0.836
-38 0.811
-38 0.739
-38 0.962
+1 0.561
+ in round 1 raise 68, max_raise=392, min_raise=2, my_stack=392
+2 0.518
+2 0.498
+2 0.37
+3 0.309
+3 0.31
+5 0.677
+ in round 5 raise 122, max_raise=398, min_raise=2, my_stack=398
+6 0.358
+8 0.71
+ in round 8 raise 398, max_raise=398, min_raise=398, my_stack=398
+8 0.614
+8 0.667
+9 0.527
+9 0.528
+9 0.431
+9 0.402
+9 0.331
+9 0.318
+9 0.448
+9 0.442
+9 0.437
+9 0.77
+9 0.778
+10 0.407
+11 0.804
+ in round 11 raise 205, max_raise=398, min_raise=2, my_stack=398
+11 0.82
+11 0.812
+11 0.761
+11 0.693
+11 0.763
+12 0.49
+12 0.425
+13 0.464
+13 0.414
+14 0.957
+ in round 14 raise 392, max_raise=392, min_raise=392, my_stack=392
+14 0.975
+14 0.989
+14 0.998
+15 0.408
+15 0.441
+16 0.654
+ in round 16 raise 392, max_raise=392, min_raise=392, my_stack=392
+16 0.683
+16 0.64
+16 0.972
+17 0.494
+17 0.509
+17 0.408
+17 0.44
+17 0.372
+17 0.356
+19 0.775
+ in round 19 raise 181, max_raise=392, min_raise=2, my_stack=392
+19 0.789
+ in round 19 raise 392, max_raise=392, min_raise=392, my_stack=211
+19 0.703
+19 0.782
+20 0.442
+21 0.533
+21 0.482
+22 0.819
+ in round 22 raise 366, max_raise=398, min_raise=366, my_stack=398
+22 0.833
+ in round 22 raise 24, max_raise=32, min_raise=24, my_stack=32
+22 0.733
+ in round 22 raise 6, max_raise=8, min_raise=6, my_stack=8
+22 0.73
+23 0.685
+ in round 23 raise 125, max_raise=392, min_raise=2, my_stack=392
+23 0.701
+ in round 23 raise 392, max_raise=392, min_raise=392, my_stack=267
+23 0.67
+23 0.768
+24 0.233
+25 0.397
+25 0.379
+26 0.836
+ in round 26 raise 138, max_raise=398, min_raise=138, my_stack=398
+27 0.773
+ in round 27 raise 182, max_raise=398, min_raise=2, my_stack=398
+28 0.384
+29 0.527
+29 0.525
+29 0.505
+29 0.489
+29 0.326
+30 0.515
+30 0.568
+ in round 30 raise 144, max_raise=144, min_raise=144, my_stack=144
+30 0.461
+30 0.836
+32 0.873
+ in round 32 raise 112, max_raise=398, min_raise=112, my_stack=398
+33 0.41
+33 0.366
+34 0.743
+ in round 34 raise 392, max_raise=392, min_raise=392, my_stack=392
+34 0.755
+34 0.815
+35 0.299
+35 0.335
+36 0.379
+37 0.561
+ in round 37 raise 69, max_raise=398, min_raise=2, my_stack=398
+37 0.575
+ in round 37 raise 398, max_raise=398, min_raise=398, my_stack=329
+37 0.766
+37 0.72
+37 0.846
+39 0.458
+39 0.494
+39 0.467
+39 0.449
+39 0.466
+39 0.463
+40 0.457
+40 0.446
+40 0.334
+40 0.601
+ in round 40 raise 374, max_raise=374, min_raise=374, my_stack=374
+40 0.723
+41 0.54
+41 0.561
+ in round 41 raise 392, max_raise=392, min_raise=392, my_stack=392
+41 0.795
+41 0.893
+42 0.532
+42 0.477
+42 0.329
+43 0.774
+ in round 43 raise 183, max_raise=398, min_raise=2, my_stack=398
+43 0.802
+ in round 43 raise 398, max_raise=398, min_raise=398, my_stack=215
+43 0.789
+43 0.738
+43 0.635
+43 0.547
+43 0.552
+44 0.505
+44 0.396
+44 0.505
+45 0.371
+45 0.383
+46 0.486
+47 0.304
+47 0.332
+48 0.861
+ in round 48 raise 37, max_raise=398, min_raise=16, my_stack=398
+49 0.569
+ in round 49 raise 71, max_raise=392, min_raise=2, my_stack=392
+49 0.598
+ in round 49 raise 253, max_raise=392, min_raise=253, my_stack=321
+49 0.464
+49 0.472
+49 0.176
+49 0.195
+50 0.392
+51 0.271
+51 0.264
+52 0.458
+53 0.375
+53 0.369
+54 0.896
+ in round 54 raise 318, max_raise=392, min_raise=318, my_stack=392
+54 0.812
+ in round 54 raise 64, max_raise=74, min_raise=64, my_stack=74
+54 0.852
+ in round 54 raise 8, max_raise=10, min_raise=8, my_stack=10
+54 0.841
+54 0.836
+54 0.877
+55 0.573
+ in round 55 raise 73, max_raise=392, min_raise=2, my_stack=392
+56 0.767
+ in round 56 raise 398, max_raise=398, min_raise=398, my_stack=398
+56 0.654
+56 0.452
+56 0.465
+56 0.358
+58 0.512
+58 0.415
+58 0.395
+58 0.355
+58 0.031
+59 0.627
+ in round 59 raise 97, max_raise=398, min_raise=2, my_stack=398
+60 0.698
+ in round 60 raise 284, max_raise=392, min_raise=284, my_stack=392
+60 0.657
+ in round 60 raise 52, max_raise=108, min_raise=52, my_stack=108
+60 0.693
+ in round 60 raise 108, max_raise=108, min_raise=108, my_stack=56
+60 0.496
+60 0.648
+61 0.324
+61 0.339
+62 0.925
+ in round 62 raise 266, max_raise=392, min_raise=266, my_stack=392
+62 0.943
+ in round 62 raise 66, max_raise=126, min_raise=66, my_stack=126
+62 0.994
+ in round 62 raise 32, max_raise=60, min_raise=32, my_stack=60
+63 0.598
+ in round 63 raise 84, max_raise=398, min_raise=2, my_stack=398
+64 0.504
+64 0.336
+64 0.337
+64 0.325
+64 0.51
+65 0.393
+65 0.386
+66 0.507
+66 0.433
+66 0.414
+66 0.252
+67 0.931
+ in round 67 raise 314, max_raise=392, min_raise=2, my_stack=392
+67 0.913
+67 0.929
+67 0.984
+68 0.927
+ in round 68 raise 392, max_raise=392, min_raise=392, my_stack=392
+68 0.869
+68 0.774
+68 0.648
+70 0.47
+71 0.54
+71 0.523
+71 0.543
+71 0.571
+ in round 71 raise 124, max_raise=124, min_raise=124, my_stack=124
+71 0.95
+71 1.0
+72 0.56
+ in round 72 raise 44, max_raise=398, min_raise=44, my_stack=398
+73 0.42
+73 0.426
+74 0.596
+ in round 74 raise 398, max_raise=398, min_raise=398, my_stack=398
+74 0.575
+74 0.754
+74 0.546
+74 0.706

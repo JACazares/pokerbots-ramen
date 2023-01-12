@@ -179,7 +179,7 @@ class Player(Bot):
                     return CallAction() 
                 else:
                     if RaiseAction in legal_actions:
-                        return RaiseAction(min(3*min_raise, max_raise))
+                        return RaiseAction(min(2*min_raise, max_raise))
                     if CheckAction in legal_actions: 
                         return CheckAction()
                     return CallAction() 
@@ -191,7 +191,7 @@ class Player(Bot):
                     return CallAction() 
                 else:
                     if RaiseAction in legal_actions:
-                        return RaiseAction(min(3*min_raise, max_raise))
+                        return RaiseAction(min(2*min_raise, max_raise))
                     if CheckAction in legal_actions: 
                         return CheckAction()
                     return CallAction() 
@@ -204,17 +204,17 @@ class Player(Bot):
                 return FoldAction()
             else:
                 if(RaiseAction in legal_actions):
-                    raise_amount=int(((p-pot_odds)**2)*(max_raise-min_raise))
+                    raise_amount=int(((p-pot_odds)**3)*(max_raise-min_raise))
                     raise_amount=min(my_stack, raise_amount)
                     raise_amount=max(min_raise, raise_amount)
                     raise_amount=min(max_raise, raise_amount)
 
-                    print(f" in round {game_state.round_num} raise {raise_amount}, max_raise={max_raise}, min_raise={min_raise}, my_stack={my_stack}")
                     if(p<=0.55):
                         if(CheckAction in legal_actions):
                             return CheckAction()
                         return CallAction()
-                    return RaiseAction(raise_amount)
+                    print(f" in round {game_state.round_num} raise {raise_amount}, max_raise={max_raise}, min_raise={min_raise}, my_stack={my_stack}")
+                    return RaiseAction(raise_amount)             
                 else: 
                     if(CheckAction in legal_actions):
                         return CheckAction()
