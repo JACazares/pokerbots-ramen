@@ -69,14 +69,24 @@ class Player(Bot):
         self.my_contribution=0
         self.iwon=False
         rounds_remaining=NUM_ROUNDS-round_num+1
+        self.winning_bankroll=0
+
         if((big_blind and round_num%2==0) or (not big_blind and round_num%2==1)): #you are A
             pairs_remaining=(rounds_remaining-rounds_remaining%2)//2
-            if(pairs_remaining*3+2*(round_num%2)<my_bankroll):
+            self.winning_bankroll=pairs_remaining*3+2*(round_num%2)+1
+            if(self.winning_bankroll<=my_bankroll):
                 self.iwon=True
         else: 
             pairs_remaining=(rounds_remaining-rounds_remaining%2)//2
-            if(pairs_remaining*3+(round_num%2)<my_bankroll):
+            self.winning_bankroll=pairs_remaining*3+(round_num%2)+1
+            if(self.winning_bankroll<=my_bankroll):
                 self.iwon=True
+        if(self.winning_bankroll>0):
+            self.PLAYABLE_THRESHOLD=max(0.4+0.3*my_bankroll/self.winning_bankroll, 0.35)
+            self.RAISEABLE_THRESHOLD=max(0.55+0.3*my_bankroll/self.winning_bankroll, 0.5)
+        else:
+            self.PLAYABLE_THRESHOLD=0.4
+            self.RAISEABLE_THRESHOLD=0.55
 
     def handle_round_over(self, game_state, terminal_state, active):
         '''
@@ -132,7 +142,7 @@ class Player(Bot):
                 return CheckAction()
             return FoldAction()
         
-        BAD_PREFLOP_CALL_THRESHOLD=0.95
+        BAD_PREFLOP_CALL_THRESHOLD=0.95 
         BAD_PREFLOP_RAISE_THRESHOLD=0.995
         MED_PREFLOP_RAISE_THRESHOLD=0.8
         GOOD_PREFLOP_RAISE_THRESHOLD=0.2
@@ -145,7 +155,7 @@ class Player(Bot):
                     return CheckFold(legal_actions)  
                 elif(r>BAD_PREFLOP_RAISE_THRESHOLD):
                     if RaiseAction in legal_actions:
-                        return RaiseAction(min(3*min_raise, max_raise))
+                        return RaiseAction(min(2*min_raise, max_raise))
                     return CheckFold(legal_actions) 
                 else: 
                     return CheckCall(legal_actions)  
@@ -155,7 +165,7 @@ class Player(Bot):
                     return CheckCall(legal_actions)
                 else:
                     if RaiseAction in legal_actions:
-                        return RaiseAction(min(3*min_raise, max_raise))
+                        return RaiseAction(min(2*min_raise, max_raise))
                     return CheckCall(legal_actions) 
             else:           #raise (most of the time) or call good hands
                 r=random.random()
@@ -176,7 +186,7 @@ class Player(Bot):
                 return FoldAction()
             else:
                 if(RaiseAction in legal_actions):
-                    raise_amount=int((p-pot_odds)*(max_raise-min_raise)+min_raise)
+                    raise_amount=int(((p-pot_odds)**3)*(max_raise-min_raise)+min_raise)
                     raise_amount=min(max_raise, raise_amount)
                     raise_amount=min(my_stack, raise_amount)
                     if(raise_amount<min_raise):
