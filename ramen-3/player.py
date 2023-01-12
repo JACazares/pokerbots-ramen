@@ -11,9 +11,6 @@ from montecarlo import *
 import eval7
 import random
 
-def get_strength(prob_table, hole):
-    return prob_table[(hole[0], hole[1])]
-
 class Player(Bot):
     '''
     A pokerbot.
@@ -38,31 +35,6 @@ class Player(Bot):
             hand_data = f.read()
         self.prob_table = eval(hand_data)
         self.all_hands = get_all_hands(self.prob_table)
-        #self.playable_hole_cards = get_playable_hole_cards(self.prob_table, self.all_hands)
-
-    def evaluate_p(self, hole, board):
-        deck=eval7.Deck()
-        hole_card=[eval7.Card(card) for card in hole]
-        board_card=[eval7.Card(card) for card in board]
-        for card in hole_card:
-            deck.cards.remove(card)
-        for card in board_card:
-            deck.cards.remove(card)
-        score=0
-        iterations=0
-        #can possibly be replaced by opponent's range
-        for c1 in deck.cards:
-            for c2 in deck.cards:
-                if(c1!=c2):
-                    iterations+=1
-                    my_score=eval7.evaluate(hole_card+board_card)
-                    opp_score=eval7.evaluate([c1, c2]+board_card)
-                    if(my_score>opp_score):
-                        score+=2
-                    elif(my_score==opp_score):
-                        score+=1
-        p=score/(2*iterations)
-        return p
                 
     def handle_new_round(self, game_state, round_state, active):
         '''
