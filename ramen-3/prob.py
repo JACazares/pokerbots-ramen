@@ -3,6 +3,7 @@ import pandas as pd
 
 def get_strength(prob_table, hole):
     return prob_table[(hole[0], hole[1])]
+    
 def get_all_hands(prob_table):
     deck = eval7.Deck()
     all_hands = []
