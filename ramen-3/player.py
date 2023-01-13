@@ -136,22 +136,22 @@ class Player(Bot):
                 # Fold bad hands most of the time
                 if strength < self.PLAYABLE_THRESHOLD:
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
-                                        BAD_PREFLOP_CALL_THRESHOLD,
-                                        BAD_PREFLOP_RAISE_THRESHOLD,
+                                        0.95,
+                                        0.995,
                                         min(2*min_raise, max_raise))
 
                 # Call (most of the time) or raise medium hands
                 elif strength < self.RAISEABLE_THRESHOLD:
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
-                                        MID_PREFLOP_CALL_THRESHOLD,
-                                        MID_PREFLOP_RAISE_THRESHOLD,
+                                        0,
+                                        0.7,
                                         min(2*min_raise, max_raise))
 
                 # Raise (most of the time) or call good hands
                 else:
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
-                                        GOOD_PREFLOP_CALL_THRESHOLD,
-                                        GOOD_PREFLOP_RAISE_THRESHOLD,
+                                        0,
+                                        0.1,
                                         min(2*min_raise, max_raise))
             else:
                 # Opponent raised!!
@@ -162,9 +162,9 @@ class Player(Bot):
                                         0.8, 1, 0)
                 elif(strength<0.75): 
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
-                                        0.05, 0.9, min(5*min_raise, max_raise))
+                                        0.05, 0.9, min(4*min_raise, max_raise))
                 # Strength high enough to raise after a raise
-                elif(my_contribution<STARTING_STACK/4):
+                elif(my_contribution<STARTING_STACK/5):
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
                                         0, 0.5, min(2*min_raise, max_raise))
                 else: 
@@ -175,7 +175,7 @@ class Player(Bot):
             if opp_contribution == 2:
                 if(strength<self.PLAYABLE_THRESHOLD):
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
-                                        0, 0.7, min(5*min_raise, max_raise))
+                                        0, 0.7, min(4*min_raise, max_raise))
                 elif(strength<self.RAISEABLE_THRESHOLD):
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
                                         0, 0.4, min(2*min_raise, max_raise))
@@ -186,11 +186,11 @@ class Player(Bot):
                 if(strength<pot_odds+0.1*my_bankroll/self.winning_bankroll):
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
                                         0.9, 1, 0)
-                elif(strength<0.8):  
+                elif(strength<0.75):  
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
                                         0.05, 0.95, min(2*min_raise, max_raise))
                 # Strength high enough to raise after a raise
-                elif(my_contribution<STARTING_STACK/4):
+                elif(my_contribution<STARTING_STACK/5):
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
                                         0, 0.5, min(2*min_raise, max_raise))
                 else: 
@@ -256,16 +256,21 @@ class Player(Bot):
         Returns:
         One of FoldAction(), CheckAction(), CallAction() or RaiseAction(amount)
         '''
+        strength = monte_carlo_sim(my_cards, board_cards, iters=100)
+        if big_blind:
+            pass
+        else: 
+            pass
 
-        p = monte_carlo_sim(my_cards, board_cards, iters=100)
+        
         pot_total = my_contribution+opp_contribution
         pot_odds = continue_cost/(pot_total + continue_cost)
 
-        if p < pot_odds:
+        if strength < pot_odds:
             return CheckFold(legal_actions)
         else:
             if RaiseAction in legal_actions and (continue_cost == 0 or self.diff_phase):
-                raise_amount = int(((p - pot_odds)**3)*(max_raise - min_raise) + min_raise)
+                raise_amount = int(((strength - pot_odds)**3)*(max_raise - min_raise) + min_raise)
                 raise_amount = min(max_raise, raise_amount)
                 raise_amount =  min(my_stack, raise_amount)
                 if raise_amount < min_raise:
@@ -387,10 +392,10 @@ class Player(Bot):
                 opp_stack, continue_cost, my_contribution, opp_contribution, min_raise, max_raise, min_cost,
                 max_cost, big_blind, my_bankroll)
         # River strategy
-        elif street == 5:
-            action = self.river_strategy(legal_actions, my_cards, board_cards, my_pip ,opp_pip, my_stack,
-                opp_stack, continue_cost, my_contribution, opp_contribution, min_raise, max_raise, min_cost,
-                max_cost, big_blind, my_bankroll)
+        #elif street == 5:
+        #    action = self.river_strategy(legal_actions, my_cards, board_cards, my_pip ,opp_pip, my_stack,
+        #        opp_stack, continue_cost, my_contribution, opp_contribution, min_raise, max_raise, min_cost,
+        #        max_cost, big_blind, my_bankroll)
         # Run strategy
         else:
             action = self.run_strategy(legal_actions, my_cards, board_cards, my_pip ,opp_pip, my_stack,

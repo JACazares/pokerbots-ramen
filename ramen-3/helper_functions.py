@@ -51,11 +51,11 @@ def RandomAction(legal_actions, my_stack, min_raise, max_raise, call_threshold, 
     elif r > raise_threshold:
         if RaiseAction in legal_actions:
             q = random.random()
-            raise_amount = int(raise_amount + (q - 0.5)*raise_amount)
+            raise_amount = int(raise_amount + (q - 0.4)*raise_amount)
             raise_amount = min([max_raise, raise_amount])
             raise_amount = min([my_stack, raise_amount])
             if raise_amount < min_raise:
-                return CheckCall(legal_actions)
+                return RaiseAction(min_raise)
             return RaiseAction(raise_amount)
         return CheckCall(legal_actions) 
     else: 
