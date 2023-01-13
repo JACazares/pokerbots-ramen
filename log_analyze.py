@@ -31,5 +31,5 @@ if __name__ == "__main__":
     plt.plot(list(range(1, len(scoreA)+1)), scoreA, marker='o', linestyle='-', markersize=2, color="red")
     plt.title("Player A")
     # plt.plot(list(range(1, len(scoreB)+1)), scoreB, marker='o', linestyle='-', markersize=2, color="blue")
-    # plt.show()
+    plt.show()
     pass
