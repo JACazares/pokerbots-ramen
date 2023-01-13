@@ -11,16 +11,6 @@ from montecarlo import *
 import eval7
 import random
 
-def CheckFold(legal_actions):
-    if CheckAction in legal_actions: 
-        return CheckAction()
-    return FoldAction()
-
-def CheckCall(legal_actions):
-    if CheckAction in legal_actions: 
-        return CheckAction()
-    return CallAction() 
-
 
 
 class Player(Bot):
@@ -70,7 +60,6 @@ class Player(Bot):
         self.iwon=False
         rounds_remaining=NUM_ROUNDS-round_num+1
         self.winning_bankroll=0
-
         if((big_blind and round_num%2==0) or (not big_blind and round_num%2==1)): #you are A
             pairs_remaining=(rounds_remaining-rounds_remaining%2)//2
             self.winning_bankroll=pairs_remaining*3+2*(round_num%2)+1
@@ -81,13 +70,22 @@ class Player(Bot):
             self.winning_bankroll=pairs_remaining*3+(round_num%2)+1
             if(self.winning_bankroll<=my_bankroll):
                 self.iwon=True
-        if(self.winning_bankroll>0):
-            self.PLAYABLE_THRESHOLD=max(0.4+0.3*my_bankroll/self.winning_bankroll, 0.35)
-            self.RAISEABLE_THRESHOLD=max(0.55+0.3*my_bankroll/self.winning_bankroll, 0.5)
-        else:
-            self.PLAYABLE_THRESHOLD=0.4
-            self.RAISEABLE_THRESHOLD=0.55
 
+        if(big_blind):
+            if(self.winning_bankroll>0):
+                self.PLAYABLE_THRESHOLD=max(0.4+0.3*my_bankroll/self.winning_bankroll, 0.35)
+                self.RAISEABLE_THRESHOLD=max(0.55+0.3*my_bankroll/self.winning_bankroll, 0.5)
+            else:
+                self.PLAYABLE_THRESHOLD=0.4
+                self.RAISEABLE_THRESHOLD=0.55
+        else:
+            if(self.winning_bankroll>0):
+                self.PLAYABLE_THRESHOLD=max(0.45+0.3*my_bankroll/self.winning_bankroll, 0.4)
+                self.RAISEABLE_THRESHOLD=max(0.5+0.3*my_bankroll/self.winning_bankroll, 0.45)
+            else:
+                self.PLAYABLE_THRESHOLD=0.45
+                self.RAISEABLE_THRESHOLD=0.5
+        print(f"Round {round_num}: I have {my_bankroll} and need {self.winning_bankroll} to win")
     def handle_round_over(self, game_state, terminal_state, active):
         '''
         Called when a round ends. Called NUM_ROUNDS times.
@@ -131,10 +129,14 @@ class Player(Bot):
         continue_cost = opp_pip - my_pip  # the number of chips needed to stay in the pot
         my_contribution = STARTING_STACK - my_stack  # the number of chips you have contributed to the pot
         opp_contribution = STARTING_STACK - opp_stack  # the number of chips your opponent has contributed to the pot
+        big_blind = bool(active)
+        my_bankroll = game_state.bankroll
         if RaiseAction in legal_actions:
             min_raise, max_raise = round_state.raise_bounds()  # the smallest and largest numbers of chips for a legal bet/raise
             min_cost = min_raise - my_pip  # the cost of a minimum bet/raise
             max_cost = max_raise - my_pip  # the cost of a maximum bet/raise
+        else: 
+            min_raise, max_raise=0, 0
 
         #IWON function: 
         if(self.iwon):
@@ -147,35 +149,49 @@ class Player(Bot):
         MED_PREFLOP_RAISE_THRESHOLD=0.8
         GOOD_PREFLOP_RAISE_THRESHOLD=0.2
         #preflop_strategy
-        if(street==0):
-            strength=get_strength(self.prob_table, my_cards)
-            if(strength<self.PLAYABLE_THRESHOLD):   #fold bad hands most of the time
-                r=random.random()
-                if(r<BAD_PREFLOP_CALL_THRESHOLD): 
-                    return CheckFold(legal_actions)  
-                elif(r>BAD_PREFLOP_RAISE_THRESHOLD):
-                    if RaiseAction in legal_actions:
-                        return RaiseAction(min(2*min_raise, max_raise))
-                    return CheckFold(legal_actions) 
-                else: 
-                    return CheckCall(legal_actions)  
-            elif(strength<self.RAISEABLE_THRESHOLD):  #Call(most of the time) or raise medium hands
-                r=random.random()
-                if(r<MED_PREFLOP_RAISE_THRESHOLD):
-                    return CheckCall(legal_actions)
-                else:
-                    if RaiseAction in legal_actions:
-                        return RaiseAction(min(2*min_raise, max_raise))
-                    return CheckCall(legal_actions) 
-            else:           #raise (most of the time) or call good hands
-                r=random.random()
-                if(r<GOOD_PREFLOP_RAISE_THRESHOLD):
-                    return CheckCall(legal_actions) 
-                else:
-                    if RaiseAction in legal_actions:
-                        return RaiseAction(min(3*min_raise, max_raise))
-                    return CheckCall(legal_actions) 
 
+        # WARNING: MOST NUMBERS ARE ARBITRARY
+        #Note: RandomAction(round_state, call_threshold, raise_threshold, raise_amount, active)
+        if(street==0):
+            pot_total=my_contribution+opp_contribution
+            pot_odds=continue_cost/(pot_total+continue_cost)
+            strength=get_strength(self.prob_table, my_cards)
+            if(not big_blind and opp_contribution==2):
+                if(strength<self.PLAYABLE_THRESHOLD):   #fold bad hands most of the time
+                    return RandomAction(round_state, 0.95, 0.995, min(2*min_raise, max_raise), active)
+                elif(strength<self.RAISEABLE_THRESHOLD):  #Call(most of the time) or raise medium hands
+                    return RandomAction(round_state, 0, 0.7, min(2*min_raise, max_raise), active)
+                else:           #raise (most of the time) or call good hands
+                    return RandomAction(round_state, 0, 0.1, min(2*min_raise, max_raise), active)
+            elif(not big_blind and opp_contribution>2):
+                #opponent raised!!
+                #update opponent's range
+                if(strength<pot_odds+0.1*my_bankroll/self.winning_bankroll): 
+                    return RandomAction(round_state, 0.8, 1, 0, active)
+                elif(strength<0.75): 
+                    
+                    return RandomAction(round_state, 0.05, 0.9, min(5*min_raise, max_raise), active)
+                elif(my_contribution<STARTING_STACK/4): #strength high enough to raise after a raise
+                    return RandomAction(round_state, 0, 0.5, min(2*min_raise, max_raise), active)
+                else: 
+                    return CheckCall()
+
+            if(big_blind and opp_contribution==2):
+                if(strength<self.PLAYABLE_THRESHOLD):
+                    return RandomAction(round_state, 0, 0.7, min(5*min_raise, max_raise), active)
+                elif(strength<self.RAISEABLE_THRESHOLD):
+                    return RandomAction(round_state, 0, 0.4, min(2*min_raise, max_raise), active)
+                else: 
+                    return RandomAction(round_state, 0, 0.6, min(2*min_raise, max_raise), active)
+            elif(big_blind and opp_contribution>2):
+                if(strength<pot_odds+0.1*my_bankroll/self.winning_bankroll):
+                    return RandomAction(round_state, 0.9, 1, 0, active)
+                elif(strength<0.8):  
+                    return RandomAction(round_state, 0.05, 0.95, min(2*min_raise, max_raise), active)
+                elif(my_contribution<STARTING_STACK/4): #strength high enough to raise after a raise
+                    return RandomAction(round_state, 0, 0.5, min(2*min_raise, max_raise), active)
+                else: 
+                    return CheckCall()
         #post flop strategy
         else:
             p=monte_carlo_sim(my_cards, board_cards, iters=1000)

@@ -1,48 +1,1165 @@
+Round 1: I have 0 and need 1502 to win
+0.4585
+0.45
+0.3425
+0.34
+0.3895
+0.398
+0.925
+0.932
+Round 2: I have 400 and need 1498 to win
+Round 3: I have 399 and need 1499 to win
+0.374
+0.378
+0.3835
+0.223
+0.2475
+0.2635
+0.269
+0.3115
+0.271
+0.537
+0.35
+Round 4: I have 799 and need 1495 to win
+0.3865
+Round 5: I have 797 and need 1496 to win
+Round 6: I have 795 and need 1492 to win
+Round 7: I have 794 and need 1493 to win
+0.528
+Round 8: I have 800 and need 1489 to win
+Round 9: I have 799 and need 1490 to win
+Round 10: I have 789 and need 1486 to win
+Round 11: I have 788 and need 1487 to win
+0.711
+Round 12: I have 790 and need 1483 to win
+Round 13: I have 789 and need 1484 to win
+0.5105
+0.497
+0.5515
+0.531
+0.533
+0.558
+0.4685
+0.4495
+0.3635
 0.357
+0.28
+Round 14: I have 789 and need 1480 to win
+Round 15: I have 788 and need 1481 to win
+0.422
+0.424
+0.3935
+0.356
+0.325
+0.3055
+Round 16: I have 409 and need 1477 to win
+Round 17: I have 408 and need 1478 to win
+0.384
+0.3725
+0.3525
 0.3105
-0.44
-0.9175
-0.9055
-0.9715
-0.9615
-0.983
-0.7155
-0.7855
-0.941
+0.3225
+0.327
+0.2905
+0.2795
+0.292
+0.0435
+Round 18: I have 8 and need 1474 to win
+0.5745
+0.586
+0.5465
+0.339
+Round 19: I have -392 and need 1475 to win
+0.4415
+0.448
+0.34
+0.362
+0.2845
+0.266
+Round 20: I have -790 and need 1471 to win
+0.377
+0.645
+0.75
+0.741
+Round 21: I have -390 and need 1472 to win
+0.553
+0.546
+0.419
+0.4335
+0.335
 0.3395
-0.328
-0.36
-0.3075
-0.333
-0.181
-0.173
-0.3295
-0.775
-0.3285
-0.573
-0.547
-0.481
-0.323
-0.4895
-0.449
-0.436
-0.535
-0.5395
-0.3145
-0.3285
-0.355
-0.3105
-0.245
-0.2565
-0.6185
-0.6125
-0.948
-0.9465
-0.9655
-0.559
-0.6425
-0.702
-0.986
-0.9295
-0.8695
-0.809
+Round 22: I have -758 and need 1468 to win
+Round 23: I have -759 and need 1469 to win
+0.7435
+0.732
+0.7025
+0.6755
+0.551
+0.53
+0.5805
+Round 24: I have -1159 and need 1465 to win
+0.651
+0.674
+0.6175
+Round 25: I have -1559 and need 1466 to win
+Round 26: I have -1558 and need 1462 to win
+Round 27: I have -1556 and need 1463 to win
+Round 28: I have -1555 and need 1459 to win
+0.326
+Round 29: I have -1553 and need 1460 to win
+Round 30: I have -1552 and need 1456 to win
+0.3185
+Round 31: I have -1550 and need 1457 to win
+Round 32: I have -1549 and need 1453 to win
+Round 33: I have -1547 and need 1454 to win
+Round 34: I have -1546 and need 1450 to win
+Round 35: I have -1544 and need 1451 to win
+Round 36: I have -1543 and need 1447 to win
+0.748
+Round 37: I have -1541 and need 1448 to win
+Round 38: I have -1540 and need 1444 to win
+Round 39: I have -1538 and need 1445 to win
+Round 40: I have -1537 and need 1441 to win
+Round 41: I have -1535 and need 1442 to win
+Round 42: I have -1534 and need 1438 to win
+Round 43: I have -1532 and need 1439 to win
+Round 44: I have -1531 and need 1435 to win
+Round 45: I have -1529 and need 1436 to win
+Round 46: I have -1528 and need 1432 to win
+0.3215
+Round 47: I have -1526 and need 1433 to win
+Round 48: I have -1525 and need 1429 to win
+Round 49: I have -1523 and need 1430 to win
+Round 50: I have -1522 and need 1426 to win
+0.4225
+Round 51: I have -1520 and need 1427 to win
+Round 52: I have -1519 and need 1423 to win
+Round 53: I have -1520 and need 1424 to win
+Round 54: I have -1519 and need 1420 to win
+Round 55: I have -1517 and need 1421 to win
+Round 56: I have -1516 and need 1417 to win
+Round 57: I have -1514 and need 1418 to win
+Round 58: I have -1513 and need 1414 to win
+Round 59: I have -1511 and need 1415 to win
+Round 60: I have -1510 and need 1411 to win
+Round 61: I have -1508 and need 1412 to win
+Round 62: I have -1507 and need 1408 to win
+0.4075
+Round 63: I have -1505 and need 1409 to win
+Round 64: I have -1504 and need 1405 to win
+Round 65: I have -1502 and need 1406 to win
+Round 66: I have -1501 and need 1402 to win
+Round 67: I have -1499 and need 1403 to win
+Round 68: I have -1498 and need 1399 to win
+Round 69: I have -1496 and need 1400 to win
+Round 70: I have -1495 and need 1396 to win
+0.3585
+Round 71: I have -1493 and need 1397 to win
+Round 72: I have -1492 and need 1393 to win
+Round 73: I have -1490 and need 1394 to win
+Round 74: I have -1489 and need 1390 to win
+0.6445
+Round 75: I have -1487 and need 1391 to win
+Round 76: I have -1486 and need 1387 to win
+Round 77: I have -1484 and need 1388 to win
+Round 78: I have -1483 and need 1384 to win
+0.2655
+Round 79: I have -1481 and need 1385 to win
+Round 80: I have -1480 and need 1381 to win
+Round 81: I have -1478 and need 1382 to win
+Round 82: I have -1477 and need 1378 to win
+Round 83: I have -1475 and need 1379 to win
+Round 84: I have -1474 and need 1375 to win
+Round 85: I have -1472 and need 1376 to win
+Round 86: I have -1471 and need 1372 to win
+Round 87: I have -1469 and need 1373 to win
+Round 88: I have -1468 and need 1369 to win
+Round 89: I have -1466 and need 1370 to win
+Round 90: I have -1465 and need 1366 to win
+Round 91: I have -1463 and need 1367 to win
+Round 92: I have -1462 and need 1363 to win
+Round 93: I have -1460 and need 1364 to win
+Round 94: I have -1459 and need 1360 to win
+Round 95: I have -1457 and need 1361 to win
+Round 96: I have -1456 and need 1357 to win
+Round 97: I have -1454 and need 1358 to win
+Round 98: I have -1453 and need 1354 to win
+0.5755
+Round 99: I have -1451 and need 1355 to win
+Round 100: I have -1450 and need 1351 to win
+Round 101: I have -1448 and need 1352 to win
+Round 102: I have -1447 and need 1348 to win
+Round 103: I have -1445 and need 1349 to win
+Round 104: I have -1444 and need 1345 to win
+Round 105: I have -1442 and need 1346 to win
+Round 106: I have -1441 and need 1342 to win
+Round 107: I have -1439 and need 1343 to win
+Round 108: I have -1438 and need 1339 to win
+Round 109: I have -1436 and need 1340 to win
+Round 110: I have -1435 and need 1336 to win
+Round 111: I have -1436 and need 1337 to win
+Round 112: I have -1435 and need 1333 to win
+0.7065
+Round 113: I have -1433 and need 1334 to win
+Round 114: I have -1432 and need 1330 to win
+Round 115: I have -1430 and need 1331 to win
+Round 116: I have -1429 and need 1327 to win
+Round 117: I have -1427 and need 1328 to win
+Round 118: I have -1426 and need 1324 to win
+0.2995
+Round 119: I have -1424 and need 1325 to win
+Round 120: I have -1423 and need 1321 to win
+Round 121: I have -1421 and need 1322 to win
+Round 122: I have -1420 and need 1318 to win
+Round 123: I have -1418 and need 1319 to win
+Round 124: I have -1417 and need 1315 to win
+Round 125: I have -1415 and need 1316 to win
+Round 126: I have -1414 and need 1312 to win
+Round 127: I have -1415 and need 1313 to win
+Round 128: I have -1414 and need 1309 to win
+0.3585
+Round 129: I have -1412 and need 1310 to win
+Round 130: I have -1411 and need 1306 to win
+Round 131: I have -1412 and need 1307 to win
+Round 132: I have -1411 and need 1303 to win
+Round 133: I have -1409 and need 1304 to win
+Round 134: I have -1408 and need 1300 to win
+Round 135: I have -1406 and need 1301 to win
+Round 136: I have -1405 and need 1297 to win
+Round 137: I have -1403 and need 1298 to win
+Round 138: I have -1402 and need 1294 to win
+Round 139: I have -1400 and need 1295 to win
+Round 140: I have -1399 and need 1291 to win
+Round 141: I have -1397 and need 1292 to win
+Round 142: I have -1396 and need 1288 to win
+Round 143: I have -1394 and need 1289 to win
+Round 144: I have -1393 and need 1285 to win
+Round 145: I have -1394 and need 1286 to win
+Round 146: I have -1393 and need 1282 to win
+Round 147: I have -1391 and need 1283 to win
+Round 148: I have -1390 and need 1279 to win
+Round 149: I have -1388 and need 1280 to win
+Round 150: I have -1387 and need 1276 to win
+0.2805
+Round 151: I have -1385 and need 1277 to win
+Round 152: I have -1384 and need 1273 to win
+Round 153: I have -1382 and need 1274 to win
+Round 154: I have -1381 and need 1270 to win
+Round 155: I have -1379 and need 1271 to win
+Round 156: I have -1378 and need 1267 to win
+Round 157: I have -1376 and need 1268 to win
+Round 158: I have -1375 and need 1264 to win
+0.5645
+Round 159: I have -1373 and need 1265 to win
+Round 160: I have -1372 and need 1261 to win
+Round 161: I have -1370 and need 1262 to win
+Round 162: I have -1369 and need 1258 to win
+Round 163: I have -1367 and need 1259 to win
+Round 164: I have -1366 and need 1255 to win
+Round 165: I have -1364 and need 1256 to win
+Round 166: I have -1363 and need 1252 to win
+Round 167: I have -1361 and need 1253 to win
+Round 168: I have -1360 and need 1249 to win
+Round 169: I have -1358 and need 1250 to win
+Round 170: I have -1357 and need 1246 to win
+0.3155
+Round 171: I have -1355 and need 1247 to win
+Round 172: I have -1354 and need 1243 to win
+Round 173: I have -1352 and need 1244 to win
+Round 174: I have -1351 and need 1240 to win
+Round 175: I have -1349 and need 1241 to win
+Round 176: I have -1348 and need 1237 to win
+Round 177: I have -1346 and need 1238 to win
+Round 178: I have -1345 and need 1234 to win
+Round 179: I have -1343 and need 1235 to win
+Round 180: I have -1342 and need 1231 to win
+Round 181: I have -1340 and need 1232 to win
+Round 182: I have -1339 and need 1228 to win
+Round 183: I have -1337 and need 1229 to win
+Round 184: I have -1336 and need 1225 to win
+Round 185: I have -1334 and need 1226 to win
+Round 186: I have -1333 and need 1222 to win
+Round 187: I have -1331 and need 1223 to win
+Round 188: I have -1330 and need 1219 to win
+Round 189: I have -1328 and need 1220 to win
+Round 190: I have -1327 and need 1216 to win
+Round 191: I have -1325 and need 1217 to win
+Round 192: I have -1324 and need 1213 to win
+Round 193: I have -1322 and need 1214 to win
+Round 194: I have -1321 and need 1210 to win
+0.611
+Round 195: I have -1319 and need 1211 to win
+Round 196: I have -1318 and need 1207 to win
+Round 197: I have -1316 and need 1208 to win
+Round 198: I have -1315 and need 1204 to win
+Round 199: I have -1313 and need 1205 to win
+Round 200: I have -1312 and need 1201 to win
+Round 201: I have -1310 and need 1202 to win
+Round 202: I have -1309 and need 1198 to win
+Round 203: I have -1310 and need 1199 to win
+Round 204: I have -1309 and need 1195 to win
+Round 205: I have -1307 and need 1196 to win
+Round 206: I have -1306 and need 1192 to win
+Round 207: I have -1304 and need 1193 to win
+Round 208: I have -1303 and need 1189 to win
+Round 209: I have -1304 and need 1190 to win
+Round 210: I have -1303 and need 1186 to win
+0.5665
+Round 211: I have -1301 and need 1187 to win
+Round 212: I have -1300 and need 1183 to win
+Round 213: I have -1298 and need 1184 to win
+Round 214: I have -1297 and need 1180 to win
+Round 215: I have -1295 and need 1181 to win
+Round 216: I have -1294 and need 1177 to win
+Round 217: I have -1292 and need 1178 to win
+Round 218: I have -1291 and need 1174 to win
+Round 219: I have -1289 and need 1175 to win
+Round 220: I have -1288 and need 1171 to win
+0.6145
+Round 221: I have -1286 and need 1172 to win
+Round 222: I have -1285 and need 1168 to win
+Round 223: I have -1283 and need 1169 to win
+Round 224: I have -1282 and need 1165 to win
+Round 225: I have -1280 and need 1166 to win
+Round 226: I have -1279 and need 1162 to win
+Round 227: I have -1277 and need 1163 to win
+Round 228: I have -1276 and need 1159 to win
+Round 229: I have -1277 and need 1160 to win
+Round 230: I have -1276 and need 1156 to win
+Round 231: I have -1274 and need 1157 to win
+Round 232: I have -1273 and need 1153 to win
+Round 233: I have -1271 and need 1154 to win
+Round 234: I have -1270 and need 1150 to win
+0.3465
+Round 235: I have -1268 and need 1151 to win
+Round 236: I have -1267 and need 1147 to win
+Round 237: I have -1265 and need 1148 to win
+Round 238: I have -1264 and need 1144 to win
+Round 239: I have -1262 and need 1145 to win
+Round 240: I have -1261 and need 1141 to win
+Round 241: I have -1259 and need 1142 to win
+Round 242: I have -1258 and need 1138 to win
+Round 243: I have -1259 and need 1139 to win
+Round 244: I have -1258 and need 1135 to win
+Round 245: I have -1259 and need 1136 to win
+Round 246: I have -1258 and need 1132 to win
+Round 247: I have -1256 and need 1133 to win
+Round 248: I have -1255 and need 1129 to win
+Round 249: I have -1253 and need 1130 to win
+Round 250: I have -1252 and need 1126 to win
+Round 251: I have -1250 and need 1127 to win
+Round 252: I have -1249 and need 1123 to win
+Round 253: I have -1250 and need 1124 to win
+Round 254: I have -1249 and need 1120 to win
+Round 255: I have -1247 and need 1121 to win
+Round 256: I have -1246 and need 1117 to win
+Round 257: I have -1247 and need 1118 to win
+Round 258: I have -1246 and need 1114 to win
+Round 259: I have -1244 and need 1115 to win
+Round 260: I have -1243 and need 1111 to win
+Round 261: I have -1241 and need 1112 to win
+Round 262: I have -1240 and need 1108 to win
+Round 263: I have -1238 and need 1109 to win
+Round 264: I have -1237 and need 1105 to win
+Round 265: I have -1235 and need 1106 to win
+Round 266: I have -1234 and need 1102 to win
+Round 267: I have -1232 and need 1103 to win
+Round 268: I have -1231 and need 1099 to win
+Round 269: I have -1229 and need 1100 to win
+Round 270: I have -1228 and need 1096 to win
+Round 271: I have -1226 and need 1097 to win
+Round 272: I have -1225 and need 1093 to win
+Round 273: I have -1223 and need 1094 to win
+Round 274: I have -1222 and need 1090 to win
+0.5505
+Round 275: I have -1220 and need 1091 to win
+Round 276: I have -1219 and need 1087 to win
+Round 277: I have -1217 and need 1088 to win
+Round 278: I have -1216 and need 1084 to win
+Round 279: I have -1214 and need 1085 to win
+Round 280: I have -1213 and need 1081 to win
+0.79
+Round 281: I have -1211 and need 1082 to win
+Round 282: I have -1210 and need 1078 to win
+Round 283: I have -1208 and need 1079 to win
+Round 284: I have -1207 and need 1075 to win
+Round 285: I have -1205 and need 1076 to win
+Round 286: I have -1204 and need 1072 to win
+Round 287: I have -1202 and need 1073 to win
+Round 288: I have -1201 and need 1069 to win
+Round 289: I have -1199 and need 1070 to win
+Round 290: I have -1198 and need 1066 to win
+0.7245
+Round 291: I have -1196 and need 1067 to win
+Round 292: I have -1195 and need 1063 to win
+Round 293: I have -1193 and need 1064 to win
+Round 294: I have -1192 and need 1060 to win
+Round 295: I have -1193 and need 1061 to win
+Round 296: I have -1192 and need 1057 to win
+Round 297: I have -1190 and need 1058 to win
+Round 298: I have -1189 and need 1054 to win
+Round 299: I have -1187 and need 1055 to win
+Round 300: I have -1186 and need 1051 to win
+Round 301: I have -1184 and need 1052 to win
+Round 302: I have -1183 and need 1048 to win
+0.279
+Round 303: I have -1181 and need 1049 to win
+Round 304: I have -1180 and need 1045 to win
+Round 305: I have -1178 and need 1046 to win
+Round 306: I have -1177 and need 1042 to win
+Round 307: I have -1175 and need 1043 to win
+Round 308: I have -1174 and need 1039 to win
+Round 309: I have -1172 and need 1040 to win
+Round 310: I have -1171 and need 1036 to win
+0.387
+Round 311: I have -1169 and need 1037 to win
+Round 312: I have -1168 and need 1033 to win
+Round 313: I have -1166 and need 1034 to win
+Round 314: I have -1165 and need 1030 to win
+Round 315: I have -1163 and need 1031 to win
+Round 316: I have -1162 and need 1027 to win
+Round 317: I have -1160 and need 1028 to win
+Round 318: I have -1159 and need 1024 to win
+Round 319: I have -1160 and need 1025 to win
+Round 320: I have -1159 and need 1021 to win
+Round 321: I have -1160 and need 1022 to win
+Round 322: I have -1159 and need 1018 to win
+0.33
+Round 323: I have -1157 and need 1019 to win
+Round 324: I have -1156 and need 1015 to win
+Round 325: I have -1157 and need 1016 to win
+Round 326: I have -1156 and need 1012 to win
+Round 327: I have -1154 and need 1013 to win
+Round 328: I have -1153 and need 1009 to win
+Round 329: I have -1151 and need 1010 to win
+Round 330: I have -1150 and need 1006 to win
+Round 331: I have -1148 and need 1007 to win
+Round 332: I have -1147 and need 1003 to win
+Round 333: I have -1145 and need 1004 to win
+Round 334: I have -1144 and need 1000 to win
+Round 335: I have -1142 and need 1001 to win
+Round 336: I have -1141 and need 997 to win
+Round 337: I have -1139 and need 998 to win
+Round 338: I have -1138 and need 994 to win
+Round 339: I have -1136 and need 995 to win
+Round 340: I have -1135 and need 991 to win
+Round 341: I have -1133 and need 992 to win
+Round 342: I have -1132 and need 988 to win
+Round 343: I have -1130 and need 989 to win
+Round 344: I have -1129 and need 985 to win
+0.278
+Round 345: I have -1127 and need 986 to win
+Round 346: I have -1126 and need 982 to win
+Round 347: I have -1124 and need 983 to win
+Round 348: I have -1123 and need 979 to win
+Round 349: I have -1121 and need 980 to win
+Round 350: I have -1120 and need 976 to win
+Round 351: I have -1118 and need 977 to win
+Round 352: I have -1117 and need 973 to win
+Round 353: I have -1118 and need 974 to win
+Round 354: I have -1117 and need 970 to win
+Round 355: I have -1115 and need 971 to win
+Round 356: I have -1114 and need 967 to win
+Round 357: I have -1115 and need 968 to win
+Round 358: I have -1114 and need 964 to win
+Round 359: I have -1112 and need 965 to win
+Round 360: I have -1111 and need 961 to win
+Round 361: I have -1109 and need 962 to win
+Round 362: I have -1108 and need 958 to win
+Round 363: I have -1109 and need 959 to win
+Round 364: I have -1108 and need 955 to win
+Round 365: I have -1106 and need 956 to win
+Round 366: I have -1105 and need 952 to win
+Round 367: I have -1103 and need 953 to win
+Round 368: I have -1102 and need 949 to win
+Round 369: I have -1100 and need 950 to win
+Round 370: I have -1099 and need 946 to win
+0.353
+Round 371: I have -1097 and need 947 to win
+Round 372: I have -1096 and need 943 to win
+Round 373: I have -1094 and need 944 to win
+Round 374: I have -1093 and need 940 to win
+Round 375: I have -1091 and need 941 to win
+Round 376: I have -1090 and need 937 to win
+Round 377: I have -1088 and need 938 to win
+Round 378: I have -1087 and need 934 to win
+Round 379: I have -1085 and need 935 to win
+Round 380: I have -1084 and need 931 to win
+Round 381: I have -1082 and need 932 to win
+Round 382: I have -1081 and need 928 to win
+0.5095
+Round 383: I have -1079 and need 929 to win
+Round 384: I have -1078 and need 925 to win
+Round 385: I have -1076 and need 926 to win
+Round 386: I have -1075 and need 922 to win
+Round 387: I have -1073 and need 923 to win
+Round 388: I have -1072 and need 919 to win
+Round 389: I have -1070 and need 920 to win
+Round 390: I have -1069 and need 916 to win
+Round 391: I have -1067 and need 917 to win
+Round 392: I have -1066 and need 913 to win
+0.682
+Round 393: I have -1064 and need 914 to win
+Round 394: I have -1063 and need 910 to win
+Round 395: I have -1061 and need 911 to win
+Round 396: I have -1060 and need 907 to win
+Round 397: I have -1058 and need 908 to win
+Round 398: I have -1057 and need 904 to win
+0.543
+Round 399: I have -1055 and need 905 to win
+Round 400: I have -1054 and need 901 to win
+Round 401: I have -1055 and need 902 to win
+Round 402: I have -1054 and need 898 to win
+0.53
+Round 403: I have -1052 and need 899 to win
+Round 404: I have -1051 and need 895 to win
+Round 405: I have -1049 and need 896 to win
+Round 406: I have -1048 and need 892 to win
+0.592
+Round 407: I have -1046 and need 893 to win
+Round 408: I have -1045 and need 889 to win
+Round 409: I have -1043 and need 890 to win
+Round 410: I have -1042 and need 886 to win
+Round 411: I have -1040 and need 887 to win
+Round 412: I have -1039 and need 883 to win
+Round 413: I have -1037 and need 884 to win
+Round 414: I have -1036 and need 880 to win
+Round 415: I have -1034 and need 881 to win
+Round 416: I have -1033 and need 877 to win
+Round 417: I have -1031 and need 878 to win
+Round 418: I have -1030 and need 874 to win
+Round 419: I have -1028 and need 875 to win
+Round 420: I have -1027 and need 871 to win
+Round 421: I have -1025 and need 872 to win
+Round 422: I have -1024 and need 868 to win
+Round 423: I have -1025 and need 869 to win
+Round 424: I have -1024 and need 865 to win
+Round 425: I have -1022 and need 866 to win
+Round 426: I have -1021 and need 862 to win
+Round 427: I have -1019 and need 863 to win
+Round 428: I have -1018 and need 859 to win
+Round 429: I have -1016 and need 860 to win
+Round 430: I have -1015 and need 856 to win
+Round 431: I have -1013 and need 857 to win
+Round 432: I have -1012 and need 853 to win
+0.5445
+Round 433: I have -1010 and need 854 to win
+Round 434: I have -1009 and need 850 to win
+Round 435: I have -1007 and need 851 to win
+Round 436: I have -1006 and need 847 to win
+Round 437: I have -1004 and need 848 to win
+Round 438: I have -1003 and need 844 to win
+Round 439: I have -1001 and need 845 to win
+Round 440: I have -1000 and need 841 to win
+Round 441: I have -1001 and need 842 to win
+Round 442: I have -1000 and need 838 to win
+Round 443: I have -1001 and need 839 to win
+Round 444: I have -1000 and need 835 to win
+Round 445: I have -998 and need 836 to win
+Round 446: I have -997 and need 832 to win
+0.287
+Round 447: I have -995 and need 833 to win
+Round 448: I have -994 and need 829 to win
+Round 449: I have -995 and need 830 to win
+Round 450: I have -994 and need 826 to win
+Round 451: I have -992 and need 827 to win
+Round 452: I have -991 and need 823 to win
+Round 453: I have -989 and need 824 to win
+Round 454: I have -988 and need 820 to win
+Round 455: I have -986 and need 821 to win
+Round 456: I have -985 and need 817 to win
+0.4585
+Round 457: I have -983 and need 818 to win
+Round 458: I have -982 and need 814 to win
+0.373
+Round 459: I have -980 and need 815 to win
+Round 460: I have -979 and need 811 to win
+0.5235
+Round 461: I have -977 and need 812 to win
+Round 462: I have -976 and need 808 to win
+Round 463: I have -974 and need 809 to win
+Round 464: I have -973 and need 805 to win
+Round 465: I have -971 and need 806 to win
+Round 466: I have -970 and need 802 to win
+Round 467: I have -968 and need 803 to win
+Round 468: I have -967 and need 799 to win
+Round 469: I have -965 and need 800 to win
+Round 470: I have -964 and need 796 to win
+Round 471: I have -962 and need 797 to win
+Round 472: I have -961 and need 793 to win
+Round 473: I have -959 and need 794 to win
+Round 474: I have -958 and need 790 to win
+Round 475: I have -956 and need 791 to win
+Round 476: I have -955 and need 787 to win
+Round 477: I have -953 and need 788 to win
+Round 478: I have -952 and need 784 to win
+Round 479: I have -953 and need 785 to win
+Round 480: I have -952 and need 781 to win
+Round 481: I have -950 and need 782 to win
+Round 482: I have -949 and need 778 to win
+Round 483: I have -947 and need 779 to win
+Round 484: I have -946 and need 775 to win
+0.8755
+Round 485: I have -944 and need 776 to win
+Round 486: I have -943 and need 772 to win
+Round 487: I have -941 and need 773 to win
+Round 488: I have -940 and need 769 to win
+Round 489: I have -938 and need 770 to win
+Round 490: I have -937 and need 766 to win
+Round 491: I have -935 and need 767 to win
+Round 492: I have -934 and need 763 to win
+Round 493: I have -935 and need 764 to win
+Round 494: I have -934 and need 760 to win
+Round 495: I have -935 and need 761 to win
+Round 496: I have -934 and need 757 to win
+Round 497: I have -932 and need 758 to win
+Round 498: I have -931 and need 754 to win
+Round 499: I have -929 and need 755 to win
+Round 500: I have -928 and need 751 to win
+0.536
+Round 501: I have -926 and need 752 to win
+Round 502: I have -925 and need 748 to win
+0.3475
+Round 503: I have -923 and need 749 to win
+Round 504: I have -922 and need 745 to win
+0.5135
+Round 505: I have -920 and need 746 to win
+Round 506: I have -919 and need 742 to win
+Round 507: I have -917 and need 743 to win
+Round 508: I have -916 and need 739 to win
+Round 509: I have -914 and need 740 to win
+Round 510: I have -913 and need 736 to win
+Round 511: I have -911 and need 737 to win
+Round 512: I have -910 and need 733 to win
+0.2045
+Round 513: I have -908 and need 734 to win
+Round 514: I have -907 and need 730 to win
+0.39
+Round 515: I have -905 and need 731 to win
+Round 516: I have -904 and need 727 to win
+Round 517: I have -905 and need 728 to win
+Round 518: I have -904 and need 724 to win
+Round 519: I have -902 and need 725 to win
+Round 520: I have -901 and need 721 to win
+Round 521: I have -899 and need 722 to win
+Round 522: I have -898 and need 718 to win
+Round 523: I have -896 and need 719 to win
+Round 524: I have -895 and need 715 to win
+0.9285
+Round 525: I have -893 and need 716 to win
+Round 526: I have -892 and need 712 to win
+Round 527: I have -890 and need 713 to win
+Round 528: I have -889 and need 709 to win
+Round 529: I have -887 and need 710 to win
+Round 530: I have -886 and need 706 to win
+Round 531: I have -884 and need 707 to win
+Round 532: I have -883 and need 703 to win
+Round 533: I have -881 and need 704 to win
+Round 534: I have -880 and need 700 to win
+Round 535: I have -878 and need 701 to win
+Round 536: I have -877 and need 697 to win
+0.4105
+Round 537: I have -875 and need 698 to win
+Round 538: I have -874 and need 694 to win
+Round 539: I have -872 and need 695 to win
+Round 540: I have -871 and need 691 to win
+Round 541: I have -869 and need 692 to win
+Round 542: I have -868 and need 688 to win
+Round 543: I have -866 and need 689 to win
+Round 544: I have -865 and need 685 to win
+Round 545: I have -863 and need 686 to win
+Round 546: I have -862 and need 682 to win
+Round 547: I have -860 and need 683 to win
+Round 548: I have -859 and need 679 to win
+Round 549: I have -857 and need 680 to win
+Round 550: I have -856 and need 676 to win
+0.3635
+Round 551: I have -854 and need 677 to win
+Round 552: I have -853 and need 673 to win
+Round 553: I have -851 and need 674 to win
+Round 554: I have -850 and need 670 to win
+Round 555: I have -848 and need 671 to win
+Round 556: I have -847 and need 667 to win
+Round 557: I have -845 and need 668 to win
+Round 558: I have -844 and need 664 to win
+Round 559: I have -842 and need 665 to win
+Round 560: I have -841 and need 661 to win
+Round 561: I have -842 and need 662 to win
+Round 562: I have -841 and need 658 to win
+0.451
+Round 563: I have -839 and need 659 to win
+Round 564: I have -838 and need 655 to win
+Round 565: I have -836 and need 656 to win
+Round 566: I have -835 and need 652 to win
+Round 567: I have -833 and need 653 to win
+Round 568: I have -832 and need 649 to win
+0.285
+Round 569: I have -830 and need 650 to win
+Round 570: I have -829 and need 646 to win
+Round 571: I have -827 and need 647 to win
+Round 572: I have -826 and need 643 to win
+Round 573: I have -824 and need 644 to win
+Round 574: I have -823 and need 640 to win
+0.351
+Round 575: I have -821 and need 641 to win
+Round 576: I have -820 and need 637 to win
+Round 577: I have -818 and need 638 to win
+Round 578: I have -817 and need 634 to win
+Round 579: I have -815 and need 635 to win
+Round 580: I have -814 and need 631 to win
+Round 581: I have -812 and need 632 to win
+Round 582: I have -811 and need 628 to win
+Round 583: I have -809 and need 629 to win
+Round 584: I have -808 and need 625 to win
+0.287
+Round 585: I have -806 and need 626 to win
+Round 586: I have -805 and need 622 to win
+0.512
+Round 587: I have -803 and need 623 to win
+Round 588: I have -802 and need 619 to win
+Round 589: I have -800 and need 620 to win
+Round 590: I have -799 and need 616 to win
+0.675
+Round 591: I have -797 and need 617 to win
+Round 592: I have -796 and need 613 to win
+Round 593: I have -794 and need 614 to win
+Round 594: I have -793 and need 610 to win
+Round 595: I have -791 and need 611 to win
+Round 596: I have -790 and need 607 to win
+Round 597: I have -788 and need 608 to win
+Round 598: I have -787 and need 604 to win
+Round 599: I have -788 and need 605 to win
+Round 600: I have -787 and need 601 to win
+Round 601: I have -788 and need 602 to win
+Round 602: I have -787 and need 598 to win
+0.2615
+Round 603: I have -785 and need 599 to win
+Round 604: I have -784 and need 595 to win
+Round 605: I have -782 and need 596 to win
+Round 606: I have -781 and need 592 to win
+Round 607: I have -779 and need 593 to win
+Round 608: I have -778 and need 589 to win
+Round 609: I have -779 and need 590 to win
+Round 610: I have -778 and need 586 to win
+Round 611: I have -776 and need 587 to win
+Round 612: I have -775 and need 583 to win
+Round 613: I have -773 and need 584 to win
+Round 614: I have -772 and need 580 to win
+Round 615: I have -770 and need 581 to win
+Round 616: I have -769 and need 577 to win
+Round 617: I have -767 and need 578 to win
+Round 618: I have -766 and need 574 to win
+Round 619: I have -764 and need 575 to win
+Round 620: I have -763 and need 571 to win
+Round 621: I have -764 and need 572 to win
+Round 622: I have -763 and need 568 to win
+0.475
+Round 623: I have -761 and need 569 to win
+Round 624: I have -760 and need 565 to win
+Round 625: I have -761 and need 566 to win
+Round 626: I have -760 and need 562 to win
+Round 627: I have -758 and need 563 to win
+Round 628: I have -757 and need 559 to win
+Round 629: I have -755 and need 560 to win
+Round 630: I have -754 and need 556 to win
+Round 631: I have -752 and need 557 to win
+Round 632: I have -751 and need 553 to win
+Round 633: I have -749 and need 554 to win
+Round 634: I have -748 and need 550 to win
+Round 635: I have -749 and need 551 to win
+Round 636: I have -748 and need 547 to win
+Round 637: I have -746 and need 548 to win
+Round 638: I have -745 and need 544 to win
+Round 639: I have -746 and need 545 to win
+Round 640: I have -745 and need 541 to win
+Round 641: I have -746 and need 542 to win
+Round 642: I have -745 and need 538 to win
+Round 643: I have -746 and need 539 to win
+Round 644: I have -745 and need 535 to win
+Round 645: I have -743 and need 536 to win
+Round 646: I have -742 and need 532 to win
+0.5895
+Round 647: I have -740 and need 533 to win
+Round 648: I have -739 and need 529 to win
+Round 649: I have -737 and need 530 to win
+Round 650: I have -736 and need 526 to win
+Round 651: I have -734 and need 527 to win
+Round 652: I have -733 and need 523 to win
+Round 653: I have -731 and need 524 to win
+Round 654: I have -730 and need 520 to win
+Round 655: I have -728 and need 521 to win
+Round 656: I have -727 and need 517 to win
+Round 657: I have -725 and need 518 to win
+Round 658: I have -724 and need 514 to win
+Round 659: I have -722 and need 515 to win
+Round 660: I have -721 and need 511 to win
+Round 661: I have -719 and need 512 to win
+Round 662: I have -718 and need 508 to win
+Round 663: I have -716 and need 509 to win
+Round 664: I have -715 and need 505 to win
+0.453
+Round 665: I have -713 and need 506 to win
+Round 666: I have -712 and need 502 to win
+Round 667: I have -710 and need 503 to win
+Round 668: I have -709 and need 499 to win
+Round 669: I have -707 and need 500 to win
+Round 670: I have -706 and need 496 to win
+0.445
+Round 671: I have -704 and need 497 to win
+Round 672: I have -703 and need 493 to win
+Round 673: I have -704 and need 494 to win
+Round 674: I have -703 and need 490 to win
+Round 675: I have -701 and need 491 to win
+Round 676: I have -700 and need 487 to win
+Round 677: I have -698 and need 488 to win
+Round 678: I have -697 and need 484 to win
+Round 679: I have -695 and need 485 to win
+Round 680: I have -694 and need 481 to win
+Round 681: I have -692 and need 482 to win
+Round 682: I have -691 and need 478 to win
+0.2865
+Round 683: I have -689 and need 479 to win
+Round 684: I have -688 and need 475 to win
+Round 685: I have -686 and need 476 to win
+Round 686: I have -685 and need 472 to win
+Round 687: I have -683 and need 473 to win
+Round 688: I have -682 and need 469 to win
+Round 689: I have -680 and need 470 to win
+Round 690: I have -679 and need 466 to win
+Round 691: I have -677 and need 467 to win
+Round 692: I have -676 and need 463 to win
+Round 693: I have -674 and need 464 to win
+Round 694: I have -673 and need 460 to win
+Round 695: I have -671 and need 461 to win
+Round 696: I have -670 and need 457 to win
+Round 697: I have -668 and need 458 to win
+Round 698: I have -667 and need 454 to win
+Round 699: I have -665 and need 455 to win
+Round 700: I have -664 and need 451 to win
+Round 701: I have -665 and need 452 to win
+Round 702: I have -664 and need 448 to win
+Round 703: I have -662 and need 449 to win
+Round 704: I have -661 and need 445 to win
+Round 705: I have -659 and need 446 to win
+Round 706: I have -658 and need 442 to win
+Round 707: I have -656 and need 443 to win
+Round 708: I have -655 and need 439 to win
+Round 709: I have -653 and need 440 to win
+Round 710: I have -652 and need 436 to win
+Round 711: I have -650 and need 437 to win
+Round 712: I have -649 and need 433 to win
+Round 713: I have -647 and need 434 to win
+Round 714: I have -646 and need 430 to win
+Round 715: I have -644 and need 431 to win
+Round 716: I have -643 and need 427 to win
+0.366
+Round 717: I have -641 and need 428 to win
+Round 718: I have -640 and need 424 to win
+Round 719: I have -638 and need 425 to win
+Round 720: I have -637 and need 421 to win
+Round 721: I have -635 and need 422 to win
+Round 722: I have -634 and need 418 to win
+Round 723: I have -632 and need 419 to win
+Round 724: I have -631 and need 415 to win
+Round 725: I have -629 and need 416 to win
+Round 726: I have -628 and need 412 to win
+Round 727: I have -629 and need 413 to win
+Round 728: I have -628 and need 409 to win
+Round 729: I have -626 and need 410 to win
+Round 730: I have -625 and need 406 to win
+0.498
+Round 731: I have -623 and need 407 to win
+Round 732: I have -622 and need 403 to win
+Round 733: I have -620 and need 404 to win
+Round 734: I have -619 and need 400 to win
+Round 735: I have -617 and need 401 to win
+Round 736: I have -616 and need 397 to win
+Round 737: I have -614 and need 398 to win
+Round 738: I have -613 and need 394 to win
+Round 739: I have -611 and need 395 to win
+Round 740: I have -610 and need 391 to win
+Round 741: I have -608 and need 392 to win
+Round 742: I have -607 and need 388 to win
+Round 743: I have -605 and need 389 to win
+Round 744: I have -604 and need 385 to win
+Round 745: I have -602 and need 386 to win
+Round 746: I have -601 and need 382 to win
+Round 747: I have -602 and need 383 to win
+Round 748: I have -601 and need 379 to win
+Round 749: I have -599 and need 380 to win
+Round 750: I have -598 and need 376 to win
+Round 751: I have -599 and need 377 to win
+Round 752: I have -598 and need 373 to win
+Round 753: I have -596 and need 374 to win
+Round 754: I have -595 and need 370 to win
+Round 755: I have -593 and need 371 to win
+Round 756: I have -592 and need 367 to win
+Round 757: I have -590 and need 368 to win
+Round 758: I have -589 and need 364 to win
+Round 759: I have -587 and need 365 to win
+Round 760: I have -586 and need 361 to win
+Round 761: I have -584 and need 362 to win
+Round 762: I have -583 and need 358 to win
+Round 763: I have -584 and need 359 to win
+Round 764: I have -583 and need 355 to win
+Round 765: I have -581 and need 356 to win
+Round 766: I have -580 and need 352 to win
+Round 767: I have -578 and need 353 to win
+Round 768: I have -577 and need 349 to win
+Round 769: I have -575 and need 350 to win
+Round 770: I have -574 and need 346 to win
+Round 771: I have -572 and need 347 to win
+Round 772: I have -571 and need 343 to win
+0.386
+Round 773: I have -569 and need 344 to win
+Round 774: I have -568 and need 340 to win
+Round 775: I have -569 and need 341 to win
+Round 776: I have -568 and need 337 to win
+0.6
+Round 777: I have -566 and need 338 to win
+Round 778: I have -565 and need 334 to win
+Round 779: I have -563 and need 335 to win
+Round 780: I have -562 and need 331 to win
+Round 781: I have -560 and need 332 to win
+Round 782: I have -559 and need 328 to win
+Round 783: I have -557 and need 329 to win
+Round 784: I have -556 and need 325 to win
+Round 785: I have -557 and need 326 to win
+Round 786: I have -556 and need 322 to win
+0.4495
+Round 787: I have -554 and need 323 to win
+Round 788: I have -553 and need 319 to win
+Round 789: I have -554 and need 320 to win
+Round 790: I have -553 and need 316 to win
+Round 791: I have -551 and need 317 to win
+Round 792: I have -550 and need 313 to win
+Round 793: I have -548 and need 314 to win
+Round 794: I have -547 and need 310 to win
+Round 795: I have -545 and need 311 to win
+Round 796: I have -544 and need 307 to win
+Round 797: I have -542 and need 308 to win
+Round 798: I have -541 and need 304 to win
+Round 799: I have -539 and need 305 to win
+Round 800: I have -538 and need 301 to win
+Round 801: I have -539 and need 302 to win
+Round 802: I have -538 and need 298 to win
+Round 803: I have -536 and need 299 to win
+Round 804: I have -535 and need 295 to win
+Round 805: I have -533 and need 296 to win
+Round 806: I have -532 and need 292 to win
+Round 807: I have -533 and need 293 to win
+Round 808: I have -532 and need 289 to win
+Round 809: I have -530 and need 290 to win
+Round 810: I have -529 and need 286 to win
+Round 811: I have -527 and need 287 to win
+Round 812: I have -526 and need 283 to win
+Round 813: I have -524 and need 284 to win
+Round 814: I have -523 and need 280 to win
+Round 815: I have -521 and need 281 to win
+Round 816: I have -520 and need 277 to win
+Round 817: I have -518 and need 278 to win
+Round 818: I have -517 and need 274 to win
+Round 819: I have -515 and need 275 to win
+Round 820: I have -514 and need 271 to win
+0.471
+Round 821: I have -512 and need 272 to win
+Round 822: I have -511 and need 268 to win
+Round 823: I have -509 and need 269 to win
+Round 824: I have -508 and need 265 to win
+Round 825: I have -506 and need 266 to win
+Round 826: I have -505 and need 262 to win
+Round 827: I have -503 and need 263 to win
+Round 828: I have -502 and need 259 to win
+Round 829: I have -500 and need 260 to win
+Round 830: I have -499 and need 256 to win
+Round 831: I have -500 and need 257 to win
+Round 832: I have -499 and need 253 to win
+Round 833: I have -500 and need 254 to win
+Round 834: I have -499 and need 250 to win
+Round 835: I have -497 and need 251 to win
+Round 836: I have -496 and need 247 to win
+Round 837: I have -494 and need 248 to win
+Round 838: I have -493 and need 244 to win
+Round 839: I have -491 and need 245 to win
+Round 840: I have -490 and need 241 to win
+Round 841: I have -488 and need 242 to win
+Round 842: I have -487 and need 238 to win
+0.7395
+Round 843: I have -485 and need 239 to win
+Round 844: I have -484 and need 235 to win
+Round 845: I have -485 and need 236 to win
+Round 846: I have -484 and need 232 to win
+0.649
+Round 847: I have -482 and need 233 to win
+Round 848: I have -481 and need 229 to win
+Round 849: I have -479 and need 230 to win
+Round 850: I have -478 and need 226 to win
+Round 851: I have -479 and need 227 to win
+Round 852: I have -478 and need 223 to win
+Round 853: I have -476 and need 224 to win
+Round 854: I have -475 and need 220 to win
+Round 855: I have -473 and need 221 to win
+Round 856: I have -472 and need 217 to win
+Round 857: I have -470 and need 218 to win
+Round 858: I have -469 and need 214 to win
+Round 859: I have -467 and need 215 to win
+Round 860: I have -466 and need 211 to win
+Round 861: I have -464 and need 212 to win
+Round 862: I have -463 and need 208 to win
+0.4625
+Round 863: I have -461 and need 209 to win
+Round 864: I have -460 and need 205 to win
+0.352
+Round 865: I have -458 and need 206 to win
+Round 866: I have -457 and need 202 to win
+Round 867: I have -455 and need 203 to win
+Round 868: I have -454 and need 199 to win
+Round 869: I have -452 and need 200 to win
+Round 870: I have -451 and need 196 to win
+Round 871: I have -449 and need 197 to win
+Round 872: I have -448 and need 193 to win
+Round 873: I have -446 and need 194 to win
+Round 874: I have -445 and need 190 to win
+Round 875: I have -443 and need 191 to win
+Round 876: I have -442 and need 187 to win
+0.306
+Round 877: I have -440 and need 188 to win
+Round 878: I have -439 and need 184 to win
+0.63
+Round 879: I have -437 and need 185 to win
+Round 880: I have -436 and need 181 to win
+Round 881: I have -434 and need 182 to win
+Round 882: I have -433 and need 178 to win
+Round 883: I have -431 and need 179 to win
+Round 884: I have -430 and need 175 to win
+Round 885: I have -431 and need 176 to win
+Round 886: I have -430 and need 172 to win
+Round 887: I have -428 and need 173 to win
+Round 888: I have -427 and need 169 to win
+Round 889: I have -425 and need 170 to win
+Round 890: I have -424 and need 166 to win
+0.5565
+Round 891: I have -422 and need 167 to win
+Round 892: I have -421 and need 163 to win
+Round 893: I have -419 and need 164 to win
+Round 894: I have -418 and need 160 to win
+0.262
+Round 895: I have -416 and need 161 to win
+Round 896: I have -415 and need 157 to win
+0.3415
+Round 897: I have -413 and need 158 to win
+Round 898: I have -412 and need 154 to win
+Round 899: I have -413 and need 155 to win
+Round 900: I have -412 and need 151 to win
+Round 901: I have -410 and need 152 to win
+Round 902: I have -409 and need 148 to win
+Round 903: I have -407 and need 149 to win
+Round 904: I have -406 and need 145 to win
+Round 905: I have -404 and need 146 to win
+Round 906: I have -403 and need 142 to win
+0.715
+Round 907: I have -401 and need 143 to win
+Round 908: I have -400 and need 139 to win
+Round 909: I have -398 and need 140 to win
+Round 910: I have -397 and need 136 to win
+Round 911: I have -395 and need 137 to win
+Round 912: I have -394 and need 133 to win
+Round 913: I have -392 and need 134 to win
+Round 914: I have -391 and need 130 to win
+Round 915: I have -392 and need 131 to win
+Round 916: I have -391 and need 127 to win
+Round 917: I have -389 and need 128 to win
+Round 918: I have -388 and need 124 to win
+Round 919: I have -386 and need 125 to win
+Round 920: I have -385 and need 121 to win
+Round 921: I have -383 and need 122 to win
+Round 922: I have -382 and need 118 to win
+0.3745
+Round 923: I have -380 and need 119 to win
+Round 924: I have -379 and need 115 to win
+Round 925: I have -377 and need 116 to win
+Round 926: I have -376 and need 112 to win
+Round 927: I have -374 and need 113 to win
+Round 928: I have -373 and need 109 to win
+Round 929: I have -374 and need 110 to win
+Round 930: I have -373 and need 106 to win
+0.5305
+Round 931: I have -371 and need 107 to win
+Round 932: I have -370 and need 103 to win
+Round 933: I have -368 and need 104 to win
+Round 934: I have -367 and need 100 to win
+Round 935: I have -365 and need 101 to win
+Round 936: I have -364 and need 97 to win
+Round 937: I have -362 and need 98 to win
+Round 938: I have -361 and need 94 to win
+Round 939: I have -359 and need 95 to win
+Round 940: I have -358 and need 91 to win
+Round 941: I have -356 and need 92 to win
+Round 942: I have -355 and need 88 to win
+Round 943: I have -353 and need 89 to win
+Round 944: I have -352 and need 85 to win
+Round 945: I have -350 and need 86 to win
+Round 946: I have -349 and need 82 to win
+0.287
+Round 947: I have -347 and need 83 to win
+Round 948: I have -346 and need 79 to win
+0.347
+Round 949: I have -344 and need 80 to win
+Round 950: I have -343 and need 76 to win
+Round 951: I have -341 and need 77 to win
+Round 952: I have -340 and need 73 to win
+Round 953: I have -338 and need 74 to win
+Round 954: I have -337 and need 70 to win
+Round 955: I have -338 and need 71 to win
+Round 956: I have -337 and need 67 to win
+Round 957: I have -335 and need 68 to win
+Round 958: I have -334 and need 64 to win
+Round 959: I have -332 and need 65 to win
+Round 960: I have -331 and need 61 to win
+Round 961: I have -329 and need 62 to win
+Round 962: I have -328 and need 58 to win
+0.304
+Round 963: I have -326 and need 59 to win
+Round 964: I have -325 and need 55 to win
+Round 965: I have -323 and need 56 to win
+Round 966: I have -322 and need 52 to win
+0.244
+Round 967: I have -320 and need 53 to win
+Round 968: I have -319 and need 49 to win
+0.6015
+Round 969: I have -317 and need 50 to win
+Round 970: I have -316 and need 46 to win
+Round 971: I have -314 and need 47 to win
+Round 972: I have -313 and need 43 to win
+0.3
+Round 973: I have -311 and need 44 to win
+Round 974: I have -310 and need 40 to win
+Round 975: I have -308 and need 41 to win
+Round 976: I have -307 and need 37 to win
+Round 977: I have -305 and need 38 to win
+Round 978: I have -304 and need 34 to win
+Round 979: I have -305 and need 35 to win
+Round 980: I have -304 and need 31 to win
+Round 981: I have -302 and need 32 to win
+Round 982: I have -301 and need 28 to win
+Round 983: I have -299 and need 29 to win
+Round 984: I have -298 and need 25 to win
+0.396
+Round 985: I have -296 and need 26 to win
+Round 986: I have -295 and need 22 to win
+0.629
+Round 987: I have -293 and need 23 to win
+Round 988: I have -292 and need 19 to win
+Round 989: I have -290 and need 20 to win
+Round 990: I have -289 and need 16 to win
+0.4495
+Round 991: I have -287 and need 17 to win
+Round 992: I have -286 and need 13 to win
+Round 993: I have -284 and need 14 to win
+Round 994: I have -283 and need 10 to win
+Round 995: I have -281 and need 11 to win
+Round 996: I have -280 and need 7 to win
+Round 997: I have -278 and need 8 to win
+Round 998: I have -277 and need 4 to win
+Round 999: I have -275 and need 5 to win
+Round 1000: I have -274 and need 1 to win
