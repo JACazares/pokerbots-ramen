@@ -196,7 +196,7 @@ class Player(Bot):
                         return CheckAction()
                     return CallAction() 
         else:
-            p=monte_carlo_sim(my_cards, board_cards, iters=1000)
+            p=monte_carlo_sim(my_cards, board_cards, iters=500)
             print(p)
             pot_total=my_contribution+opp_contribution
             pot_odds=continue_cost/(pot_total+continue_cost)
