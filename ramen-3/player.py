@@ -258,6 +258,7 @@ class Player(Bot):
         '''
         strength = monte_carlo_sim(my_cards, board_cards, iters=100)
         if big_blind:
+            #test
             pass
         else: 
             pass
