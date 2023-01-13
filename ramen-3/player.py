@@ -107,7 +107,6 @@ class Player(Bot):
         opp_contribution = STARTING_STACK - opp_stack
         
         self.opponent_contribution_total = np.append(self.opponent_contribution_total, [opp_contribution])
-        print(self.opponent_contribution_total)
 
         if my_delta > 0:
             self.opponent_contribution_we_won = np.append(self.opponent_contribution_total, [opp_contribution])
