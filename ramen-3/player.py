@@ -305,7 +305,7 @@ class Player(Bot):
             if opp_pip==0:
                 if strength<0.5:
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
-                                        0, 0.9, 2*pot_total)
+                                        0, 0.9, (1-strength)*pot_total/strength)
                 elif strength<0.85:
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
                                         0, 0.5, pot_total)
