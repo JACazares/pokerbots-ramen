@@ -47,6 +47,7 @@ def RaiseRandom(legal_actions, raise_amount):
 def RandomAction(legal_actions, my_stack, min_raise, max_raise, call_threshold, raise_threshold, raise_amount):
     r = random.random()
     if r < call_threshold: 
+        print("         checkfold")
         return CheckFold(legal_actions)  
     elif r > raise_threshold:
         if RaiseAction in legal_actions:
@@ -55,8 +56,12 @@ def RandomAction(legal_actions, my_stack, min_raise, max_raise, call_threshold, 
             raise_amount = min([max_raise, raise_amount])
             raise_amount = min([my_stack, raise_amount])
             if raise_amount < min_raise:
+                print(f"         raise {min_raise}")
                 return RaiseAction(min_raise)
+            print(f"         raise {raise_amount}")
             return RaiseAction(raise_amount)
+        print("         raisecheckcall")
         return CheckCall(legal_actions) 
     else: 
+        print("         checkcall")
         return CheckCall(legal_actions)

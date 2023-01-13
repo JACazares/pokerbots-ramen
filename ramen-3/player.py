@@ -76,10 +76,10 @@ class Player(Bot):
         else:
             if self.winning_bankroll > 0:
                 self.PLAYABLE_THRESHOLD = max([0.45+0.3*my_bankroll/self.winning_bankroll, 0.4])
-                self.RAISEABLE_THRESHOLD = max([0.5+0.3*my_bankroll/self.winning_bankroll, 0.45])
+                self.RAISEABLE_THRESHOLD = max([0.55+0.3*my_bankroll/self.winning_bankroll, 0.5])
             else:
                 self.PLAYABLE_THRESHOLD = 0.45
-                self.RAISEABLE_THRESHOLD = 0.5
+                self.RAISEABLE_THRESHOLD = 0.55
 
         print(f"Round {round_num}: I have {my_bankroll} and need {self.winning_bankroll} to win")
 
@@ -153,10 +153,14 @@ class Player(Bot):
         pot_total = my_contribution + opp_contribution
         pot_odds = continue_cost/(pot_total + continue_cost)
         strength = get_strength(self.prob_table, my_cards)
-
+        print(f"     my_strength={strength}")
+        print(f"     pot_total={pot_total}")
+        print(f"     pot_odds= {pot_odds}")
+        print(f"     normalized_pot_odds= {pot_odds+0.1*my_bankroll/self.winning_bankroll}")
         # You play first
         if not big_blind:
-            if opp_contribution == 2:
+            if opp_pip == 2:
+                print("this")
                 # Fold bad hands most of the time
                 if strength < self.PLAYABLE_THRESHOLD:
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
@@ -181,9 +185,12 @@ class Player(Bot):
                 # Opponent raised!!
                 # TODO: update opponent's range
 
-                if strength < (pot_odds + 0.1*my_bankroll/self.winning_bankroll): 
+                if strength < (pot_odds + max(0.1*my_bankroll/self.winning_bankroll, 0)): 
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
-                                        0.8, 1, 0)
+                                        0.9, 1, 0)
+                elif(strength<0.55):
+                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
+                                        0.7, 1, 0)
                 elif(strength<0.75): 
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
                                         0.05, 0.9, min(4*min_raise, max_raise))
@@ -196,7 +203,8 @@ class Player(Bot):
 
         # You play second
         else:
-            if opp_contribution == 2:
+            if opp_pip == 2:
+                print("that")
                 if(strength<self.PLAYABLE_THRESHOLD):
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
                                         0, 0.7, min(4*min_raise, max_raise))
@@ -207,9 +215,12 @@ class Player(Bot):
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
                                         0, 0.6, min(2*min_raise, max_raise))
             else:
-                if(strength<pot_odds+0.1*my_bankroll/self.winning_bankroll):
+                if(strength<pot_odds+max(0.2*my_bankroll/self.winning_bankroll, 0)):
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
                                         0.9, 1, 0)
+                elif(strength<0.55):
+                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
+                                        0.7, 1, 0)
                 elif(strength<0.75):  
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
                                         0.05, 0.95, min(2*min_raise, max_raise))
@@ -281,28 +292,64 @@ class Player(Bot):
         One of FoldAction(), CheckAction(), CallAction() or RaiseAction(amount)
         '''
         strength = monte_carlo_sim(my_cards, board_cards, iters=100)
-        if big_blind:
-            #test
-            pass
-        else: 
-            pass
-
-        
         pot_total = my_contribution+opp_contribution
         pot_odds = continue_cost/(pot_total + continue_cost)
-
-        if strength < pot_odds:
-            return CheckFold(legal_actions)
-        else:
-            if RaiseAction in legal_actions and (continue_cost == 0 or self.diff_phase):
-                raise_amount = int(((strength - pot_odds)**3)*(max_raise - min_raise) + min_raise)
-                raise_amount = min(max_raise, raise_amount)
-                raise_amount =  min(my_stack, raise_amount)
-                if raise_amount < min_raise:
+        print(f"     my_strength={strength}")
+        print(f"     pot_total={pot_total}")
+        print(f"     pot_odds= {pot_odds}")
+        print(f"     normalized_pot_odds= {pot_odds+0.1*my_bankroll/self.winning_bankroll}")
+        if big_blind:
+            if opp_pip==0:
+                if strength<0.5:
+                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
+                                        0, 0.995, 2*pot_total)
+                elif strength<0.85:
+                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
+                                        0, 0.8, pot_total)
+                else: 
+                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
+                                        0, 0.6, 8*pot_total)
+            else:
+                if strength<pot_odds+max(0.2*my_bankroll/self.winning_bankroll, 0):
+                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
+                                        0.9, 0.95, 2*min_raise)
+                elif strength<0.65:
+                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
+                                        0.7, 1, 0)
+                elif strength<0.85:
+                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
+                                        0.05, 0.9, pot_total)
+                elif my_pip<STARTING_STACK/4:
+                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
+                                        0, 0.1, 8*pot_total)
+                else:
                     return CheckCall(legal_actions)
-                return RaiseAction(raise_amount)
-            else: 
-                return CheckCall(legal_actions)
+        else: 
+            if opp_pip==0:
+                if strength<0.5:
+                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
+                                        0, 0.9, 2*pot_total)
+                elif strength<0.85:
+                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
+                                        0, 0.5, pot_total)
+                else: 
+                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
+                                        0, 0.3, pot_total)
+            else:
+                if strength<pot_odds+max(0.2*my_bankroll/self.winning_bankroll, 0):
+                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
+                                        0.98, 1, 2*min_raise)
+                elif strength<0.65:
+                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
+                                        0.7, 1, 0)
+                elif strength<0.85:
+                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
+                                        0.2, 0.95, pot_total)
+                elif my_pip<STARTING_STACK/4:
+                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
+                                        0, 0.5, 8*pot_total)
+                else:
+                    return CheckCall(legal_actions)
 
     def turn_strategy(self, legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
                         opp_stack, continue_cost, my_contribution, opp_contribution, min_raise,\
@@ -403,26 +450,31 @@ class Player(Bot):
         action = CallAction()
         # Pre-flop strategy
         if street == 0:
+            print(f"    preflop:")
             action = self.preflop_strategy(legal_actions, my_cards, board_cards, my_pip ,opp_pip, my_stack,
                 opp_stack, continue_cost, my_contribution, opp_contribution, min_raise, max_raise, min_cost,
                 max_cost, big_blind, my_bankroll)
         # Flop strategy
         elif street == 3:
+            print(f"    flop:")
             action = self.flop_strategy(legal_actions, my_cards, board_cards, my_pip ,opp_pip, my_stack,
                 opp_stack, continue_cost, my_contribution, opp_contribution, min_raise, max_raise, min_cost,
                 max_cost, big_blind, my_bankroll)
         # Turn strategy
         elif street == 4:
+            print(f"    turn:")
             action = self.turn_strategy(legal_actions, my_cards, board_cards, my_pip ,opp_pip, my_stack,
                 opp_stack, continue_cost, my_contribution, opp_contribution, min_raise, max_raise, min_cost,
                 max_cost, big_blind, my_bankroll)
         # River strategy
-        #elif street == 5:
-        #    action = self.river_strategy(legal_actions, my_cards, board_cards, my_pip ,opp_pip, my_stack,
-        #        opp_stack, continue_cost, my_contribution, opp_contribution, min_raise, max_raise, min_cost,
-        #        max_cost, big_blind, my_bankroll)
+        elif street == 5:
+            print(f"    river:")
+            action = self.river_strategy(legal_actions, my_cards, board_cards, my_pip ,opp_pip, my_stack,
+                opp_stack, continue_cost, my_contribution, opp_contribution, min_raise, max_raise, min_cost,
+                max_cost, big_blind, my_bankroll)
         # Run strategy
         else:
+            print(f"    run:")
             action = self.run_strategy(legal_actions, my_cards, board_cards, my_pip ,opp_pip, my_stack,
                 opp_stack, continue_cost, my_contribution, opp_contribution, min_raise, max_raise, min_cost,
                 max_cost, big_blind, my_bankroll)

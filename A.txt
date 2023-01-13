@@ -1,1 +1,4115 @@
-Could not connect to localhost:57341
+1 0
+Round 1: I have 0 and need 1503 to win
+    preflop:
+     my_strength=0.4945
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.25
+this
+         checkcall
+    preflop:
+     my_strength=0.4945
+     pot_total=48
+     pot_odds= 0.4782608695652174
+     normalized_pot_odds= 0.4782608695652174
+         checkfold
+2 1
+Round 2: I have -2 and need 1498 to win
+    preflop:
+     my_strength=0.412
+     pot_total=8
+     pot_odds= 0.3333333333333333
+     normalized_pot_odds= 0.3331998219848687
+         checkcall
+    flop:
+     my_strength=0.615
+     pot_total=12
+     pot_odds= 0.0
+     normalized_pot_odds= -0.0001335113484646195
+         checkcall
+    flop:
+     my_strength=0.565
+     pot_total=20
+     pot_odds= 0.2857142857142857
+     normalized_pot_odds= 0.2855807743658211
+         checkfold
+3 0
+Round 3: I have -8 and need 1500 to win
+    preflop:
+     my_strength=0.5565
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.24946666666666667
+this
+         raise 9
+    preflop:
+     my_strength=0.5565
+     pot_total=30
+     pot_odds= 0.2857142857142857
+     normalized_pot_odds= 0.28518095238095237
+         checkcall
+    flop:
+     my_strength=0.435
+     pot_total=87
+     pot_odds= 0.3409090909090909
+     normalized_pot_odds= 0.34037575757575755
+         checkfold
+4 1
+Round 4: I have -29 and need 1495 to win
+    preflop:
+     my_strength=0.496
+     pot_total=13
+     pot_odds= 0.4090909090909091
+     normalized_pot_odds= 0.40715110975980545
+         checkfold
+5 0
+Round 5: I have -31 and need 1497 to win
+    preflop:
+     my_strength=0.666
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.24792919171676686
+this
+         raise 4
+    preflop:
+     my_strength=0.666
+     pot_total=11
+     pot_odds= 0.21428571428571427
+     normalized_pot_odds= 0.21221490600248114
+         checkcall
+    flop:
+     my_strength=0.785
+     pot_total=24
+     pot_odds= 0.29411764705882354
+     normalized_pot_odds= 0.2920468387755904
+         checkcall
+    turn:
+     my_strength=0.86
+     pot_total=38
+     pot_odds= 0.09523809523809523
+     normalized_pot_odds= 0.0931672869548621
+         checkcall
+    river:
+     my_strength=0.92
+     pot_total=44
+     pot_odds= 0.043478260869565216
+     normalized_pot_odds= 0.041407452586332084
+         checkcall
+6 1
+Round 6: I have -8 and need 1492 to win
+    preflop:
+     my_strength=0.496
+     pot_total=10
+     pot_odds= 0.375
+     normalized_pot_odds= 0.3744638069705094
+         checkfold
+7 0
+Round 7: I have -10 and need 1494 to win
+    preflop:
+     my_strength=0.557
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.24933065595716197
+this
+         raise 11
+    preflop:
+     my_strength=0.557
+     pot_total=31
+     pot_odds= 0.225
+     normalized_pot_odds= 0.22433065595716198
+         checkcall
+    flop:
+     my_strength=0.83
+     pot_total=195
+     pot_odds= 0.44285714285714284
+     normalized_pot_odds= 0.4421877988143048
+         checkfold
+8 1
+Round 8: I have -30 and need 1489 to win
+    preflop:
+     my_strength=0.625
+     pot_total=22
+     pot_odds= 0.45
+     normalized_pot_odds= 0.4479852249832102
+         checkcall
+    flop:
+     my_strength=0.545
+     pot_total=40
+     pot_odds= 0.0
+     normalized_pot_odds= -0.0020147750167897917
+         checkcall
+    flop:
+     my_strength=0.505
+     pot_total=123
+     pot_odds= 0.4029126213592233
+     normalized_pot_odds= 0.4008978463424335
+         checkfold
+9 0
+Round 9: I have -50 and need 1491 to win
+    preflop:
+     my_strength=0.415
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.24664654594232058
+this
+         checkfold
+10 1
+Round 10: I have -51 and need 1486 to win
+    preflop:
+     my_strength=0.3815
+     pot_total=7
+     pot_odds= 0.3
+     normalized_pot_odds= 0.2965679676985195
+         checkfold
+11 0
+Round 11: I have -53 and need 1488 to win
+    preflop:
+     my_strength=0.4725
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.24643817204301074
+this
+         raise 6
+    preflop:
+     my_strength=0.4725
+     pot_total=25
+     pot_odds= 0.34210526315789475
+     normalized_pot_odds= 0.3385434352009055
+         checkfold
+12 1
+Round 12: I have -59 and need 1483 to win
+    preflop:
+     my_strength=0.5065
+     pot_total=10
+     pot_odds= 0.375
+     normalized_pot_odds= 0.37102157788267026
+         checkfold
+13 0
+Round 13: I have -61 and need 1485 to win
+    preflop:
+     my_strength=0.411
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.24589225589225588
+this
+         checkfold
+14 1
+Round 14: I have -62 and need 1480 to win
+    preflop:
+     my_strength=0.5105
+     pot_total=16
+     pot_odds= 0.42857142857142855
+     normalized_pot_odds= 0.42438223938223935
+         checkcall
+    flop:
+     my_strength=0.445
+     pot_total=28
+     pot_odds= 0.0
+     normalized_pot_odds= -0.004189189189189189
+         checkcall
+    flop:
+     my_strength=0.42
+     pot_total=90
+     pot_odds= 0.40789473684210525
+     normalized_pot_odds= 0.40370554765291605
+         checkfold
+15 0
+Round 15: I have -76 and need 1482 to win
+    preflop:
+     my_strength=0.4235
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.24487179487179486
+this
+         checkfold
+16 1
+Round 16: I have -77 and need 1477 to win
+    preflop:
+     my_strength=0.5055
+     pot_total=8
+     pot_odds= 0.3333333333333333
+     normalized_pot_odds= 0.3281200631911532
+         checkfold
+17 0
+Round 17: I have -79 and need 1479 to win
+    preflop:
+     my_strength=0.466
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.24465855307640297
+this
+         checkcall
+    preflop:
+     my_strength=0.466
+     pot_total=71
+     pot_odds= 0.4855072463768116
+     normalized_pot_odds= 0.4801657994532146
+         checkfold
+18 1
+Round 18: I have -81 and need 1474 to win
+    preflop:
+     my_strength=0.5055
+     pot_total=17
+     pot_odds= 0.43333333333333335
+     normalized_pot_odds= 0.42783808231569426
+         checkcall
+    flop:
+     my_strength=0.365
+     pot_total=30
+     pot_odds= 0.0
+     normalized_pot_odds= -0.005495251017639077
+         checkcall
+    flop:
+     my_strength=0.44
+     pot_total=71
+     pot_odds= 0.36607142857142855
+     normalized_pot_odds= 0.36057617755378946
+         checkcall
+    turn:
+     my_strength=0.335
+     pot_total=112
+     pot_odds= 0.0
+     normalized_pot_odds= -0.005495251017639077
+         checkcall
+    turn:
+     my_strength=0.34
+     pot_total=154
+     pot_odds= 0.21428571428571427
+     normalized_pot_odds= 0.2087904632680752
+         checkfold
+19 0
+Round 19: I have -137 and need 1476 to win
+    preflop:
+     my_strength=0.5095
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.2407181571815718
+this
+         checkcall
+    preflop:
+     my_strength=0.5095
+     pot_total=39
+     pot_odds= 0.47297297297297297
+     normalized_pot_odds= 0.4636911301545448
+         checkfold
+20 1
+Round 20: I have -139 and need 1471 to win
+    preflop:
+     my_strength=0.4325
+     pot_total=8
+     pot_odds= 0.3333333333333333
+     normalized_pot_odds= 0.32388397915250394
+         checkfold
+21 0
+Round 21: I have -141 and need 1473 to win
+    preflop:
+     my_strength=0.4225
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.24042769857433807
+this
+         checkcall
+    preflop:
+     my_strength=0.4225
+     pot_total=100
+     pot_odds= 0.4897959183673469
+     normalized_pot_odds= 0.480223616941685
+         checkfold
+22 1
+Round 22: I have -143 and need 1468 to win
+    preflop:
+     my_strength=0.4495
+     pot_total=15
+     pot_odds= 0.4230769230769231
+     normalized_pot_odds= 0.4133357786627541
+         checkcall
+    flop:
+     my_strength=0.27
+     pot_total=26
+     pot_odds= 0.0
+     normalized_pot_odds= -0.009741144414168937
+         checkcall
+    flop:
+     my_strength=0.285
+     pot_total=52
+     pot_odds= 0.3333333333333333
+     normalized_pot_odds= 0.32359218891916436
+         checkfold
+23 0
+Round 23: I have -156 and need 1470 to win
+    preflop:
+     my_strength=0.812
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.23938775510204083
+this
+         raise 5
+    preflop:
+     my_strength=0.812
+     pot_total=13
+     pot_odds= 0.1875
+     normalized_pot_odds= 0.17688775510204083
+         raise 32
+    flop:
+     my_strength=0.9
+     pot_total=72
+     pot_odds= 0.1
+     normalized_pot_odds= 0.08938775510204082
+         raise 368
+24 1
+Round 24: I have -116 and need 1465 to win
+    preflop:
+     my_strength=0.623
+     pot_total=15
+     pot_odds= 0.4230769230769231
+     normalized_pot_odds= 0.4151588343397217
+         checkcall
+    flop:
+     my_strength=0.745
+     pot_total=26
+     pot_odds= 0.0
+     normalized_pot_odds= -0.007918088737201366
+         checkcall
+    flop:
+     my_strength=0.775
+     pot_total=136
+     pot_odds= 0.44715447154471544
+     normalized_pot_odds= 0.4392363828075141
+         checkcall
+    turn:
+     my_strength=0.655
+     pot_total=246
+     pot_odds= 0.0
+     normalized_pot_odds= -0.007918088737201366
+         checkcall
+    turn:
+     my_strength=0.64
+     pot_total=305
+     pot_odds= 0.1620879120879121
+     normalized_pot_odds= 0.15416982335071072
+         checkfold
+25 0
+Round 25: I have -239 and need 1467 to win
+    preflop:
+     my_strength=0.481
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.23370824812542604
+this
+         checkcall
+    preflop:
+     my_strength=0.481
+     pot_total=60
+     pot_odds= 0.4827586206896552
+     normalized_pot_odds= 0.46646686881508126
+         checkcall
+    flop:
+     my_strength=0.32
+     pot_total=173
+     pot_odds= 0.24782608695652175
+     normalized_pot_odds= 0.2315343350819478
+         checkfold
+26 1
+Round 26: I have -297 and need 1462 to win
+    preflop:
+     my_strength=0.526
+     pot_total=10
+     pot_odds= 0.375
+     normalized_pot_odds= 0.35468536251709987
+         checkfold
+27 0
+Round 27: I have -299 and need 1464 to win
+    preflop:
+     my_strength=0.5785
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.22957650273224045
+this
+         raise 11
+    preflop:
+     my_strength=0.5785
+     pot_total=32
+     pot_odds= 0.23809523809523808
+     normalized_pot_odds= 0.21767174082747853
+         checkcall
+    flop:
+     my_strength=0.505
+     pot_total=103
+     pot_odds= 0.3719512195121951
+     normalized_pot_odds= 0.35152772224443557
+         checkfold
+28 1
+Round 28: I have -320 and need 1459 to win
+    preflop:
+     my_strength=0.375
+     pot_total=8
+     pot_odds= 0.3333333333333333
+     normalized_pot_odds= 0.31140050262737035
+         checkfold
+29 0
+Round 29: I have -322 and need 1461 to win
+    preflop:
+     my_strength=0.4105
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.2279603011635866
+this
+         checkcall
+    preflop:
+     my_strength=0.4105
+     pot_total=56
+     pot_odds= 0.48148148148148145
+     normalized_pot_odds= 0.459441782645068
+         checkfold
+30 1
+Round 30: I have -324 and need 1456 to win
+    preflop:
+     my_strength=0.493
+     pot_total=10
+     pot_odds= 0.375
+     normalized_pot_odds= 0.35274725274725277
+         checkcall
+    flop:
+     my_strength=0.385
+     pot_total=16
+     pot_odds= 0.0
+     normalized_pot_odds= -0.022252747252747253
+         checkcall
+    flop:
+     my_strength=0.4
+     pot_total=76
+     pot_odds= 0.4411764705882353
+     normalized_pot_odds= 0.41892372333548805
+         checkfold
+31 0
+Round 31: I have -332 and need 1458 to win
+    preflop:
+     my_strength=0.399
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.22722908093278463
+this
+         checkfold
+32 1
+Round 32: I have -333 and need 1453 to win
+    preflop:
+     my_strength=0.4235
+     pot_total=10
+     pot_odds= 0.375
+     normalized_pot_odds= 0.35208189951823815
+         checkfold
+33 0
+Round 33: I have -335 and need 1455 to win
+    preflop:
+     my_strength=0.4235
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.22697594501718213
+this
+         checkcall
+    preflop:
+     my_strength=0.4235
+     pot_total=59
+     pot_odds= 0.4824561403508772
+     normalized_pot_odds= 0.45943208536805935
+         checkfold
+34 1
+Round 34: I have -337 and need 1450 to win
+    preflop:
+     my_strength=0.512
+     pot_total=7
+     pot_odds= 0.3
+     normalized_pot_odds= 0.2767586206896552
+         checkfold
+35 0
+Round 35: I have -339 and need 1452 to win
+    preflop:
+     my_strength=0.5125
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.22665289256198348
+this
+         raise 12
+36 1
+Round 36: I have -337 and need 1447 to win
+    preflop:
+     my_strength=0.483
+     pot_total=9
+     pot_odds= 0.35714285714285715
+     normalized_pot_odds= 0.33385329252640933
+         checkcall
+    flop:
+     my_strength=0.395
+     pot_total=14
+     pot_odds= 0.0
+     normalized_pot_odds= -0.023289564616447826
+         checkcall
+    flop:
+     my_strength=0.41
+     pot_total=25
+     pot_odds= 0.3055555555555556
+     normalized_pot_odds= 0.28226599093910776
+         checkcall
+    turn:
+     my_strength=0.505
+     pot_total=36
+     pot_odds= 0.0
+     normalized_pot_odds= -0.023289564616447826
+         checkcall
+    turn:
+     my_strength=0.495
+     pot_total=39
+     pot_odds= 0.07142857142857142
+     normalized_pot_odds= 0.0481390068121236
+         checkcall
+    river:
+     my_strength=0.93
+     pot_total=42
+     pot_odds= 0.0
+     normalized_pot_odds= -0.023289564616447826
+         checkcall
+    river:
+     my_strength=0.99
+     pot_total=44
+     pot_odds= 0.043478260869565216
+     normalized_pot_odds= 0.02018869625311739
+         raise 379
+37 0
+Round 37: I have -314 and need 1449 to win
+    preflop:
+     my_strength=0.389
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.22832988267770876
+this
+         checkfold
+38 1
+Round 38: I have -315 and need 1444 to win
+    preflop:
+     my_strength=0.282
+     pot_total=13
+     pot_odds= 0.4090909090909091
+     normalized_pot_odds= 0.38727650465877617
+         checkcall
+    flop:
+     my_strength=0.425
+     pot_total=22
+     pot_odds= 0.0
+     normalized_pot_odds= -0.021814404432132964
+         checkcall
+    flop:
+     my_strength=0.425
+     pot_total=41
+     pot_odds= 0.31666666666666665
+     normalized_pot_odds= 0.2948522622345337
+         checkfold
+39 0
+Round 39: I have -326 and need 1446 to win
+    preflop:
+     my_strength=0.5345
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.22745504840940525
+this
+         raise 6
+    preflop:
+     my_strength=0.5345
+     pot_total=17
+     pot_odds= 0.22727272727272727
+     normalized_pot_odds= 0.20472777568213252
+         checkfold
+40 1
+Round 40: I have -332 and need 1441 to win
+    preflop:
+     my_strength=0.5815
+     pot_total=11
+     pot_odds= 0.3888888888888889
+     normalized_pot_odds= 0.3658493330249055
+         checkfold
+41 0
+Round 41: I have -334 and need 1443 to win
+    preflop:
+     my_strength=0.687
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.22685377685377686
+this
+         raise 7
+    preflop:
+     my_strength=0.687
+     pot_total=20
+     pot_odds= 0.23076923076923078
+     normalized_pot_odds= 0.20762300762300764
+         checkfold
+42 1
+Round 42: I have -341 and need 1438 to win
+    preflop:
+     my_strength=0.3975
+     pot_total=10
+     pot_odds= 0.375
+     normalized_pot_odds= 0.3512865090403338
+         checkfold
+43 0
+Round 43: I have -343 and need 1440 to win
+    preflop:
+     my_strength=0.54
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.22618055555555555
+this
+         raise 5
+    preflop:
+     my_strength=0.54
+     pot_total=15
+     pot_odds= 0.25
+     normalized_pot_odds= 0.22618055555555555
+         checkfold
+44 1
+Round 44: I have -348 and need 1435 to win
+    preflop:
+     my_strength=0.616
+     pot_total=12
+     pot_odds= 0.4
+     normalized_pot_odds= 0.3757491289198607
+         checkfold
+45 0
+Round 45: I have -350 and need 1437 to win
+    preflop:
+     my_strength=0.416
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.22564370215727209
+this
+         checkcall
+    preflop:
+     my_strength=0.416
+     pot_total=41
+     pot_odds= 0.47435897435897434
+     normalized_pot_odds= 0.4500026765162464
+         checkfold
+46 1
+Round 46: I have -352 and need 1432 to win
+    preflop:
+     my_strength=0.5565
+     pot_total=9
+     pot_odds= 0.35714285714285715
+     normalized_pot_odds= 0.33256185155626494
+         checkcall
+    flop:
+     my_strength=0.515
+     pot_total=14
+     pot_odds= 0.0
+     normalized_pot_odds= -0.02458100558659218
+         checkcall
+    flop:
+     my_strength=0.525
+     pot_total=35
+     pot_odds= 0.375
+     normalized_pot_odds= 0.35041899441340785
+         checkfold
+47 0
+Round 47: I have -359 and need 1434 to win
+    preflop:
+     my_strength=0.4165
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.22496513249651326
+this
+         checkcall
+    preflop:
+     my_strength=0.4165
+     pot_total=33
+     pot_odds= 0.46774193548387094
+     normalized_pot_odds= 0.4427070679803842
+         checkfold
+48 1
+Round 48: I have -361 and need 1429 to win
+    preflop:
+     my_strength=0.4535
+     pot_total=7
+     pot_odds= 0.3
+     normalized_pot_odds= 0.27473757872638205
+         checkfold
+49 0
+Round 49: I have -363 and need 1431 to win
+    preflop:
+     my_strength=0.4955
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.22463312368972746
+this
+         checkcall
+    preflop:
+     my_strength=0.4955
+     pot_total=31
+     pot_odds= 0.46551724137931033
+     normalized_pot_odds= 0.4401503650690378
+         checkcall
+    flop:
+     my_strength=0.66
+     pot_total=108
+     pot_odds= 0.31645569620253167
+     normalized_pot_odds= 0.2910888198922591
+         checkcall
+    turn:
+     my_strength=0.56
+     pot_total=170
+     pot_odds= 0.06593406593406594
+     normalized_pot_odds= 0.040567189623793395
+         checkcall
+    river:
+     my_strength=0.78
+     pot_total=227
+     pot_odds= 0.16544117647058823
+     normalized_pot_odds= 0.1400743001603157
+         checkcall
+50 1
+Round 50: I have -227 and need 1426 to win
+    preflop:
+     my_strength=0.3845
+     pot_total=6
+     pot_odds= 0.25
+     normalized_pot_odds= 0.2340813464235624
+         checkcall
+    flop:
+     my_strength=0.33
+     pot_total=8
+     pot_odds= 0.0
+     normalized_pot_odds= -0.01591865357643759
+         checkcall
+    flop:
+     my_strength=0.29
+     pot_total=15
+     pot_odds= 0.3181818181818182
+     normalized_pot_odds= 0.3022631646053806
+         checkfold
+51 0
+Round 51: I have -231 and need 1428 to win
+    preflop:
+     my_strength=0.4615
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.2338235294117647
+this
+         raise 8
+    preflop:
+     my_strength=0.4615
+     pot_total=22
+     pot_odds= 0.21428571428571427
+     normalized_pot_odds= 0.19810924369747898
+         checkcall
+    flop:
+     my_strength=0.445
+     pot_total=41
+     pot_odds= 0.24074074074074073
+     normalized_pot_odds= 0.22456427015250544
+         checkfold
+52 1
+Round 52: I have -245 and need 1423 to win
+    preflop:
+     my_strength=0.5725
+     pot_total=12
+     pot_odds= 0.4
+     normalized_pot_odds= 0.38278285312719607
+         checkcall
+    flop:
+     my_strength=0.92
+     pot_total=20
+     pot_odds= 0.0
+     normalized_pot_odds= -0.017217146872803936
+         checkcall
+    flop:
+     my_strength=0.92
+     pot_total=91
+     pot_odds= 0.4382716049382716
+     normalized_pot_odds= 0.42105445806546765
+         checkcall
+    turn:
+     my_strength=0.9
+     pot_total=162
+     pot_odds= 0.0
+     normalized_pot_odds= -0.017217146872803936
+         checkcall
+    turn:
+     my_strength=0.95
+     pot_total=277
+     pot_odds= 0.29336734693877553
+     normalized_pot_odds= 0.2761502000659716
+         raise 319
+    river:
+     my_strength=0.99
+     pot_total=800
+     pot_odds= 0.0
+     normalized_pot_odds= -0.017217146872803936
+         raisecheckcall
+53 0
+Round 53: I have 155 and need 1425 to win
+    preflop:
+     my_strength=0.4545
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.26087719298245615
+this
+         checkfold
+54 1
+Round 54: I have 154 and need 1420 to win
+    preflop:
+     my_strength=0.423
+     pot_total=8
+     pot_odds= 0.3333333333333333
+     normalized_pot_odds= 0.3441784037558685
+         checkfold
+55 0
+Round 55: I have 152 and need 1422 to win
+    preflop:
+     my_strength=0.385
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.26068917018284105
+this
+         checkfold
+56 1
+Round 56: I have 151 and need 1417 to win
+    preflop:
+     my_strength=0.4755
+     pot_total=30
+     pot_odds= 0.4642857142857143
+     normalized_pot_odds= 0.47494203044661765
+         checkfold
+57 0
+Round 57: I have 149 and need 1419 to win
+    preflop:
+     my_strength=0.785
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.2605003523608175
+this
+         checkcall
+    preflop:
+     my_strength=0.785
+     pot_total=67
+     pot_odds= 0.4846153846153846
+     normalized_pot_odds= 0.4951157369762021
+         checkcall
+    flop:
+     my_strength=0.71
+     pot_total=139
+     pot_odds= 0.060810810810810814
+     normalized_pot_odds= 0.07131116317162829
+         checkcall
+    turn:
+     my_strength=0.815
+     pot_total=153
+     pot_odds= 0.03164556962025317
+     normalized_pot_odds= 0.042145921981070644
+         checkcall
+    river:
+     my_strength=0.83
+     pot_total=160
+     pot_odds= 0.012345679012345678
+     normalized_pot_odds= 0.022846031373163156
+         checkcall
+58 1
+Round 58: I have 230 and need 1414 to win
+    preflop:
+     my_strength=0.5605
+     pot_total=18
+     pot_odds= 0.4375
+     normalized_pot_odds= 0.4537659123055163
+         checkcall
+    flop:
+     my_strength=0.88
+     pot_total=32
+     pot_odds= 0.0
+     normalized_pot_odds= 0.016265912305516265
+         checkcall
+    flop:
+     my_strength=0.905
+     pot_total=47
+     pot_odds= 0.24193548387096775
+     normalized_pot_odds= 0.258201396176484
+         raise 384
+59 0
+Round 59: I have 261 and need 1416 to win
+    preflop:
+     my_strength=0.6215
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.26843220338983054
+this
+         raise 12
+    preflop:
+     my_strength=0.6215
+     pot_total=34
+     pot_odds= 0.22727272727272727
+     normalized_pot_odds= 0.24570493066255777
+         checkcall
+    flop:
+     my_strength=0.82
+     pot_total=56
+     pot_odds= 0.17647058823529413
+     normalized_pot_odds= 0.19490279162512464
+         checkcall
+    turn:
+     my_strength=0.75
+     pot_total=75
+     pot_odds= 0.08536585365853659
+     normalized_pot_odds= 0.1037980570483671
+         checkfold
+60 1
+Round 60: I have 227 and need 1411 to win
+    preflop:
+     my_strength=0.3955
+     pot_total=8
+     pot_odds= 0.3333333333333333
+     normalized_pot_odds= 0.34942121426884004
+         checkfold
+61 0
+Round 61: I have 225 and need 1413 to win
+    preflop:
+     my_strength=0.5425
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.2659235668789809
+this
+         checkcall
+    preflop:
+     my_strength=0.5425
+     pot_total=48
+     pot_odds= 0.4782608695652174
+     normalized_pot_odds= 0.4941844364441983
+         checkcall
+    flop:
+     my_strength=0.485
+     pot_total=202
+     pot_odds= 0.3525641025641026
+     normalized_pot_odds= 0.3684876694430835
+         checkcall
+    turn:
+     my_strength=0.33
+     pot_total=354
+     pot_odds= 0.10606060606060606
+     normalized_pot_odds= 0.12198417293958695
+         checkfold
+62 1
+Round 62: I have 69 and need 1408 to win
+    preflop:
+     my_strength=0.6295
+     pot_total=28
+     pot_odds= 0.46153846153846156
+     normalized_pot_odds= 0.46643902972027973
+         checkcall
+    flop:
+     my_strength=0.36
+     pot_total=52
+     pot_odds= 0.0
+     normalized_pot_odds= 0.004900568181818182
+         checkcall
+    flop:
+     my_strength=0.47
+     pot_total=69
+     pot_odds= 0.19767441860465115
+     normalized_pot_odds= 0.20257498678646935
+         checkcall
+    turn:
+     my_strength=0.39
+     pot_total=86
+     pot_odds= 0.0
+     normalized_pot_odds= 0.004900568181818182
+         checkcall
+    turn:
+     my_strength=0.345
+     pot_total=118
+     pot_odds= 0.21333333333333335
+     normalized_pot_odds= 0.21823390151515154
+         checkfold
+63 0
+Round 63: I have 26 and need 1410 to win
+    preflop:
+     my_strength=0.351
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.2518439716312057
+this
+         checkfold
+64 1
+Round 64: I have 25 and need 1405 to win
+    preflop:
+     my_strength=0.382
+     pot_total=6
+     pot_odds= 0.25
+     normalized_pot_odds= 0.251779359430605
+         checkcall
+    flop:
+     my_strength=0.24
+     pot_total=8
+     pot_odds= 0.0
+     normalized_pot_odds= 0.0017793594306049821
+         checkcall
+    flop:
+     my_strength=0.19
+     pot_total=13
+     pot_odds= 0.2777777777777778
+     normalized_pot_odds= 0.27955713720838277
+         checkfold
+65 0
+Round 65: I have 21 and need 1407 to win
+    preflop:
+     my_strength=0.4645
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.25149253731343285
+this
+         checkcall
+    preflop:
+     my_strength=0.4645
+     pot_total=66
+     pot_odds= 0.484375
+     normalized_pot_odds= 0.48586753731343285
+         checkfold
+66 1
+Round 66: I have 19 and need 1402 to win
+    preflop:
+     my_strength=0.5815
+     pot_total=9
+     pot_odds= 0.35714285714285715
+     normalized_pot_odds= 0.35849806399021805
+         checkcall
+    flop:
+     my_strength=0.46
+     pot_total=14
+     pot_odds= 0.0
+     normalized_pot_odds= 0.001355206847360913
+         checkcall
+    flop:
+     my_strength=0.52
+     pot_total=28
+     pot_odds= 0.3333333333333333
+     normalized_pot_odds= 0.3346885401806942
+         checkfold
+67 0
+Round 67: I have 12 and need 1404 to win
+    preflop:
+     my_strength=0.414
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.25085470085470085
+this
+         checkfold
+68 1
+Round 68: I have 11 and need 1399 to win
+    preflop:
+     my_strength=0.4775
+     pot_total=11
+     pot_odds= 0.3888888888888889
+     normalized_pot_odds= 0.38967516480025416
+         checkcall
+    flop:
+     my_strength=0.425
+     pot_total=18
+     pot_odds= 0.0
+     normalized_pot_odds= 0.0007862759113652609
+         checkcall
+    flop:
+     my_strength=0.46
+     pot_total=43
+     pot_odds= 0.36764705882352944
+     normalized_pot_odds= 0.3684333347348947
+         checkfold
+69 0
+Round 69: I have 2 and need 1401 to win
+    preflop:
+     my_strength=0.3675
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.2501427551748751
+this
+         checkfold
+70 1
+Round 70: I have 1 and need 1396 to win
+    preflop:
+     my_strength=0.396
+     pot_total=9
+     pot_odds= 0.35714285714285715
+     normalized_pot_odds= 0.3572144903806795
+         checkcall
+    flop:
+     my_strength=0.62
+     pot_total=14
+     pot_odds= 0.0
+     normalized_pot_odds= 7.163323782234958e-05
+         checkcall
+    flop:
+     my_strength=0.58
+     pot_total=44
+     pot_odds= 0.40540540540540543
+     normalized_pot_odds= 0.40547703864322776
+         checkfold
+71 0
+Round 71: I have -6 and need 1398 to win
+    preflop:
+     my_strength=0.4065
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.24957081545064377
+this
+         checkfold
+72 1
+Round 72: I have -7 and need 1393 to win
+    preflop:
+     my_strength=0.469
+     pot_total=21
+     pot_odds= 0.4473684210526316
+     normalized_pot_odds= 0.4468659084898175
+         checkfold
+73 0
+Round 73: I have -9 and need 1395 to win
+    preflop:
+     my_strength=0.6545
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.24935483870967742
+this
+         raise 9
+    preflop:
+     my_strength=0.6545
+     pot_total=32
+     pot_odds= 0.30434782608695654
+     normalized_pot_odds= 0.30370266479663394
+         checkcall
+    flop:
+     my_strength=0.66
+     pot_total=236
+     pot_odds= 0.4460093896713615
+     normalized_pot_odds= 0.4453642283810389
+         checkcall
+    turn:
+     my_strength=0.695
+     pot_total=479
+     pot_odds= 0.09962406015037593
+     normalized_pot_odds= 0.09897889886005336
+         checkcall
+    river:
+     my_strength=0.685
+     pot_total=581
+     pot_odds= 0.07777777777777778
+     normalized_pot_odds= 0.0771326164874552
+         checkcall
+    run:
+     my_strength=0.915
+     pot_total=642
+     pot_odds= 0.01834862385321101
+     normalized_pot_odds= 0.01770346256288843
+         raise 85
+74 1
+Round 74: I have 391 and need 1390 to win
+    preflop:
+     my_strength=0.5805
+     pot_total=6
+     pot_odds= 0.25
+     normalized_pot_odds= 0.2781294964028777
+         checkcall
+    flop:
+     my_strength=0.43
+     pot_total=8
+     pot_odds= 0.0
+     normalized_pot_odds= 0.0281294964028777
+         checkcall
+    flop:
+     my_strength=0.445
+     pot_total=70
+     pot_odds= 0.4696969696969697
+     normalized_pot_odds= 0.49782646609984743
+         checkfold
+75 0
+Round 75: I have 387 and need 1392 to win
+    preflop:
+     my_strength=0.5785
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.277801724137931
+this
+         checkcall
+    preflop:
+     my_strength=0.5785
+     pot_total=39
+     pot_odds= 0.47297297297297297
+     normalized_pot_odds= 0.500774697110904
+         checkcall
+    flop:
+     my_strength=0.385
+     pot_total=86
+     pot_odds= 0.12244897959183673
+     normalized_pot_odds= 0.15025070372976776
+         checkfold
+76 1
+Round 76: I have 350 and need 1387 to win
+    preflop:
+     my_strength=0.727
+     pot_total=6
+     pot_odds= 0.25
+     normalized_pot_odds= 0.2752343186733958
+         checkcall
+    flop:
+     my_strength=0.73
+     pot_total=8
+     pot_odds= 0.0
+     normalized_pot_odds= 0.025234318673395817
+         checkcall
+    flop:
+     my_strength=0.625
+     pot_total=125
+     pot_odds= 0.4834710743801653
+     normalized_pot_odds= 0.5087053930535611
+         checkcall
+    turn:
+     my_strength=0.745
+     pot_total=242
+     pot_odds= 0.0
+     normalized_pot_odds= 0.025234318673395817
+         checkcall
+    turn:
+     my_strength=0.68
+     pot_total=349
+     pot_odds= 0.23464912280701755
+     normalized_pot_odds= 0.25988344148041337
+         checkcall
+    river:
+     my_strength=0.605
+     pot_total=456
+     pot_odds= 0.0
+     normalized_pot_odds= 0.025234318673395817
+         checkcall
+    river:
+     my_strength=0.57
+     pot_total=492
+     pot_odds= 0.06818181818181818
+     normalized_pot_odds= 0.093416136855214
+         checkfold
+77 0
+Round 77: I have 122 and need 1389 to win
+    preflop:
+     my_strength=0.608
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.2587832973362131
+this
+         raise 10
+    preflop:
+     my_strength=0.608
+     pot_total=28
+     pot_odds= 0.2222222222222222
+     normalized_pot_odds= 0.23100551955843532
+         checkcall
+    flop:
+     my_strength=0.42
+     pot_total=53
+     pot_odds= 0.24285714285714285
+     normalized_pot_odds= 0.25164044019335596
+         checkfold
+78 1
+Round 78: I have 104 and need 1384 to win
+    preflop:
+     my_strength=0.4325
+     pot_total=21
+     pot_odds= 0.4473684210526316
+     normalized_pot_odds= 0.45488287191968363
+         checkfold
+79 0
+Round 79: I have 102 and need 1386 to win
+    preflop:
+     my_strength=0.325
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.25735930735930734
+this
+         checkfold
+80 1
+Round 80: I have 101 and need 1381 to win
+    preflop:
+     my_strength=0.5055
+     pot_total=18
+     pot_odds= 0.4375
+     normalized_pot_odds= 0.44481354091238234
+         checkfold
+81 0
+Round 81: I have 99 and need 1383 to win
+    preflop:
+     my_strength=0.497
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.25715835140997834
+this
+         raise 9
+    preflop:
+     my_strength=0.497
+     pot_total=25
+     pot_odds= 0.21875
+     normalized_pot_odds= 0.2259083514099783
+         checkcall
+    flop:
+     my_strength=0.285
+     pot_total=50
+     pot_odds= 0.2647058823529412
+     normalized_pot_odds= 0.27186423376291946
+         checkcall
+    turn:
+     my_strength=0.295
+     pot_total=82
+     pot_odds= 0.14583333333333334
+     normalized_pot_odds= 0.15299168474331165
+         checkfold
+82 1
+Round 82: I have 65 and need 1378 to win
+    preflop:
+     my_strength=0.4265
+     pot_total=27
+     pot_odds= 0.46
+     normalized_pot_odds= 0.4647169811320755
+         checkfold
+83 0
+Round 83: I have 63 and need 1380 to win
+    preflop:
+     my_strength=0.5925
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.25456521739130433
+this
+         raise 4
+    preflop:
+     my_strength=0.5925
+     pot_total=26
+     pot_odds= 0.4090909090909091
+     normalized_pot_odds= 0.41365612648221345
+         checkcall
+    flop:
+     my_strength=0.51
+     pot_total=133
+     pot_odds= 0.4009009009009009
+     normalized_pot_odds= 0.40546611829220525
+         checkfold
+84 1
+Round 84: I have 41 and need 1375 to win
+    preflop:
+     my_strength=0.6125
+     pot_total=7
+     pot_odds= 0.3
+     normalized_pot_odds= 0.3029818181818182
+         raise 10
+    flop:
+     my_strength=0.57
+     pot_total=20
+     pot_odds= 0.0
+     normalized_pot_odds= 0.0029818181818181823
+         checkcall
+    flop:
+     my_strength=0.565
+     pot_total=29
+     pot_odds= 0.23684210526315788
+     normalized_pot_odds= 0.23982392344497605
+         checkfold
+85 0
+Round 85: I have 31 and need 1377 to win
+    preflop:
+     my_strength=0.5925
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.25225127087872184
+this
+         raise 11
+    preflop:
+     my_strength=0.5925
+     pot_total=31
+     pot_odds= 0.225
+     normalized_pot_odds= 0.22725127087872188
+         checkcall
+    flop:
+     my_strength=0.515
+     pot_total=75
+     pot_odds= 0.3181818181818182
+     normalized_pot_odds= 0.32043308906054
+         checkfold
+86 1
+Round 86: I have 11 and need 1372 to win
+    preflop:
+     my_strength=0.56
+     pot_total=16
+     pot_odds= 0.42857142857142855
+     normalized_pot_odds= 0.42937317784256557
+         checkcall
+    flop:
+     my_strength=0.805
+     pot_total=28
+     pot_odds= 0.0
+     normalized_pot_odds= 0.0008017492711370263
+         checkcall
+    flop:
+     my_strength=0.76
+     pot_total=95
+     pot_odds= 0.41358024691358025
+     normalized_pot_odds= 0.41438199618471727
+         checkcall
+    turn:
+     my_strength=0.85
+     pot_total=162
+     pot_odds= 0.0
+     normalized_pot_odds= 0.0008017492711370263
+         checkcall
+    turn:
+     my_strength=0.87
+     pot_total=189
+     pot_odds= 0.125
+     normalized_pot_odds= 0.12580174927113702
+         raise 319
+    river:
+     my_strength=0.735
+     pot_total=800
+     pot_odds= 0.0
+     normalized_pot_odds= 0.0008017492711370263
+         raisecheckcall
+    run:
+     my_strength=0.98
+     pot_total=800
+     pot_odds= 0.0
+     normalized_pot_odds= 0.0008017492711370263
+         raisecheckcall
+87 0
+Round 87: I have 411 and need 1374 to win
+    preflop:
+     my_strength=0.5045
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.27991266375545854
+this
+         checkfold
+88 1
+Round 88: I have 410 and need 1369 to win
+    preflop:
+     my_strength=0.4165
+     pot_total=7
+     pot_odds= 0.3
+     normalized_pot_odds= 0.3299488677867056
+         checkfold
+89 0
+Round 89: I have 408 and need 1371 to win
+    preflop:
+     my_strength=0.5735
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.27975929978118164
+this
+         raise 8
+    preflop:
+     my_strength=0.5735
+     pot_total=22
+     pot_odds= 0.21428571428571427
+     normalized_pot_odds= 0.24404501406689588
+         checkcall
+    flop:
+     my_strength=0.675
+     pot_total=137
+     pot_odds= 0.44308943089430897
+     normalized_pot_odds= 0.4728487306754906
+         checkcall
+    turn:
+     my_strength=0.6
+     pot_total=342
+     pot_odds= 0.2191780821917808
+     normalized_pot_odds= 0.24893738197296245
+         checkcall
+    river:
+     my_strength=0.32
+     pot_total=492
+     pot_odds= 0.0989010989010989
+     normalized_pot_odds= 0.12866039868228052
+         checkfold
+90 1
+Round 90: I have 189 and need 1366 to win
+    preflop:
+     my_strength=0.6055
+     pot_total=22
+     pot_odds= 0.45
+     normalized_pot_odds= 0.4638360175695461
+         checkcall
+    flop:
+     my_strength=0.69
+     pot_total=40
+     pot_odds= 0.0
+     normalized_pot_odds= 0.013836017569546121
+         checkcall
+    flop:
+     my_strength=0.7
+     pot_total=138
+     pot_odds= 0.4152542372881356
+     normalized_pot_odds= 0.4290902548576817
+         checkcall
+    turn:
+     my_strength=0.585
+     pot_total=236
+     pot_odds= 0.0
+     normalized_pot_odds= 0.013836017569546121
+         raise 199
+    turn:
+     my_strength=0.535
+     pot_total=717
+     pot_odds= 0.10375
+     normalized_pot_odds= 0.11758601756954612
+         checkfold
+91 0
+Round 91: I have -128 and need 1368 to win
+    preflop:
+     my_strength=0.5455
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.24064327485380116
+this
+         checkcall
+    preflop:
+     my_strength=0.5455
+     pot_total=82
+     pot_odds= 0.4875
+     normalized_pot_odds= 0.47814327485380115
+         checkfold
+92 1
+Round 92: I have -130 and need 1363 to win
+    preflop:
+     my_strength=0.356
+     pot_total=24
+     pot_odds= 0.45454545454545453
+     normalized_pot_odds= 0.4450076702461148
+         checkfold
+93 0
+Round 93: I have -132 and need 1365 to win
+    preflop:
+     my_strength=0.4755
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.24032967032967034
+this
+         raise 9
+    preflop:
+     my_strength=0.4755
+     pot_total=25
+     pot_odds= 0.21875
+     normalized_pot_odds= 0.20907967032967034
+         checkfold
+94 1
+Round 94: I have -141 and need 1360 to win
+    preflop:
+     my_strength=0.5855
+     pot_total=21
+     pot_odds= 0.4473684210526316
+     normalized_pot_odds= 0.43700077399380804
+         checkcall
+    flop:
+     my_strength=0.555
+     pot_total=38
+     pot_odds= 0.0
+     normalized_pot_odds= -0.01036764705882353
+         checkcall
+    flop:
+     my_strength=0.55
+     pot_total=81
+     pot_odds= 0.3467741935483871
+     normalized_pot_odds= 0.3364065464895636
+         checkfold
+95 0
+Round 95: I have -160 and need 1362 to win
+    preflop:
+     my_strength=0.3335
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.2382525697503671
+this
+         checkfold
+96 1
+Round 96: I have -161 and need 1357 to win
+    preflop:
+     my_strength=0.5735
+     pot_total=64
+     pot_odds= 0.4838709677419355
+     normalized_pot_odds= 0.4720065609622745
+         checkcall
+    flop:
+     my_strength=0.35
+     pot_total=124
+     pot_odds= 0.0
+     normalized_pot_odds= -0.011864406779661017
+         checkcall
+    flop:
+     my_strength=0.33
+     pot_total=218
+     pot_odds= 0.30128205128205127
+     normalized_pot_odds= 0.28941764450239027
+         checkfold
+97 0
+Round 97: I have -223 and need 1359 to win
+    preflop:
+     my_strength=0.5655
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.23359087564385578
+this
+         raise 7
+    preflop:
+     my_strength=0.5655
+     pot_total=26
+     pot_odds= 0.3157894736842105
+     normalized_pot_odds= 0.2993803493280663
+         checkcall
+    flop:
+     my_strength=0.6
+     pot_total=153
+     pot_odds= 0.4291044776119403
+     normalized_pot_odds= 0.4126953532557961
+         checkfold
+98 1
+Round 98: I have -242 and need 1354 to win
+    preflop:
+     my_strength=0.5425
+     pot_total=9
+     pot_odds= 0.35714285714285715
+     normalized_pot_odds= 0.3392698881620595
+         checkfold
+99 0
+Round 99: I have -244 and need 1356 to win
+    preflop:
+     my_strength=0.49
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.23200589970501476
+this
+         checkcall
+    preflop:
+     my_strength=0.49
+     pot_total=34
+     pot_odds= 0.46875
+     normalized_pot_odds= 0.45075589970501473
+         checkfold
+100 1
+Round 100: I have -246 and need 1351 to win
+    preflop:
+     my_strength=0.413
+     pot_total=14
+     pot_odds= 0.4166666666666667
+     normalized_pot_odds= 0.3984579323957562
+         checkfold
+101 0
+Round 101: I have -248 and need 1353 to win
+    preflop:
+     my_strength=0.441
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.23167036215816703
+this
+         raise 7
+    preflop:
+     my_strength=0.441
+     pot_total=19
+     pot_odds= 0.20833333333333334
+     normalized_pot_odds= 0.19000369549150037
+         checkfold
+102 1
+Round 102: I have -255 and need 1348 to win
+    preflop:
+     my_strength=0.463
+     pot_total=17
+     pot_odds= 0.43333333333333335
+     normalized_pot_odds= 0.4144164193867458
+         checkcall
+    flop:
+     my_strength=0.655
+     pot_total=30
+     pot_odds= 0.0
+     normalized_pot_odds= -0.018916913946587538
+         checkcall
+    flop:
+     my_strength=0.715
+     pot_total=63
+     pot_odds= 0.34375
+     normalized_pot_odds= 0.32483308605341243
+         raise 66
+    turn:
+     my_strength=0.615
+     pot_total=162
+     pot_odds= 0.0
+     normalized_pot_odds= -0.018916913946587538
+         checkcall
+    turn:
+     my_strength=0.645
+     pot_total=183
+     pot_odds= 0.10294117647058823
+     normalized_pot_odds= 0.08402426252400069
+         checkcall
+    river:
+     my_strength=0.625
+     pot_total=204
+     pot_odds= 0.0
+     normalized_pot_odds= -0.018916913946587538
+         checkcall
+    river:
+     my_strength=0.585
+     pot_total=212
+     pot_odds= 0.03636363636363636
+     normalized_pot_odds= 0.017446722417048824
+         checkfold
+103 0
+Round 103: I have -357 and need 1350 to win
+    preflop:
+     my_strength=0.424
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.22355555555555556
+this
+         checkcall
+    preflop:
+     my_strength=0.424
+     pot_total=171
+     pot_odds= 0.4940828402366864
+     normalized_pot_odds= 0.467638395792242
+         checkfold
+104 1
+Round 104: I have -359 and need 1345 to win
+    preflop:
+     my_strength=0.622
+     pot_total=7
+     pot_odds= 0.3
+     normalized_pot_odds= 0.2733085501858736
+         checkcall
+    flop:
+     my_strength=0.53
+     pot_total=10
+     pot_odds= 0.0
+     normalized_pot_odds= -0.026691449814126394
+         checkcall
+    flop:
+     my_strength=0.46
+     pot_total=35
+     pot_odds= 0.4166666666666667
+     normalized_pot_odds= 0.3899752168525403
+         checkfold
+105 0
+Round 105: I have -364 and need 1347 to win
+    preflop:
+     my_strength=0.58
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.22297698589458054
+this
+         raise 9
+    preflop:
+     my_strength=0.58
+     pot_total=25
+     pot_odds= 0.21875
+     normalized_pot_odds= 0.19172698589458054
+         checkcall
+    flop:
+     my_strength=0.47
+     pot_total=74
+     pot_odds= 0.3620689655172414
+     normalized_pot_odds= 0.3350459514118219
+         checkfold
+106 1
+Round 106: I have -380 and need 1342 to win
+    preflop:
+     my_strength=0.3895
+     pot_total=11
+     pot_odds= 0.3888888888888889
+     normalized_pot_odds= 0.36057294254015565
+         checkcall
+    flop:
+     my_strength=0.375
+     pot_total=18
+     pot_odds= 0.0
+     normalized_pot_odds= -0.028315946348733235
+         checkcall
+    flop:
+     my_strength=0.4
+     pot_total=39
+     pot_odds= 0.35
+     normalized_pot_odds= 0.32168405365126673
+         checkfold
+107 0
+Round 107: I have -389 and need 1344 to win
+    preflop:
+     my_strength=0.4305
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.2210565476190476
+this
+         checkcall
+    preflop:
+     my_strength=0.4305
+     pot_total=88
+     pot_odds= 0.4883720930232558
+     normalized_pot_odds= 0.45942864064230343
+         checkfold
+108 1
+Round 108: I have -391 and need 1339 to win
+    preflop:
+     my_strength=0.529
+     pot_total=9
+     pot_odds= 0.35714285714285715
+     normalized_pot_odds= 0.3279419609516697
+         checkcall
+    flop:
+     my_strength=0.825
+     pot_total=14
+     pot_odds= 0.0
+     normalized_pot_odds= -0.029200896191187455
+         checkcall
+    flop:
+     my_strength=0.785
+     pot_total=116
+     pot_odds= 0.46788990825688076
+     normalized_pot_odds= 0.43868901206569333
+         checkcall
+    turn:
+     my_strength=0.775
+     pot_total=218
+     pot_odds= 0.0
+     normalized_pot_odds= -0.029200896191187455
+         checkcall
+    turn:
+     my_strength=0.72
+     pot_total=259
+     pot_odds= 0.13666666666666666
+     normalized_pot_odds= 0.1074657704754792
+         checkcall
+    river:
+     my_strength=0.775
+     pot_total=300
+     pot_odds= 0.0
+     normalized_pot_odds= -0.029200896191187455
+         checkcall
+    river:
+     my_strength=0.87
+     pot_total=328
+     pot_odds= 0.07865168539325842
+     normalized_pot_odds= 0.049450789202070966
+         raise 250
+109 0
+Round 109: I have 9 and need 1341 to win
+    preflop:
+     my_strength=0.5675
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.2506711409395973
+this
+         raise 9
+    preflop:
+     my_strength=0.5675
+     pot_total=27
+     pot_odds= 0.25
+     normalized_pot_odds= 0.2506711409395973
+         checkcall
+    flop:
+     my_strength=0.475
+     pot_total=77
+     pot_odds= 0.3474576271186441
+     normalized_pot_odds= 0.3481287680582414
+         checkfold
+110 1
+Round 110: I have -9 and need 1336 to win
+    preflop:
+     my_strength=0.817
+     pot_total=25
+     pot_odds= 0.45652173913043476
+     normalized_pot_odds= 0.455848086435824
+         raise 88
+    flop:
+     my_strength=0.87
+     pot_total=176
+     pot_odds= 0.0
+     normalized_pot_odds= -0.0006736526946107785
+         raise 312
+    turn:
+     my_strength=0.91
+     pot_total=800
+     pot_odds= 0.0
+     normalized_pot_odds= -0.0006736526946107785
+         raisecheckcall
+    river:
+     my_strength=0.84
+     pot_total=800
+     pot_odds= 0.0
+     normalized_pot_odds= -0.0006736526946107785
+         raisecheckcall
+111 0
+Round 111: I have 391 and need 1338 to win
+    preflop:
+     my_strength=0.5735
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.27922272047832586
+this
+         raise 12
+    preflop:
+     my_strength=0.5735
+     pot_total=36
+     pot_odds= 0.25
+     normalized_pot_odds= 0.27922272047832586
+         checkcall
+    flop:
+     my_strength=0.505
+     pot_total=72
+     pot_odds= 0.25
+     normalized_pot_odds= 0.27922272047832586
+         checkcall
+    turn:
+     my_strength=0.32
+     pot_total=103
+     pot_odds= 0.06363636363636363
+     normalized_pot_odds= 0.09285908411468949
+         checkfold
+112 1
+Round 112: I have 343 and need 1333 to win
+    preflop:
+     my_strength=0.4975
+     pot_total=22
+     pot_odds= 0.45
+     normalized_pot_odds= 0.47573143285821456
+         checkfold
+113 0
+Round 113: I have 341 and need 1335 to win
+    preflop:
+     my_strength=0.443
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.2755430711610487
+this
+         checkfold
+114 1
+Round 114: I have 340 and need 1330 to win
+    preflop:
+     my_strength=0.459
+     pot_total=27
+     pot_odds= 0.46
+     normalized_pot_odds= 0.4855639097744361
+         checkfold
+115 0
+Round 115: I have 338 and need 1332 to win
+    preflop:
+     my_strength=0.4805
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.2753753753753754
+this
+         checkfold
+116 1
+Round 116: I have 337 and need 1327 to win
+    preflop:
+     my_strength=0.495
+     pot_total=7
+     pot_odds= 0.3
+     normalized_pot_odds= 0.3253956292388847
+         checkfold
+117 0
+Round 117: I have 335 and need 1329 to win
+    preflop:
+     my_strength=0.5325
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.2752069224981189
+this
+         checkcall
+    preflop:
+     my_strength=0.5325
+     pot_total=43
+     pot_odds= 0.47560975609756095
+     normalized_pot_odds= 0.5008166785956798
+         checkfold
+118 1
+Round 118: I have 333 and need 1324 to win
+    preflop:
+     my_strength=0.5245
+     pot_total=23
+     pot_odds= 0.4523809523809524
+     normalized_pot_odds= 0.47753200978276505
+         checkfold
+119 0
+Round 119: I have 331 and need 1326 to win
+    preflop:
+     my_strength=0.408
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.27496229260935146
+this
+         checkfold
+120 1
+Round 120: I have 330 and need 1321 to win
+    preflop:
+     my_strength=0.517
+     pot_total=9
+     pot_odds= 0.35714285714285715
+     normalized_pot_odds= 0.382123932086082
+         checkcall
+    flop:
+     my_strength=0.57
+     pot_total=14
+     pot_odds= 0.0
+     normalized_pot_odds= 0.02498107494322483
+         checkcall
+    flop:
+     my_strength=0.625
+     pot_total=44
+     pot_odds= 0.40540540540540543
+     normalized_pot_odds= 0.43038648034863025
+         checkfold
+121 0
+Round 121: I have 323 and need 1323 to win
+    preflop:
+     my_strength=0.5775
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.2744142101284959
+this
+         checkcall
+    preflop:
+     my_strength=0.5775
+     pot_total=31
+     pot_odds= 0.46551724137931033
+     normalized_pot_odds= 0.48993145150780615
+         checkcall
+    flop:
+     my_strength=0.72
+     pot_total=68
+     pot_odds= 0.1282051282051282
+     normalized_pot_odds= 0.15261933833362404
+         checkfold
+122 1
+Round 122: I have 294 and need 1318 to win
+    preflop:
+     my_strength=0.4035
+     pot_total=13
+     pot_odds= 0.4090909090909091
+     normalized_pot_odds= 0.4313974341288454
+         checkfold
+123 0
+Round 123: I have 292 and need 1320 to win
+    preflop:
+     my_strength=0.6195
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.2721212121212121
+this
+         raise 9
+    preflop:
+     my_strength=0.6195
+     pot_total=25
+     pot_odds= 0.21875
+     normalized_pot_odds= 0.24087121212121212
+         checkcall
+    flop:
+     my_strength=0.915
+     pot_total=52
+     pot_odds= 0.2777777777777778
+     normalized_pot_odds= 0.2998989898989899
+         checkcall
+    turn:
+     my_strength=0.97
+     pot_total=88
+     pot_odds= 0.15384615384615385
+     normalized_pot_odds= 0.17596736596736598
+         checkcall
+    river:
+     my_strength=0.99
+     pot_total=111
+     pot_odds= 0.059322033898305086
+     normalized_pot_odds= 0.08144324601951722
+         checkcall
+124 1
+Round 124: I have 351 and need 1315 to win
+    preflop:
+     my_strength=0.3395
+     pot_total=8
+     pot_odds= 0.3333333333333333
+     normalized_pot_odds= 0.36002534854245877
+         checkcall
+    flop:
+     my_strength=0.485
+     pot_total=12
+     pot_odds= 0.0
+     normalized_pot_odds= 0.026692015209125477
+         checkcall
+    flop:
+     my_strength=0.56
+     pot_total=100
+     pot_odds= 0.46808510638297873
+     normalized_pot_odds= 0.4947771215921042
+         checkfold
+125 0
+Round 125: I have 345 and need 1317 to win
+    preflop:
+     my_strength=0.4505
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.2761958997722096
+this
+         checkfold
+126 1
+Round 126: I have 344 and need 1312 to win
+    preflop:
+     my_strength=0.4535
+     pot_total=18
+     pot_odds= 0.4375
+     normalized_pot_odds= 0.463719512195122
+         checkfold
+127 0
+Round 127: I have 342 and need 1314 to win
+    preflop:
+     my_strength=0.558
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.276027397260274
+this
+         raise 7
+    preflop:
+     my_strength=0.558
+     pot_total=23
+     pot_odds= 0.28125
+     normalized_pot_odds= 0.307277397260274
+         checkcall
+    flop:
+     my_strength=0.425
+     pot_total=99
+     pot_odds= 0.4036144578313253
+     normalized_pot_odds= 0.4296418550915993
+         checkfold
+128 1
+Round 128: I have 326 and need 1309 to win
+    preflop:
+     my_strength=0.4605
+     pot_total=11
+     pot_odds= 0.3888888888888889
+     normalized_pot_odds= 0.4137933961463373
+         checkfold
+129 0
+Round 129: I have 324 and need 1311 to win
+    preflop:
+     my_strength=0.6745
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.27471395881006866
+this
+         raise 7
+    preflop:
+     my_strength=0.6745
+     pot_total=31
+     pot_odds= 0.3541666666666667
+     normalized_pot_odds= 0.37888062547673534
+         checkcall
+    flop:
+     my_strength=0.835
+     pot_total=124
+     pot_odds= 0.38
+     normalized_pot_odds= 0.40471395881006866
+         checkcall
+    turn:
+     my_strength=0.76
+     pot_total=278
+     pot_odds= 0.21910112359550563
+     normalized_pot_odds= 0.24381508240557428
+         checkcall
+    river:
+     my_strength=0.565
+     pot_total=452
+     pot_odds= 0.17518248175182483
+     normalized_pot_odds= 0.19989644056189348
+         checkfold
+130 1
+Round 130: I have 146 and need 1306 to win
+    preflop:
+     my_strength=0.494
+     pot_total=28
+     pot_odds= 0.46153846153846156
+     normalized_pot_odds= 0.47271763458593474
+         checkfold
+131 0
+Round 131: I have 144 and need 1308 to win
+    preflop:
+     my_strength=0.508
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.2610091743119266
+this
+         checkcall
+    preflop:
+     my_strength=0.508
+     pot_total=38
+     pot_odds= 0.4722222222222222
+     normalized_pot_odds= 0.4832313965341488
+         checkfold
+132 1
+Round 132: I have 142 and need 1303 to win
+    preflop:
+     my_strength=0.58
+     pot_total=15
+     pot_odds= 0.4230769230769231
+     normalized_pot_odds= 0.4339748509357105
+         checkcall
+    flop:
+     my_strength=0.545
+     pot_total=26
+     pot_odds= 0.0
+     normalized_pot_odds= 0.010897927858787414
+         checkcall
+    flop:
+     my_strength=0.655
+     pot_total=160
+     pot_odds= 0.4557823129251701
+     normalized_pot_odds= 0.4666802407839575
+         checkcall
+    turn:
+     my_strength=0.575
+     pot_total=294
+     pot_odds= 0.0
+     normalized_pot_odds= 0.010897927858787414
+         raise 253
+    river:
+     my_strength=0.99
+     pot_total=800
+     pot_odds= 0.0
+     normalized_pot_odds= 0.010897927858787414
+         raisecheckcall
+133 0
+Round 133: I have 542 and need 1305 to win
+    preflop:
+     my_strength=0.5515
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.29153256704980846
+this
+         checkfold
+134 1
+Round 134: I have 541 and need 1300 to win
+    preflop:
+     my_strength=0.6145
+     pot_total=14
+     pot_odds= 0.4166666666666667
+     normalized_pot_odds= 0.4582820512820513
+         checkcall
+    flop:
+     my_strength=0.5
+     pot_total=24
+     pot_odds= 0.0
+     normalized_pot_odds= 0.04161538461538462
+         checkcall
+    flop:
+     my_strength=0.48
+     pot_total=117
+     pot_odds= 0.44285714285714284
+     normalized_pot_odds= 0.48447252747252745
+         checkfold
+135 0
+Round 135: I have 529 and need 1302 to win
+    preflop:
+     my_strength=0.4655
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.2906298003072197
+this
+         checkfold
+136 1
+Round 136: I have 528 and need 1297 to win
+    preflop:
+     my_strength=0.6125
+     pot_total=15
+     pot_odds= 0.4230769230769231
+     normalized_pot_odds= 0.463786252298203
+         checkcall
+    flop:
+     my_strength=0.77
+     pot_total=26
+     pot_odds= 0.0
+     normalized_pot_odds= 0.04070932922127988
+         raise 36
+    flop:
+     my_strength=0.765
+     pot_total=134
+     pot_odds= 0.21176470588235294
+     normalized_pot_odds= 0.2524740351036328
+         checkcall
+    turn:
+     my_strength=0.765
+     pot_total=170
+     pot_odds= 0.0
+     normalized_pot_odds= 0.04070932922127988
+         checkcall
+    turn:
+     my_strength=0.735
+     pot_total=277
+     pot_odds= 0.2786458333333333
+     normalized_pot_odds= 0.3193551625546132
+         checkcall
+    river:
+     my_strength=0.67
+     pot_total=384
+     pot_odds= 0.0
+     normalized_pot_odds= 0.04070932922127988
+         raise 208
+    run:
+     my_strength=0.695
+     pot_total=800
+     pot_odds= 0.0
+     normalized_pot_odds= 0.04070932922127988
+         checkcall
+137 0
+Round 137: I have 928 and need 1299 to win
+    preflop:
+     my_strength=0.781
+     pot_total=3
+     pot_odds= 0.25
+     normalized_pot_odds= 0.3214395688991532
+this
+         checkcall
+    preflop:
+     my_strength=0.781
+     pot_total=41
+     pot_odds= 0.47435897435897434
+     normalized_pot_odds= 0.5457985432581276
+         raise 118
+    flop:
+     my_strength=0.86
+     pot_total=257
+     pot_odds= 0.07553956834532374
+     normalized_pot_odds= 0.14697913724447695
+         raise 282
+    turn:
+     my_strength=0.79
+     pot_total=800
+     pot_odds= 0.0
+     normalized_pot_odds= 0.0714395688991532
+         checkcall
+    river:
+     my_strength=1.0
+     pot_total=800
+     pot_odds= 0.0
+     normalized_pot_odds= 0.0714395688991532
+         checkcall
+138 1
+Round 138: I have 1328 and need 1294 to win
+139 0
+Round 139: I have 1326 and need 1296 to win
+140 1
+Round 140: I have 1325 and need 1291 to win
+141 0
+Round 141: I have 1323 and need 1293 to win
+142 1
+Round 142: I have 1322 and need 1288 to win
+143 0
+Round 143: I have 1320 and need 1290 to win
+144 1
+Round 144: I have 1319 and need 1285 to win
+145 0
+Round 145: I have 1317 and need 1287 to win
+146 1
+Round 146: I have 1316 and need 1282 to win
+147 0
+Round 147: I have 1314 and need 1284 to win
+148 1
+Round 148: I have 1313 and need 1279 to win
+149 0
+Round 149: I have 1311 and need 1281 to win
+150 1
+Round 150: I have 1310 and need 1276 to win
+151 0
+Round 151: I have 1308 and need 1278 to win
+152 1
+Round 152: I have 1307 and need 1273 to win
+153 0
+Round 153: I have 1305 and need 1275 to win
+154 1
+Round 154: I have 1304 and need 1270 to win
+155 0
+Round 155: I have 1302 and need 1272 to win
+156 1
+Round 156: I have 1301 and need 1267 to win
+157 0
+Round 157: I have 1299 and need 1269 to win
+158 1
+Round 158: I have 1298 and need 1264 to win
+159 0
+Round 159: I have 1296 and need 1266 to win
+160 1
+Round 160: I have 1295 and need 1261 to win
+161 0
+Round 161: I have 1293 and need 1263 to win
+162 1
+Round 162: I have 1292 and need 1258 to win
+163 0
+Round 163: I have 1290 and need 1260 to win
+164 1
+Round 164: I have 1289 and need 1255 to win
+165 0
+Round 165: I have 1287 and need 1257 to win
+166 1
+Round 166: I have 1286 and need 1252 to win
+167 0
+Round 167: I have 1284 and need 1254 to win
+168 1
+Round 168: I have 1283 and need 1249 to win
+169 0
+Round 169: I have 1281 and need 1251 to win
+170 1
+Round 170: I have 1280 and need 1246 to win
+171 0
+Round 171: I have 1278 and need 1248 to win
+172 1
+Round 172: I have 1277 and need 1243 to win
+173 0
+Round 173: I have 1275 and need 1245 to win
+174 1
+Round 174: I have 1274 and need 1240 to win
+175 0
+Round 175: I have 1272 and need 1242 to win
+176 1
+Round 176: I have 1271 and need 1237 to win
+177 0
+Round 177: I have 1269 and need 1239 to win
+178 1
+Round 178: I have 1268 and need 1234 to win
+179 0
+Round 179: I have 1266 and need 1236 to win
+180 1
+Round 180: I have 1265 and need 1231 to win
+181 0
+Round 181: I have 1263 and need 1233 to win
+182 1
+Round 182: I have 1262 and need 1228 to win
+183 0
+Round 183: I have 1260 and need 1230 to win
+184 1
+Round 184: I have 1259 and need 1225 to win
+185 0
+Round 185: I have 1257 and need 1227 to win
+186 1
+Round 186: I have 1256 and need 1222 to win
+187 0
+Round 187: I have 1254 and need 1224 to win
+188 1
+Round 188: I have 1253 and need 1219 to win
+189 0
+Round 189: I have 1251 and need 1221 to win
+190 1
+Round 190: I have 1250 and need 1216 to win
+191 0
+Round 191: I have 1248 and need 1218 to win
+192 1
+Round 192: I have 1247 and need 1213 to win
+193 0
+Round 193: I have 1245 and need 1215 to win
+194 1
+Round 194: I have 1244 and need 1210 to win
+195 0
+Round 195: I have 1242 and need 1212 to win
+196 1
+Round 196: I have 1241 and need 1207 to win
+197 0
+Round 197: I have 1239 and need 1209 to win
+198 1
+Round 198: I have 1238 and need 1204 to win
+199 0
+Round 199: I have 1236 and need 1206 to win
+200 1
+Round 200: I have 1235 and need 1201 to win
+201 0
+Round 201: I have 1233 and need 1203 to win
+202 1
+Round 202: I have 1232 and need 1198 to win
+203 0
+Round 203: I have 1230 and need 1200 to win
+204 1
+Round 204: I have 1229 and need 1195 to win
+205 0
+Round 205: I have 1227 and need 1197 to win
+206 1
+Round 206: I have 1226 and need 1192 to win
+207 0
+Round 207: I have 1224 and need 1194 to win
+208 1
+Round 208: I have 1223 and need 1189 to win
+209 0
+Round 209: I have 1221 and need 1191 to win
+210 1
+Round 210: I have 1220 and need 1186 to win
+211 0
+Round 211: I have 1218 and need 1188 to win
+212 1
+Round 212: I have 1217 and need 1183 to win
+213 0
+Round 213: I have 1215 and need 1185 to win
+214 1
+Round 214: I have 1214 and need 1180 to win
+215 0
+Round 215: I have 1212 and need 1182 to win
+216 1
+Round 216: I have 1211 and need 1177 to win
+217 0
+Round 217: I have 1209 and need 1179 to win
+218 1
+Round 218: I have 1208 and need 1174 to win
+219 0
+Round 219: I have 1206 and need 1176 to win
+220 1
+Round 220: I have 1205 and need 1171 to win
+221 0
+Round 221: I have 1203 and need 1173 to win
+222 1
+Round 222: I have 1202 and need 1168 to win
+223 0
+Round 223: I have 1200 and need 1170 to win
+224 1
+Round 224: I have 1199 and need 1165 to win
+225 0
+Round 225: I have 1197 and need 1167 to win
+226 1
+Round 226: I have 1196 and need 1162 to win
+227 0
+Round 227: I have 1194 and need 1164 to win
+228 1
+Round 228: I have 1193 and need 1159 to win
+229 0
+Round 229: I have 1191 and need 1161 to win
+230 1
+Round 230: I have 1190 and need 1156 to win
+231 0
+Round 231: I have 1188 and need 1158 to win
+232 1
+Round 232: I have 1187 and need 1153 to win
+233 0
+Round 233: I have 1185 and need 1155 to win
+234 1
+Round 234: I have 1184 and need 1150 to win
+235 0
+Round 235: I have 1182 and need 1152 to win
+236 1
+Round 236: I have 1181 and need 1147 to win
+237 0
+Round 237: I have 1179 and need 1149 to win
+238 1
+Round 238: I have 1178 and need 1144 to win
+239 0
+Round 239: I have 1176 and need 1146 to win
+240 1
+Round 240: I have 1175 and need 1141 to win
+241 0
+Round 241: I have 1173 and need 1143 to win
+242 1
+Round 242: I have 1172 and need 1138 to win
+243 0
+Round 243: I have 1170 and need 1140 to win
+244 1
+Round 244: I have 1169 and need 1135 to win
+245 0
+Round 245: I have 1167 and need 1137 to win
+246 1
+Round 246: I have 1166 and need 1132 to win
+247 0
+Round 247: I have 1164 and need 1134 to win
+248 1
+Round 248: I have 1163 and need 1129 to win
+249 0
+Round 249: I have 1161 and need 1131 to win
+250 1
+Round 250: I have 1160 and need 1126 to win
+251 0
+Round 251: I have 1158 and need 1128 to win
+252 1
+Round 252: I have 1157 and need 1123 to win
+253 0
+Round 253: I have 1155 and need 1125 to win
+254 1
+Round 254: I have 1154 and need 1120 to win
+255 0
+Round 255: I have 1152 and need 1122 to win
+256 1
+Round 256: I have 1151 and need 1117 to win
+257 0
+Round 257: I have 1149 and need 1119 to win
+258 1
+Round 258: I have 1148 and need 1114 to win
+259 0
+Round 259: I have 1146 and need 1116 to win
+260 1
+Round 260: I have 1145 and need 1111 to win
+261 0
+Round 261: I have 1143 and need 1113 to win
+262 1
+Round 262: I have 1142 and need 1108 to win
+263 0
+Round 263: I have 1140 and need 1110 to win
+264 1
+Round 264: I have 1139 and need 1105 to win
+265 0
+Round 265: I have 1137 and need 1107 to win
+266 1
+Round 266: I have 1136 and need 1102 to win
+267 0
+Round 267: I have 1134 and need 1104 to win
+268 1
+Round 268: I have 1133 and need 1099 to win
+269 0
+Round 269: I have 1131 and need 1101 to win
+270 1
+Round 270: I have 1130 and need 1096 to win
+271 0
+Round 271: I have 1128 and need 1098 to win
+272 1
+Round 272: I have 1127 and need 1093 to win
+273 0
+Round 273: I have 1125 and need 1095 to win
+274 1
+Round 274: I have 1124 and need 1090 to win
+275 0
+Round 275: I have 1122 and need 1092 to win
+276 1
+Round 276: I have 1121 and need 1087 to win
+277 0
+Round 277: I have 1119 and need 1089 to win
+278 1
+Round 278: I have 1118 and need 1084 to win
+279 0
+Round 279: I have 1116 and need 1086 to win
+280 1
+Round 280: I have 1115 and need 1081 to win
+281 0
+Round 281: I have 1113 and need 1083 to win
+282 1
+Round 282: I have 1112 and need 1078 to win
+283 0
+Round 283: I have 1110 and need 1080 to win
+284 1
+Round 284: I have 1109 and need 1075 to win
+285 0
+Round 285: I have 1107 and need 1077 to win
+286 1
+Round 286: I have 1106 and need 1072 to win
+287 0
+Round 287: I have 1104 and need 1074 to win
+288 1
+Round 288: I have 1103 and need 1069 to win
+289 0
+Round 289: I have 1101 and need 1071 to win
+290 1
+Round 290: I have 1100 and need 1066 to win
+291 0
+Round 291: I have 1098 and need 1068 to win
+292 1
+Round 292: I have 1097 and need 1063 to win
+293 0
+Round 293: I have 1095 and need 1065 to win
+294 1
+Round 294: I have 1094 and need 1060 to win
+295 0
+Round 295: I have 1092 and need 1062 to win
+296 1
+Round 296: I have 1091 and need 1057 to win
+297 0
+Round 297: I have 1089 and need 1059 to win
+298 1
+Round 298: I have 1088 and need 1054 to win
+299 0
+Round 299: I have 1086 and need 1056 to win
+300 1
+Round 300: I have 1085 and need 1051 to win
+301 0
+Round 301: I have 1083 and need 1053 to win
+302 1
+Round 302: I have 1082 and need 1048 to win
+303 0
+Round 303: I have 1080 and need 1050 to win
+304 1
+Round 304: I have 1079 and need 1045 to win
+305 0
+Round 305: I have 1077 and need 1047 to win
+306 1
+Round 306: I have 1076 and need 1042 to win
+307 0
+Round 307: I have 1074 and need 1044 to win
+308 1
+Round 308: I have 1073 and need 1039 to win
+309 0
+Round 309: I have 1071 and need 1041 to win
+310 1
+Round 310: I have 1070 and need 1036 to win
+311 0
+Round 311: I have 1068 and need 1038 to win
+312 1
+Round 312: I have 1067 and need 1033 to win
+313 0
+Round 313: I have 1065 and need 1035 to win
+314 1
+Round 314: I have 1064 and need 1030 to win
+315 0
+Round 315: I have 1062 and need 1032 to win
+316 1
+Round 316: I have 1061 and need 1027 to win
+317 0
+Round 317: I have 1059 and need 1029 to win
+318 1
+Round 318: I have 1058 and need 1024 to win
+319 0
+Round 319: I have 1056 and need 1026 to win
+320 1
+Round 320: I have 1055 and need 1021 to win
+321 0
+Round 321: I have 1053 and need 1023 to win
+322 1
+Round 322: I have 1052 and need 1018 to win
+323 0
+Round 323: I have 1050 and need 1020 to win
+324 1
+Round 324: I have 1049 and need 1015 to win
+325 0
+Round 325: I have 1047 and need 1017 to win
+326 1
+Round 326: I have 1046 and need 1012 to win
+327 0
+Round 327: I have 1044 and need 1014 to win
+328 1
+Round 328: I have 1043 and need 1009 to win
+329 0
+Round 329: I have 1041 and need 1011 to win
+330 1
+Round 330: I have 1040 and need 1006 to win
+331 0
+Round 331: I have 1038 and need 1008 to win
+332 1
+Round 332: I have 1037 and need 1003 to win
+333 0
+Round 333: I have 1035 and need 1005 to win
+334 1
+Round 334: I have 1034 and need 1000 to win
+335 0
+Round 335: I have 1032 and need 1002 to win
+336 1
+Round 336: I have 1031 and need 997 to win
+337 0
+Round 337: I have 1029 and need 999 to win
+338 1
+Round 338: I have 1028 and need 994 to win
+339 0
+Round 339: I have 1026 and need 996 to win
+340 1
+Round 340: I have 1025 and need 991 to win
+341 0
+Round 341: I have 1023 and need 993 to win
+342 1
+Round 342: I have 1022 and need 988 to win
+343 0
+Round 343: I have 1020 and need 990 to win
+344 1
+Round 344: I have 1019 and need 985 to win
+345 0
+Round 345: I have 1017 and need 987 to win
+346 1
+Round 346: I have 1016 and need 982 to win
+347 0
+Round 347: I have 1014 and need 984 to win
+348 1
+Round 348: I have 1013 and need 979 to win
+349 0
+Round 349: I have 1011 and need 981 to win
+350 1
+Round 350: I have 1010 and need 976 to win
+351 0
+Round 351: I have 1008 and need 978 to win
+352 1
+Round 352: I have 1007 and need 973 to win
+353 0
+Round 353: I have 1005 and need 975 to win
+354 1
+Round 354: I have 1004 and need 970 to win
+355 0
+Round 355: I have 1002 and need 972 to win
+356 1
+Round 356: I have 1001 and need 967 to win
+357 0
+Round 357: I have 999 and need 969 to win
+358 1
+Round 358: I have 998 and need 964 to win
+359 0
+Round 359: I have 996 and need 966 to win
+360 1
+Round 360: I have 995 and need 961 to win
+361 0
+Round 361: I have 993 and need 963 to win
+362 1
+Round 362: I have 992 and need 958 to win
+363 0
+Round 363: I have 990 and need 960 to win
+364 1
+Round 364: I have 989 and need 955 to win
+365 0
+Round 365: I have 987 and need 957 to win
+366 1
+Round 366: I have 986 and need 952 to win
+367 0
+Round 367: I have 984 and need 954 to win
+368 1
+Round 368: I have 983 and need 949 to win
+369 0
+Round 369: I have 981 and need 951 to win
+370 1
+Round 370: I have 980 and need 946 to win
+371 0
+Round 371: I have 978 and need 948 to win
+372 1
+Round 372: I have 977 and need 943 to win
+373 0
+Round 373: I have 975 and need 945 to win
+374 1
+Round 374: I have 974 and need 940 to win
+375 0
+Round 375: I have 972 and need 942 to win
+376 1
+Round 376: I have 971 and need 937 to win
+377 0
+Round 377: I have 969 and need 939 to win
+378 1
+Round 378: I have 968 and need 934 to win
+379 0
+Round 379: I have 966 and need 936 to win
+380 1
+Round 380: I have 965 and need 931 to win
+381 0
+Round 381: I have 963 and need 933 to win
+382 1
+Round 382: I have 962 and need 928 to win
+383 0
+Round 383: I have 960 and need 930 to win
+384 1
+Round 384: I have 959 and need 925 to win
+385 0
+Round 385: I have 957 and need 927 to win
+386 1
+Round 386: I have 956 and need 922 to win
+387 0
+Round 387: I have 954 and need 924 to win
+388 1
+Round 388: I have 953 and need 919 to win
+389 0
+Round 389: I have 951 and need 921 to win
+390 1
+Round 390: I have 950 and need 916 to win
+391 0
+Round 391: I have 948 and need 918 to win
+392 1
+Round 392: I have 947 and need 913 to win
+393 0
+Round 393: I have 945 and need 915 to win
+394 1
+Round 394: I have 944 and need 910 to win
+395 0
+Round 395: I have 942 and need 912 to win
+396 1
+Round 396: I have 941 and need 907 to win
+397 0
+Round 397: I have 939 and need 909 to win
+398 1
+Round 398: I have 938 and need 904 to win
+399 0
+Round 399: I have 936 and need 906 to win
+400 1
+Round 400: I have 935 and need 901 to win
+401 0
+Round 401: I have 933 and need 903 to win
+402 1
+Round 402: I have 932 and need 898 to win
+403 0
+Round 403: I have 930 and need 900 to win
+404 1
+Round 404: I have 929 and need 895 to win
+405 0
+Round 405: I have 927 and need 897 to win
+406 1
+Round 406: I have 926 and need 892 to win
+407 0
+Round 407: I have 924 and need 894 to win
+408 1
+Round 408: I have 923 and need 889 to win
+409 0
+Round 409: I have 921 and need 891 to win
+410 1
+Round 410: I have 920 and need 886 to win
+411 0
+Round 411: I have 918 and need 888 to win
+412 1
+Round 412: I have 917 and need 883 to win
+413 0
+Round 413: I have 915 and need 885 to win
+414 1
+Round 414: I have 914 and need 880 to win
+415 0
+Round 415: I have 912 and need 882 to win
+416 1
+Round 416: I have 911 and need 877 to win
+417 0
+Round 417: I have 909 and need 879 to win
+418 1
+Round 418: I have 908 and need 874 to win
+419 0
+Round 419: I have 906 and need 876 to win
+420 1
+Round 420: I have 905 and need 871 to win
+421 0
+Round 421: I have 903 and need 873 to win
+422 1
+Round 422: I have 902 and need 868 to win
+423 0
+Round 423: I have 900 and need 870 to win
+424 1
+Round 424: I have 899 and need 865 to win
+425 0
+Round 425: I have 897 and need 867 to win
+426 1
+Round 426: I have 896 and need 862 to win
+427 0
+Round 427: I have 894 and need 864 to win
+428 1
+Round 428: I have 893 and need 859 to win
+429 0
+Round 429: I have 891 and need 861 to win
+430 1
+Round 430: I have 890 and need 856 to win
+431 0
+Round 431: I have 888 and need 858 to win
+432 1
+Round 432: I have 887 and need 853 to win
+433 0
+Round 433: I have 885 and need 855 to win
+434 1
+Round 434: I have 884 and need 850 to win
+435 0
+Round 435: I have 882 and need 852 to win
+436 1
+Round 436: I have 881 and need 847 to win
+437 0
+Round 437: I have 879 and need 849 to win
+438 1
+Round 438: I have 878 and need 844 to win
+439 0
+Round 439: I have 876 and need 846 to win
+440 1
+Round 440: I have 875 and need 841 to win
+441 0
+Round 441: I have 873 and need 843 to win
+442 1
+Round 442: I have 872 and need 838 to win
+443 0
+Round 443: I have 870 and need 840 to win
+444 1
+Round 444: I have 869 and need 835 to win
+445 0
+Round 445: I have 867 and need 837 to win
+446 1
+Round 446: I have 866 and need 832 to win
+447 0
+Round 447: I have 864 and need 834 to win
+448 1
+Round 448: I have 863 and need 829 to win
+449 0
+Round 449: I have 861 and need 831 to win
+450 1
+Round 450: I have 860 and need 826 to win
+451 0
+Round 451: I have 858 and need 828 to win
+452 1
+Round 452: I have 857 and need 823 to win
+453 0
+Round 453: I have 855 and need 825 to win
+454 1
+Round 454: I have 854 and need 820 to win
+455 0
+Round 455: I have 852 and need 822 to win
+456 1
+Round 456: I have 851 and need 817 to win
+457 0
+Round 457: I have 849 and need 819 to win
+458 1
+Round 458: I have 848 and need 814 to win
+459 0
+Round 459: I have 846 and need 816 to win
+460 1
+Round 460: I have 845 and need 811 to win
+461 0
+Round 461: I have 843 and need 813 to win
+462 1
+Round 462: I have 842 and need 808 to win
+463 0
+Round 463: I have 840 and need 810 to win
+464 1
+Round 464: I have 839 and need 805 to win
+465 0
+Round 465: I have 837 and need 807 to win
+466 1
+Round 466: I have 836 and need 802 to win
+467 0
+Round 467: I have 834 and need 804 to win
+468 1
+Round 468: I have 833 and need 799 to win
+469 0
+Round 469: I have 831 and need 801 to win
+470 1
+Round 470: I have 830 and need 796 to win
+471 0
+Round 471: I have 828 and need 798 to win
+472 1
+Round 472: I have 827 and need 793 to win
+473 0
+Round 473: I have 825 and need 795 to win
+474 1
+Round 474: I have 824 and need 790 to win
+475 0
+Round 475: I have 822 and need 792 to win
+476 1
+Round 476: I have 821 and need 787 to win
+477 0
+Round 477: I have 819 and need 789 to win
+478 1
+Round 478: I have 818 and need 784 to win
+479 0
+Round 479: I have 816 and need 786 to win
+480 1
+Round 480: I have 815 and need 781 to win
+481 0
+Round 481: I have 813 and need 783 to win
+482 1
+Round 482: I have 812 and need 778 to win
+483 0
+Round 483: I have 810 and need 780 to win
+484 1
+Round 484: I have 809 and need 775 to win
+485 0
+Round 485: I have 807 and need 777 to win
+486 1
+Round 486: I have 806 and need 772 to win
+487 0
+Round 487: I have 804 and need 774 to win
+488 1
+Round 488: I have 803 and need 769 to win
+489 0
+Round 489: I have 801 and need 771 to win
+490 1
+Round 490: I have 800 and need 766 to win
+491 0
+Round 491: I have 798 and need 768 to win
+492 1
+Round 492: I have 797 and need 763 to win
+493 0
+Round 493: I have 795 and need 765 to win
+494 1
+Round 494: I have 794 and need 760 to win
+495 0
+Round 495: I have 792 and need 762 to win
+496 1
+Round 496: I have 791 and need 757 to win
+497 0
+Round 497: I have 789 and need 759 to win
+498 1
+Round 498: I have 788 and need 754 to win
+499 0
+Round 499: I have 786 and need 756 to win
+500 1
+Round 500: I have 785 and need 751 to win
+501 0
+Round 501: I have 783 and need 753 to win
+502 1
+Round 502: I have 782 and need 748 to win
+503 0
+Round 503: I have 780 and need 750 to win
+504 1
+Round 504: I have 779 and need 745 to win
+505 0
+Round 505: I have 777 and need 747 to win
+506 1
+Round 506: I have 776 and need 742 to win
+507 0
+Round 507: I have 774 and need 744 to win
+508 1
+Round 508: I have 773 and need 739 to win
+509 0
+Round 509: I have 771 and need 741 to win
+510 1
+Round 510: I have 770 and need 736 to win
+511 0
+Round 511: I have 768 and need 738 to win
+512 1
+Round 512: I have 767 and need 733 to win
+513 0
+Round 513: I have 765 and need 735 to win
+514 1
+Round 514: I have 764 and need 730 to win
+515 0
+Round 515: I have 762 and need 732 to win
+516 1
+Round 516: I have 761 and need 727 to win
+517 0
+Round 517: I have 759 and need 729 to win
+518 1
+Round 518: I have 758 and need 724 to win
+519 0
+Round 519: I have 756 and need 726 to win
+520 1
+Round 520: I have 755 and need 721 to win
+521 0
+Round 521: I have 753 and need 723 to win
+522 1
+Round 522: I have 752 and need 718 to win
+523 0
+Round 523: I have 750 and need 720 to win
+524 1
+Round 524: I have 749 and need 715 to win
+525 0
+Round 525: I have 747 and need 717 to win
+526 1
+Round 526: I have 746 and need 712 to win
+527 0
+Round 527: I have 744 and need 714 to win
+528 1
+Round 528: I have 743 and need 709 to win
+529 0
+Round 529: I have 741 and need 711 to win
+530 1
+Round 530: I have 740 and need 706 to win
+531 0
+Round 531: I have 738 and need 708 to win
+532 1
+Round 532: I have 737 and need 703 to win
+533 0
+Round 533: I have 735 and need 705 to win
+534 1
+Round 534: I have 734 and need 700 to win
+535 0
+Round 535: I have 732 and need 702 to win
+536 1
+Round 536: I have 731 and need 697 to win
+537 0
+Round 537: I have 729 and need 699 to win
+538 1
+Round 538: I have 728 and need 694 to win
+539 0
+Round 539: I have 726 and need 696 to win
+540 1
+Round 540: I have 725 and need 691 to win
+541 0
+Round 541: I have 723 and need 693 to win
+542 1
+Round 542: I have 722 and need 688 to win
+543 0
+Round 543: I have 720 and need 690 to win
+544 1
+Round 544: I have 719 and need 685 to win
+545 0
+Round 545: I have 717 and need 687 to win
+546 1
+Round 546: I have 716 and need 682 to win
+547 0
+Round 547: I have 714 and need 684 to win
+548 1
+Round 548: I have 713 and need 679 to win
+549 0
+Round 549: I have 711 and need 681 to win
+550 1
+Round 550: I have 710 and need 676 to win
+551 0
+Round 551: I have 708 and need 678 to win
+552 1
+Round 552: I have 707 and need 673 to win
+553 0
+Round 553: I have 705 and need 675 to win
+554 1
+Round 554: I have 704 and need 670 to win
+555 0
+Round 555: I have 702 and need 672 to win
+556 1
+Round 556: I have 701 and need 667 to win
+557 0
+Round 557: I have 699 and need 669 to win
+558 1
+Round 558: I have 698 and need 664 to win
+559 0
+Round 559: I have 696 and need 666 to win
+560 1
+Round 560: I have 695 and need 661 to win
+561 0
+Round 561: I have 693 and need 663 to win
+562 1
+Round 562: I have 692 and need 658 to win
+563 0
+Round 563: I have 690 and need 660 to win
+564 1
+Round 564: I have 689 and need 655 to win
+565 0
+Round 565: I have 687 and need 657 to win
+566 1
+Round 566: I have 686 and need 652 to win
+567 0
+Round 567: I have 684 and need 654 to win
+568 1
+Round 568: I have 683 and need 649 to win
+569 0
+Round 569: I have 681 and need 651 to win
+570 1
+Round 570: I have 680 and need 646 to win
+571 0
+Round 571: I have 678 and need 648 to win
+572 1
+Round 572: I have 677 and need 643 to win
+573 0
+Round 573: I have 675 and need 645 to win
+574 1
+Round 574: I have 674 and need 640 to win
+575 0
+Round 575: I have 672 and need 642 to win
+576 1
+Round 576: I have 671 and need 637 to win
+577 0
+Round 577: I have 669 and need 639 to win
+578 1
+Round 578: I have 668 and need 634 to win
+579 0
+Round 579: I have 666 and need 636 to win
+580 1
+Round 580: I have 665 and need 631 to win
+581 0
+Round 581: I have 663 and need 633 to win
+582 1
+Round 582: I have 662 and need 628 to win
+583 0
+Round 583: I have 660 and need 630 to win
+584 1
+Round 584: I have 659 and need 625 to win
+585 0
+Round 585: I have 657 and need 627 to win
+586 1
+Round 586: I have 656 and need 622 to win
+587 0
+Round 587: I have 654 and need 624 to win
+588 1
+Round 588: I have 653 and need 619 to win
+589 0
+Round 589: I have 651 and need 621 to win
+590 1
+Round 590: I have 650 and need 616 to win
+591 0
+Round 591: I have 648 and need 618 to win
+592 1
+Round 592: I have 647 and need 613 to win
+593 0
+Round 593: I have 645 and need 615 to win
+594 1
+Round 594: I have 644 and need 610 to win
+595 0
+Round 595: I have 642 and need 612 to win
+596 1
+Round 596: I have 641 and need 607 to win
+597 0
+Round 597: I have 639 and need 609 to win
+598 1
+Round 598: I have 638 and need 604 to win
+599 0
+Round 599: I have 636 and need 606 to win
+600 1
+Round 600: I have 635 and need 601 to win
+601 0
+Round 601: I have 633 and need 603 to win
+602 1
+Round 602: I have 632 and need 598 to win
+603 0
+Round 603: I have 630 and need 600 to win
+604 1
+Round 604: I have 629 and need 595 to win
+605 0
+Round 605: I have 627 and need 597 to win
+606 1
+Round 606: I have 626 and need 592 to win
+607 0
+Round 607: I have 624 and need 594 to win
+608 1
+Round 608: I have 623 and need 589 to win
+609 0
+Round 609: I have 621 and need 591 to win
+610 1
+Round 610: I have 620 and need 586 to win
+611 0
+Round 611: I have 618 and need 588 to win
+612 1
+Round 612: I have 617 and need 583 to win
+613 0
+Round 613: I have 615 and need 585 to win
+614 1
+Round 614: I have 614 and need 580 to win
+615 0
+Round 615: I have 612 and need 582 to win
+616 1
+Round 616: I have 611 and need 577 to win
+617 0
+Round 617: I have 609 and need 579 to win
+618 1
+Round 618: I have 608 and need 574 to win
+619 0
+Round 619: I have 606 and need 576 to win
+620 1
+Round 620: I have 605 and need 571 to win
+621 0
+Round 621: I have 603 and need 573 to win
+622 1
+Round 622: I have 602 and need 568 to win
+623 0
+Round 623: I have 600 and need 570 to win
+624 1
+Round 624: I have 599 and need 565 to win
+625 0
+Round 625: I have 597 and need 567 to win
+626 1
+Round 626: I have 596 and need 562 to win
+627 0
+Round 627: I have 594 and need 564 to win
+628 1
+Round 628: I have 593 and need 559 to win
+629 0
+Round 629: I have 591 and need 561 to win
+630 1
+Round 630: I have 590 and need 556 to win
+631 0
+Round 631: I have 588 and need 558 to win
+632 1
+Round 632: I have 587 and need 553 to win
+633 0
+Round 633: I have 585 and need 555 to win
+634 1
+Round 634: I have 584 and need 550 to win
+635 0
+Round 635: I have 582 and need 552 to win
+636 1
+Round 636: I have 581 and need 547 to win
+637 0
+Round 637: I have 579 and need 549 to win
+638 1
+Round 638: I have 578 and need 544 to win
+639 0
+Round 639: I have 576 and need 546 to win
+640 1
+Round 640: I have 575 and need 541 to win
+641 0
+Round 641: I have 573 and need 543 to win
+642 1
+Round 642: I have 572 and need 538 to win
+643 0
+Round 643: I have 570 and need 540 to win
+644 1
+Round 644: I have 569 and need 535 to win
+645 0
+Round 645: I have 567 and need 537 to win
+646 1
+Round 646: I have 566 and need 532 to win
+647 0
+Round 647: I have 564 and need 534 to win
+648 1
+Round 648: I have 563 and need 529 to win
+649 0
+Round 649: I have 561 and need 531 to win
+650 1
+Round 650: I have 560 and need 526 to win
+651 0
+Round 651: I have 558 and need 528 to win
+652 1
+Round 652: I have 557 and need 523 to win
+653 0
+Round 653: I have 555 and need 525 to win
+654 1
+Round 654: I have 554 and need 520 to win
+655 0
+Round 655: I have 552 and need 522 to win
+656 1
+Round 656: I have 551 and need 517 to win
+657 0
+Round 657: I have 549 and need 519 to win
+658 1
+Round 658: I have 548 and need 514 to win
+659 0
+Round 659: I have 546 and need 516 to win
+660 1
+Round 660: I have 545 and need 511 to win
+661 0
+Round 661: I have 543 and need 513 to win
+662 1
+Round 662: I have 542 and need 508 to win
+663 0
+Round 663: I have 540 and need 510 to win
+664 1
+Round 664: I have 539 and need 505 to win
+665 0
+Round 665: I have 537 and need 507 to win
+666 1
+Round 666: I have 536 and need 502 to win
+667 0
+Round 667: I have 534 and need 504 to win
+668 1
+Round 668: I have 533 and need 499 to win
+669 0
+Round 669: I have 531 and need 501 to win
+670 1
+Round 670: I have 530 and need 496 to win
+671 0
+Round 671: I have 528 and need 498 to win
+672 1
+Round 672: I have 527 and need 493 to win
+673 0
+Round 673: I have 525 and need 495 to win
+674 1
+Round 674: I have 524 and need 490 to win
+675 0
+Round 675: I have 522 and need 492 to win
+676 1
+Round 676: I have 521 and need 487 to win
+677 0
+Round 677: I have 519 and need 489 to win
+678 1
+Round 678: I have 518 and need 484 to win
+679 0
+Round 679: I have 516 and need 486 to win
+680 1
+Round 680: I have 515 and need 481 to win
+681 0
+Round 681: I have 513 and need 483 to win
+682 1
+Round 682: I have 512 and need 478 to win
+683 0
+Round 683: I have 510 and need 480 to win
+684 1
+Round 684: I have 509 and need 475 to win
+685 0
+Round 685: I have 507 and need 477 to win
+686 1
+Round 686: I have 506 and need 472 to win
+687 0
+Round 687: I have 504 and need 474 to win
+688 1
+Round 688: I have 503 and need 469 to win
+689 0
+Round 689: I have 501 and need 471 to win
+690 1
+Round 690: I have 500 and need 466 to win
+691 0
+Round 691: I have 498 and need 468 to win
+692 1
+Round 692: I have 497 and need 463 to win
+693 0
+Round 693: I have 495 and need 465 to win
+694 1
+Round 694: I have 494 and need 460 to win
+695 0
+Round 695: I have 492 and need 462 to win
+696 1
+Round 696: I have 491 and need 457 to win
+697 0
+Round 697: I have 489 and need 459 to win
+698 1
+Round 698: I have 488 and need 454 to win
+699 0
+Round 699: I have 486 and need 456 to win
+700 1
+Round 700: I have 485 and need 451 to win
+701 0
+Round 701: I have 483 and need 453 to win
+702 1
+Round 702: I have 482 and need 448 to win
+703 0
+Round 703: I have 480 and need 450 to win
+704 1
+Round 704: I have 479 and need 445 to win
+705 0
+Round 705: I have 477 and need 447 to win
+706 1
+Round 706: I have 476 and need 442 to win
+707 0
+Round 707: I have 474 and need 444 to win
+708 1
+Round 708: I have 473 and need 439 to win
+709 0
+Round 709: I have 471 and need 441 to win
+710 1
+Round 710: I have 470 and need 436 to win
+711 0
+Round 711: I have 468 and need 438 to win
+712 1
+Round 712: I have 467 and need 433 to win
+713 0
+Round 713: I have 465 and need 435 to win
+714 1
+Round 714: I have 464 and need 430 to win
+715 0
+Round 715: I have 462 and need 432 to win
+716 1
+Round 716: I have 461 and need 427 to win
+717 0
+Round 717: I have 459 and need 429 to win
+718 1
+Round 718: I have 458 and need 424 to win
+719 0
+Round 719: I have 456 and need 426 to win
+720 1
+Round 720: I have 455 and need 421 to win
+721 0
+Round 721: I have 453 and need 423 to win
+722 1
+Round 722: I have 452 and need 418 to win
+723 0
+Round 723: I have 450 and need 420 to win
+724 1
+Round 724: I have 449 and need 415 to win
+725 0
+Round 725: I have 447 and need 417 to win
+726 1
+Round 726: I have 446 and need 412 to win
+727 0
+Round 727: I have 444 and need 414 to win
+728 1
+Round 728: I have 443 and need 409 to win
+729 0
+Round 729: I have 441 and need 411 to win
+730 1
+Round 730: I have 440 and need 406 to win
+731 0
+Round 731: I have 438 and need 408 to win
+732 1
+Round 732: I have 437 and need 403 to win
+733 0
+Round 733: I have 435 and need 405 to win
+734 1
+Round 734: I have 434 and need 400 to win
+735 0
+Round 735: I have 432 and need 402 to win
+736 1
+Round 736: I have 431 and need 397 to win
+737 0
+Round 737: I have 429 and need 399 to win
+738 1
+Round 738: I have 428 and need 394 to win
+739 0
+Round 739: I have 426 and need 396 to win
+740 1
+Round 740: I have 425 and need 391 to win
+741 0
+Round 741: I have 423 and need 393 to win
+742 1
+Round 742: I have 422 and need 388 to win
+743 0
+Round 743: I have 420 and need 390 to win
+744 1
+Round 744: I have 419 and need 385 to win
+745 0
+Round 745: I have 417 and need 387 to win
+746 1
+Round 746: I have 416 and need 382 to win
+747 0
+Round 747: I have 414 and need 384 to win
+748 1
+Round 748: I have 413 and need 379 to win
+749 0
+Round 749: I have 411 and need 381 to win
+750 1
+Round 750: I have 410 and need 376 to win
+751 0
+Round 751: I have 408 and need 378 to win
+752 1
+Round 752: I have 407 and need 373 to win
+753 0
+Round 753: I have 405 and need 375 to win
+754 1
+Round 754: I have 404 and need 370 to win
+755 0
+Round 755: I have 402 and need 372 to win
+756 1
+Round 756: I have 401 and need 367 to win
+757 0
+Round 757: I have 399 and need 369 to win
+758 1
+Round 758: I have 398 and need 364 to win
+759 0
+Round 759: I have 396 and need 366 to win
+760 1
+Round 760: I have 395 and need 361 to win
+761 0
+Round 761: I have 393 and need 363 to win
+762 1
+Round 762: I have 392 and need 358 to win
+763 0
+Round 763: I have 390 and need 360 to win
+764 1
+Round 764: I have 389 and need 355 to win
+765 0
+Round 765: I have 387 and need 357 to win
+766 1
+Round 766: I have 386 and need 352 to win
+767 0
+Round 767: I have 384 and need 354 to win
+768 1
+Round 768: I have 383 and need 349 to win
+769 0
+Round 769: I have 381 and need 351 to win
+770 1
+Round 770: I have 380 and need 346 to win
+771 0
+Round 771: I have 378 and need 348 to win
+772 1
+Round 772: I have 377 and need 343 to win
+773 0
+Round 773: I have 375 and need 345 to win
+774 1
+Round 774: I have 374 and need 340 to win
+775 0
+Round 775: I have 372 and need 342 to win
+776 1
+Round 776: I have 371 and need 337 to win
+777 0
+Round 777: I have 369 and need 339 to win
+778 1
+Round 778: I have 368 and need 334 to win
+779 0
+Round 779: I have 366 and need 336 to win
+780 1
+Round 780: I have 365 and need 331 to win
+781 0
+Round 781: I have 363 and need 333 to win
+782 1
+Round 782: I have 362 and need 328 to win
+783 0
+Round 783: I have 360 and need 330 to win
+784 1
+Round 784: I have 359 and need 325 to win
+785 0
+Round 785: I have 357 and need 327 to win
+786 1
+Round 786: I have 356 and need 322 to win
+787 0
+Round 787: I have 354 and need 324 to win
+788 1
+Round 788: I have 353 and need 319 to win
+789 0
+Round 789: I have 351 and need 321 to win
+790 1
+Round 790: I have 350 and need 316 to win
+791 0
+Round 791: I have 348 and need 318 to win
+792 1
+Round 792: I have 347 and need 313 to win
+793 0
+Round 793: I have 345 and need 315 to win
+794 1
+Round 794: I have 344 and need 310 to win
+795 0
+Round 795: I have 342 and need 312 to win
+796 1
+Round 796: I have 341 and need 307 to win
+797 0
+Round 797: I have 339 and need 309 to win
+798 1
+Round 798: I have 338 and need 304 to win
+799 0
+Round 799: I have 336 and need 306 to win
+800 1
+Round 800: I have 335 and need 301 to win
+801 0
+Round 801: I have 333 and need 303 to win
+802 1
+Round 802: I have 332 and need 298 to win
+803 0
+Round 803: I have 330 and need 300 to win
+804 1
+Round 804: I have 329 and need 295 to win
+805 0
+Round 805: I have 327 and need 297 to win
+806 1
+Round 806: I have 326 and need 292 to win
+807 0
+Round 807: I have 324 and need 294 to win
+808 1
+Round 808: I have 323 and need 289 to win
+809 0
+Round 809: I have 321 and need 291 to win
+810 1
+Round 810: I have 320 and need 286 to win
+811 0
+Round 811: I have 318 and need 288 to win
+812 1
+Round 812: I have 317 and need 283 to win
+813 0
+Round 813: I have 315 and need 285 to win
+814 1
+Round 814: I have 314 and need 280 to win
+815 0
+Round 815: I have 312 and need 282 to win
+816 1
+Round 816: I have 311 and need 277 to win
+817 0
+Round 817: I have 309 and need 279 to win
+818 1
+Round 818: I have 308 and need 274 to win
+819 0
+Round 819: I have 306 and need 276 to win
+820 1
+Round 820: I have 305 and need 271 to win
+821 0
+Round 821: I have 303 and need 273 to win
+822 1
+Round 822: I have 302 and need 268 to win
+823 0
+Round 823: I have 300 and need 270 to win
+824 1
+Round 824: I have 299 and need 265 to win
+825 0
+Round 825: I have 297 and need 267 to win
+826 1
+Round 826: I have 296 and need 262 to win
+827 0
+Round 827: I have 294 and need 264 to win
+828 1
+Round 828: I have 293 and need 259 to win
+829 0
+Round 829: I have 291 and need 261 to win
+830 1
+Round 830: I have 290 and need 256 to win
+831 0
+Round 831: I have 288 and need 258 to win
+832 1
+Round 832: I have 287 and need 253 to win
+833 0
+Round 833: I have 285 and need 255 to win
+834 1
+Round 834: I have 284 and need 250 to win
+835 0
+Round 835: I have 282 and need 252 to win
+836 1
+Round 836: I have 281 and need 247 to win
+837 0
+Round 837: I have 279 and need 249 to win
+838 1
+Round 838: I have 278 and need 244 to win
+839 0
+Round 839: I have 276 and need 246 to win
+840 1
+Round 840: I have 275 and need 241 to win
+841 0
+Round 841: I have 273 and need 243 to win
+842 1
+Round 842: I have 272 and need 238 to win
+843 0
+Round 843: I have 270 and need 240 to win
+844 1
+Round 844: I have 269 and need 235 to win
+845 0
+Round 845: I have 267 and need 237 to win
+846 1
+Round 846: I have 266 and need 232 to win
+847 0
+Round 847: I have 264 and need 234 to win
+848 1
+Round 848: I have 263 and need 229 to win
+849 0
+Round 849: I have 261 and need 231 to win
+850 1
+Round 850: I have 260 and need 226 to win
+851 0
+Round 851: I have 258 and need 228 to win
+852 1
+Round 852: I have 257 and need 223 to win
+853 0
+Round 853: I have 255 and need 225 to win
+854 1
+Round 854: I have 254 and need 220 to win
+855 0
+Round 855: I have 252 and need 222 to win
+856 1
+Round 856: I have 251 and need 217 to win
+857 0
+Round 857: I have 249 and need 219 to win
+858 1
+Round 858: I have 248 and need 214 to win
+859 0
+Round 859: I have 246 and need 216 to win
+860 1
+Round 860: I have 245 and need 211 to win
+861 0
+Round 861: I have 243 and need 213 to win
+862 1
+Round 862: I have 242 and need 208 to win
+863 0
+Round 863: I have 240 and need 210 to win
+864 1
+Round 864: I have 239 and need 205 to win
+865 0
+Round 865: I have 237 and need 207 to win
+866 1
+Round 866: I have 236 and need 202 to win
+867 0
+Round 867: I have 234 and need 204 to win
+868 1
+Round 868: I have 233 and need 199 to win
+869 0
+Round 869: I have 231 and need 201 to win
+870 1
+Round 870: I have 230 and need 196 to win
+871 0
+Round 871: I have 228 and need 198 to win
+872 1
+Round 872: I have 227 and need 193 to win
+873 0
+Round 873: I have 225 and need 195 to win
+874 1
+Round 874: I have 224 and need 190 to win
+875 0
+Round 875: I have 222 and need 192 to win
+876 1
+Round 876: I have 221 and need 187 to win
+877 0
+Round 877: I have 219 and need 189 to win
+878 1
+Round 878: I have 218 and need 184 to win
+879 0
+Round 879: I have 216 and need 186 to win
+880 1
+Round 880: I have 215 and need 181 to win
+881 0
+Round 881: I have 213 and need 183 to win
+882 1
+Round 882: I have 212 and need 178 to win
+883 0
+Round 883: I have 210 and need 180 to win
+884 1
+Round 884: I have 209 and need 175 to win
+885 0
+Round 885: I have 207 and need 177 to win
+886 1
+Round 886: I have 206 and need 172 to win
+887 0
+Round 887: I have 204 and need 174 to win
+888 1
+Round 888: I have 203 and need 169 to win
+889 0
+Round 889: I have 201 and need 171 to win
+890 1
+Round 890: I have 200 and need 166 to win
+891 0
+Round 891: I have 198 and need 168 to win
+892 1
+Round 892: I have 197 and need 163 to win
+893 0
+Round 893: I have 195 and need 165 to win
+894 1
+Round 894: I have 194 and need 160 to win
+895 0
+Round 895: I have 192 and need 162 to win
+896 1
+Round 896: I have 191 and need 157 to win
+897 0
+Round 897: I have 189 and need 159 to win
+898 1
+Round 898: I have 188 and need 154 to win
+899 0
+Round 899: I have 186 and need 156 to win
+900 1
+Round 900: I have 185 and need 151 to win
+901 0
+Round 901: I have 183 and need 153 to win
+902 1
+Round 902: I have 182 and need 148 to win
+903 0
+Round 903: I have 180 and need 150 to win
+904 1
+Round 904: I have 179 and need 145 to win
+905 0
+Round 905: I have 177 and need 147 to win
+906 1
+Round 906: I have 176 and need 142 to win
+907 0
+Round 907: I have 174 and need 144 to win
+908 1
+Round 908: I have 173 and need 139 to win
+909 0
+Round 909: I have 171 and need 141 to win
+910 1
+Round 910: I have 170 and need 136 to win
+911 0
+Round 911: I have 168 and need 138 to win
+912 1
+Round 912: I have 167 and need 133 to win
+913 0
+Round 913: I have 165 and need 135 to win
+914 1
+Round 914: I have 164 and need 130 to win
+915 0
+Round 915: I have 162 and need 132 to win
+916 1
+Round 916: I have 161 and need 127 to win
+917 0
+Round 917: I have 159 and need 129 to win
+918 1
+Round 918: I have 158 and need 124 to win
+919 0
+Round 919: I have 156 and need 126 to win
+920 1
+Round 920: I have 155 and need 121 to win
+921 0
+Round 921: I have 153 and need 123 to win
+922 1
+Round 922: I have 152 and need 118 to win
+923 0
+Round 923: I have 150 and need 120 to win
+924 1
+Round 924: I have 149 and need 115 to win
+925 0
+Round 925: I have 147 and need 117 to win
+926 1
+Round 926: I have 146 and need 112 to win
+927 0
+Round 927: I have 144 and need 114 to win
+928 1
+Round 928: I have 143 and need 109 to win
+929 0
+Round 929: I have 141 and need 111 to win
+930 1
+Round 930: I have 140 and need 106 to win
+931 0
+Round 931: I have 138 and need 108 to win
+932 1
+Round 932: I have 137 and need 103 to win
+933 0
+Round 933: I have 135 and need 105 to win
+934 1
+Round 934: I have 134 and need 100 to win
+935 0
+Round 935: I have 132 and need 102 to win
+936 1
+Round 936: I have 131 and need 97 to win
+937 0
+Round 937: I have 129 and need 99 to win
+938 1
+Round 938: I have 128 and need 94 to win
+939 0
+Round 939: I have 126 and need 96 to win
+940 1
+Round 940: I have 125 and need 91 to win
+941 0
+Round 941: I have 123 and need 93 to win
+942 1
+Round 942: I have 122 and need 88 to win
+943 0
+Round 943: I have 120 and need 90 to win
+944 1
+Round 944: I have 119 and need 85 to win
+945 0
+Round 945: I have 117 and need 87 to win
+946 1
+Round 946: I have 116 and need 82 to win
+947 0
+Round 947: I have 114 and need 84 to win
+948 1
+Round 948: I have 113 and need 79 to win
+949 0
+Round 949: I have 111 and need 81 to win
+950 1
+Round 950: I have 110 and need 76 to win
+951 0
+Round 951: I have 108 and need 78 to win
+952 1
+Round 952: I have 107 and need 73 to win
+953 0
+Round 953: I have 105 and need 75 to win
+954 1
+Round 954: I have 104 and need 70 to win
+955 0
+Round 955: I have 102 and need 72 to win
+956 1
+Round 956: I have 101 and need 67 to win
+957 0
+Round 957: I have 99 and need 69 to win
+958 1
+Round 958: I have 98 and need 64 to win
+959 0
+Round 959: I have 96 and need 66 to win
+960 1
+Round 960: I have 95 and need 61 to win
+961 0
+Round 961: I have 93 and need 63 to win
+962 1
+Round 962: I have 92 and need 58 to win
+963 0
+Round 963: I have 90 and need 60 to win
+964 1
+Round 964: I have 89 and need 55 to win
+965 0
+Round 965: I have 87 and need 57 to win
+966 1
+Round 966: I have 86 and need 52 to win
+967 0
+Round 967: I have 84 and need 54 to win
+968 1
+Round 968: I have 83 and need 49 to win
+969 0
+Round 969: I have 81 and need 51 to win
+970 1
+Round 970: I have 80 and need 46 to win
+971 0
+Round 971: I have 78 and need 48 to win
+972 1
+Round 972: I have 77 and need 43 to win
+973 0
+Round 973: I have 75 and need 45 to win
+974 1
+Round 974: I have 74 and need 40 to win
+975 0
+Round 975: I have 72 and need 42 to win
+976 1
+Round 976: I have 71 and need 37 to win
+977 0
+Round 977: I have 69 and need 39 to win
+978 1
+Round 978: I have 68 and need 34 to win
+979 0
+Round 979: I have 66 and need 36 to win
+980 1
+Round 980: I have 65 and need 31 to win
+981 0
+Round 981: I have 63 and need 33 to win
+982 1
+Round 982: I have 62 and need 28 to win
+983 0
+Round 983: I have 60 and need 30 to win
+984 1
+Round 984: I have 59 and need 25 to win
+985 0
+Round 985: I have 57 and need 27 to win
+986 1
+Round 986: I have 56 and need 22 to win
+987 0
+Round 987: I have 54 and need 24 to win
+988 1
+Round 988: I have 53 and need 19 to win
+989 0
+Round 989: I have 51 and need 21 to win
+990 1
+Round 990: I have 50 and need 16 to win
+991 0
+Round 991: I have 48 and need 18 to win
+992 1
+Round 992: I have 47 and need 13 to win
+993 0
+Round 993: I have 45 and need 15 to win
+994 1
+Round 994: I have 44 and need 10 to win
+995 0
+Round 995: I have 42 and need 12 to win
+996 1
+Round 996: I have 41 and need 7 to win
+997 0
+Round 997: I have 39 and need 9 to win
+998 1
+Round 998: I have 38 and need 4 to win
+999 0
+Round 999: I have 36 and need 6 to win
+1000 1
+Round 1000: I have 35 and need 1 to win
