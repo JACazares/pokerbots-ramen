@@ -16,13 +16,20 @@ def read_gamelog(filename):
         elif lineBA:
             scoresA.append(int(lineBA.group(2)))
             scoresB.append(int(lineBA.group(1)))
+        else:
+            finalLine = re.match("Final, A \((-?[0-9]*)\), B \((-?[0-9]*)\)", line)
+            if finalLine:
+                scoresA.append(int(finalLine.group(1)))
+                scoresB.append(int(finalLine.group(2)))
     
     return (scoresA, scoresB)
 
 if __name__ == "__main__":
     scoreA, scoreB = read_gamelog("gamelog.txt")
+    print(f"Final, A ({scoreA[-1]}), B ({scoreB[-1]})")
+
     plt.plot(list(range(1, len(scoreA)+1)), scoreA, marker='o', linestyle='-', markersize=2, color="red")
     plt.title("Player A")
-    #plt.plot(list(range(1, len(scoreB)+1)), scoreB, marker='o', linestyle='-', markersize=2, color="blue")
-    plt.show()
+    # plt.plot(list(range(1, len(scoreB)+1)), scoreB, marker='o', linestyle='-', markersize=2, color="blue")
+    # plt.show()
     pass
