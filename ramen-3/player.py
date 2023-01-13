@@ -63,12 +63,23 @@ class Player(Bot):
         (self.iwon, self.winning_bankroll) =\
             verify_win(big_blind, round_num, NUM_ROUNDS - round_num + 1, my_bankroll)
 
-        if self.winning_bankroll > 0:
-            self.PLAYABLE_THRESHOLD = max([0.4 + 0.3*my_bankroll/self.winning_bankroll, 0.35])
-            self.RAISEABLE_THRESHOLD = max([0.55 + 0.3*my_bankroll/self.winning_bankroll, 0.5])
+        # Adjust betting bounds to be more conservative when you're winning
+        if big_blind:
+            if self.winning_bankroll > 0:
+                self.PLAYABLE_THRESHOLD = max([0.4 + 0.3*my_bankroll/self.winning_bankroll, 0.35])
+                self.RAISEABLE_THRESHOLD = max([0.55 + 0.3*my_bankroll/self.winning_bankroll, 0.5])
+            else:
+                self.PLAYABLE_THRESHOLD = 0.4
+                self.RAISEABLE_THRESHOLD = 0.55
         else:
-            self.PLAYABLE_THRESHOLD = 0.4
-            self.RAISEABLE_THRESHOLD = 0.55
+            if self.winning_bankroll > 0:
+                self.PLAYABLE_THRESHOLD = max([0.45+0.3*my_bankroll/self.winning_bankroll, 0.4])
+                self.RAISEABLE_THRESHOLD = max([0.5+0.3*my_bankroll/self.winning_bankroll, 0.45])
+            else:
+                self.PLAYABLE_THRESHOLD = 0.45
+                self.RAISEABLE_THRESHOLD = 0.5
+
+        print(f"Round {round_num}: I have {my_bankroll} and need {self.winning_bankroll} to win")
 
     def handle_round_over(self, game_state, terminal_state, active):
         '''
@@ -91,7 +102,7 @@ class Player(Bot):
 
     def preflop_strategy(self, legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
                         opp_stack, continue_cost, my_contribution, opp_contribution, min_raise,\
-                        max_raise, min_cost, max_cost):
+                        max_raise, min_cost, max_cost, big_blind, my_bankroll):
         '''
         Returns an action for the pre-flop phase
         
@@ -102,11 +113,91 @@ class Player(Bot):
         One of FoldAction(), CheckAction(), CallAction() or RaiseAction(amount)
         '''
 
+        # WARNING: MOST NUMBERS ARE ARBITRARY
+        # Note: RandomAction(legal_actions, my_stack, min_raise, max_raise,\
+        #                    call_threshold, raise_threshold, raise_amount)
+
         BAD_PREFLOP_CALL_THRESHOLD = 0.95 
         BAD_PREFLOP_RAISE_THRESHOLD = 0.995
-        MED_PREFLOP_RAISE_THRESHOLD = 0.8
-        GOOD_PREFLOP_RAISE_THRESHOLD = 0.2
 
+        MID_PREFLOP_CALL_THRESHOLD = 0
+        MID_PREFLOP_RAISE_THRESHOLD = 0.7
+
+        GOOD_PREFLOP_CALL_THRESHOLD = 0
+        GOOD_PREFLOP_RAISE_THRESHOLD = 0.1
+
+        pot_total = my_contribution + opp_contribution
+        pot_odds = continue_cost/(pot_total + continue_cost)
+        strength = get_strength(self.prob_table, my_cards)
+
+        # You play first
+        if not big_blind:
+            if opp_contribution == 2:
+                # Fold bad hands most of the time
+                if strength < self.PLAYABLE_THRESHOLD:
+                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
+                                        BAD_PREFLOP_CALL_THRESHOLD,
+                                        BAD_PREFLOP_RAISE_THRESHOLD,
+                                        min(2*min_raise, max_raise))
+
+                # Call (most of the time) or raise medium hands
+                elif strength < self.RAISEABLE_THRESHOLD:
+                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
+                                        MID_PREFLOP_CALL_THRESHOLD,
+                                        MID_PREFLOP_RAISE_THRESHOLD,
+                                        min(2*min_raise, max_raise))
+
+                # Raise (most of the time) or call good hands
+                else:
+                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
+                                        GOOD_PREFLOP_CALL_THRESHOLD,
+                                        GOOD_PREFLOP_RAISE_THRESHOLD,
+                                        min(2*min_raise, max_raise))
+            else:
+                # Opponent raised!!
+                # TODO: update opponent's range
+
+                if strength < (pot_odds + 0.1*my_bankroll/self.winning_bankroll): 
+                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
+                                        0.8, 1, 0)
+                elif(strength<0.75): 
+                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
+                                        0.05, 0.9, min(5*min_raise, max_raise))
+                # Strength high enough to raise after a raise
+                elif(my_contribution<STARTING_STACK/4):
+                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
+                                        0, 0.5, min(2*min_raise, max_raise))
+                else: 
+                    return CheckCall(legal_actions)
+
+        # You play second
+        else:
+            if opp_contribution == 2:
+                if(strength<self.PLAYABLE_THRESHOLD):
+                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
+                                        0, 0.7, min(5*min_raise, max_raise))
+                elif(strength<self.RAISEABLE_THRESHOLD):
+                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
+                                        0, 0.4, min(2*min_raise, max_raise))
+                else: 
+                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
+                                        0, 0.6, min(2*min_raise, max_raise))
+            else:
+                if(strength<pot_odds+0.1*my_bankroll/self.winning_bankroll):
+                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
+                                        0.9, 1, 0)
+                elif(strength<0.8):  
+                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
+                                        0.05, 0.95, min(2*min_raise, max_raise))
+                # Strength high enough to raise after a raise
+                elif(my_contribution<STARTING_STACK/4):
+                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
+                                        0, 0.5, min(2*min_raise, max_raise))
+                else: 
+                    return CheckCall(legal_actions)
+        
+        return CheckFold(legal_actions)
+        '''
         pot_total = my_contribution+opp_contribution
         p = get_strength(self.prob_table, my_cards)
         if pot_total == 0:
@@ -151,10 +242,11 @@ class Player(Bot):
                     return RaiseAction(raise_amount)
                 else: 
                     return Check_Call(legal_actions)
+        '''
 
     def flop_strategy(self, legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
                         opp_stack, continue_cost, my_contribution, opp_contribution, min_raise,\
-                        max_raise, min_cost, max_cost):
+                        max_raise, min_cost, max_cost, big_blind, my_bankroll):
         '''
         Returns an action for the flop phase
         
@@ -170,21 +262,21 @@ class Player(Bot):
         pot_odds = continue_cost/(pot_total + continue_cost)
 
         if p < pot_odds:
-            return Check_Fold(legal_actions)
+            return CheckFold(legal_actions)
         else:
             if RaiseAction in legal_actions and (continue_cost == 0 or self.diff_phase):
                 raise_amount = int(((p - pot_odds)**3)*(max_raise - min_raise) + min_raise)
                 raise_amount = min(max_raise, raise_amount)
                 raise_amount =  min(my_stack, raise_amount)
                 if raise_amount < min_raise:
-                    return Check_Call(legal_actions)
+                    return CheckCall(legal_actions)
                 return RaiseAction(raise_amount)
             else: 
-                return Check_Call(legal_actions)
+                return CheckCall(legal_actions)
 
     def turn_strategy(self, legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
                         opp_stack, continue_cost, my_contribution, opp_contribution, min_raise,\
-                        max_raise, min_cost, max_cost):
+                        max_raise, min_cost, max_cost, big_blind, my_bankroll):
         '''
         Returns an action for the turn phase
         
@@ -197,11 +289,11 @@ class Player(Bot):
 
         return self.flop_strategy(legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
                         opp_stack, continue_cost, my_contribution, opp_contribution, min_raise,\
-                        max_raise, min_cost, max_cost)
+                        max_raise, min_cost, max_cost, big_blind, my_bankroll)
 
     def river_strategy(self, legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
                         opp_stack, continue_cost, my_contribution, opp_contribution, min_raise,\
-                        max_raise, min_cost, max_cost):
+                        max_raise, min_cost, max_cost, big_blind, my_bankroll):
         '''
         Returns an action for the river phase
         
@@ -214,11 +306,11 @@ class Player(Bot):
 
         return self.flop_strategy(legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
                         opp_stack, continue_cost, my_contribution, opp_contribution, min_raise,\
-                        max_raise, min_cost, max_cost)
+                        max_raise, min_cost, max_cost, big_blind, my_bankroll)
 
     def run_strategy(self, legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
                         opp_stack, continue_cost, my_contribution, opp_contribution, min_raise,\
-                        max_raise, min_cost, max_cost):
+                        max_raise, min_cost, max_cost, big_blind, my_bankroll):
         '''
         Returns an action for the run phase
         
@@ -231,7 +323,7 @@ class Player(Bot):
 
         return self.flop_strategy(legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
                         opp_stack, continue_cost, my_contribution, opp_contribution, min_raise,\
-                        max_raise, min_cost, max_cost)
+                        max_raise, min_cost, max_cost, big_blind, my_bankroll)
 
     def get_action(self, game_state, round_state, active):
         '''
@@ -250,7 +342,7 @@ class Player(Bot):
         legal_actions = round_state.legal_actions()  # the actions you are allowed to take
         # Check if theoretical win
         if self.iwon:
-            return Check_Fold(legal_actions)
+            return CheckFold(legal_actions)
 
         street = round_state.street  # int representing pre-flop, flop, turn, or river respectively
         my_cards = round_state.hands[active]  # your cards
@@ -266,6 +358,8 @@ class Player(Bot):
         max_raise = 0
         min_cost = 0
         max_cost = 0
+        big_blind = bool(active)
+        my_bankroll = game_state.bankroll
         if RaiseAction in legal_actions:
             min_raise, max_raise = round_state.raise_bounds()  # the smallest and largest numbers of chips for a legal bet/raise
             min_cost = min_raise - my_pip  # the cost of a minimum bet/raise
@@ -281,27 +375,27 @@ class Player(Bot):
         if street == 0:
             action = self.preflop_strategy(legal_actions, my_cards, board_cards, my_pip ,opp_pip, my_stack,
                 opp_stack, continue_cost, my_contribution, opp_contribution, min_raise, max_raise, min_cost,
-                max_cost)
+                max_cost, big_blind, my_bankroll)
         # Flop strategy
         elif street == 3:
             action = self.flop_strategy(legal_actions, my_cards, board_cards, my_pip ,opp_pip, my_stack,
                 opp_stack, continue_cost, my_contribution, opp_contribution, min_raise, max_raise, min_cost,
-                max_cost)
+                max_cost, big_blind, my_bankroll)
         # Turn strategy
         elif street == 4:
             action = self.turn_strategy(legal_actions, my_cards, board_cards, my_pip ,opp_pip, my_stack,
                 opp_stack, continue_cost, my_contribution, opp_contribution, min_raise, max_raise, min_cost,
-                max_cost)
+                max_cost, big_blind, my_bankroll)
         # River strategy
         elif street == 5:
             action = self.river_strategy(legal_actions, my_cards, board_cards, my_pip ,opp_pip, my_stack,
                 opp_stack, continue_cost, my_contribution, opp_contribution, min_raise, max_raise, min_cost,
-                max_cost)
+                max_cost, big_blind, my_bankroll)
         # Run strategy
         else:
             action = self.run_strategy(legal_actions, my_cards, board_cards, my_pip ,opp_pip, my_stack,
                 opp_stack, continue_cost, my_contribution, opp_contribution, min_raise, max_raise, min_cost,
-                max_cost)
+                max_cost, big_blind, my_bankroll)
 
         self.prev_street = street
 
