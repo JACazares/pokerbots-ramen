@@ -178,8 +178,8 @@ B posts the blind of 2
 A dealt [4d 7c]
 B dealt [2d Jh]
 A folds
-A awarded -1
-B awarded 1
+A awarded -2
+B awarded 2
 
 Round #16, B (77), A (-77)
 B posts the blind of 1
@@ -356,8 +356,8 @@ B dealt [Qh 6s]
 A calls
 B raises to 54
 A folds
-A awarded -2
-B awarded 2
+A awarded -30
+B awarded 30
 
 Round #30, B (324), A (-324)
 B posts the blind of 1
@@ -1821,8 +1821,8 @@ B posts the blind of 2
 A dealt [3c Qc]
 B dealt [6s Ks]
 A folds
-A awarded -1
-B awarded 1
+A awarded -2
+B awarded 2
 
 Round #140, B (-1325), A (1325)
 B posts the blind of 1
@@ -1992,8 +1992,8 @@ B posts the blind of 2
 A dealt [Qs 8c]
 B dealt [Js 4s]
 A folds
-A awarded -1
-B awarded 1
+A awarded -5
+B awarded 5
 
 Round #158, B (-1298), A (1298)
 B posts the blind of 1
@@ -2277,8 +2277,8 @@ B posts the blind of 2
 A dealt [2d 6d]
 B dealt [6c 3h]
 A folds
-A awarded -1
-B awarded 1
+A awarded -5
+B awarded 5
 
 Round #188, B (-1253), A (1253)
 B posts the blind of 1
@@ -3246,8 +3246,8 @@ B posts the blind of 2
 A dealt [Qc 7d]
 B dealt [Jd Kc]
 A folds
-A awarded -1
-B awarded 1
+A awarded -48
+B awarded 48
 
 Round #290, B (-1100), A (1100)
 B posts the blind of 1
@@ -3531,8 +3531,8 @@ B posts the blind of 2
 A dealt [7h 9s]
 B dealt [8d 8c]
 A folds
-A awarded -1
-B awarded 1
+A awarded -5
+B awarded 5
 
 Round #320, B (-1055), A (1055)
 B posts the blind of 1
@@ -3778,8 +3778,8 @@ B posts the blind of 2
 A dealt [3h 7c]
 B dealt [2s 4s]
 A folds
-A awarded -1
-B awarded 1
+A awarded -80
+B awarded 80
 
 Round #346, B (-1016), A (1016)
 B posts the blind of 1
@@ -3987,8 +3987,8 @@ B posts the blind of 2
 A dealt [6s 8h]
 B dealt [5s 7c]
 A folds
-A awarded -1
-B awarded 1
+A awarded -12
+B awarded 12
 
 Round #368, B (-983), A (983)
 B posts the blind of 1
