@@ -98,6 +98,7 @@ class Player(Bot):
         street = previous_state.street  # int of street representing when this round ended
         my_cards = previous_state.hands[active]  # your cards
         opp_cards = previous_state.hands[1-active]  # opponent's cards or [] if not revealed
+        # hola como estas
         pass
 
     def preflop_strategy(self, legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
