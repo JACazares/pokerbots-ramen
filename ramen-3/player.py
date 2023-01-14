@@ -111,12 +111,14 @@ class Player(Bot):
         my_contribution = STARTING_STACK - my_stack
         opp_contribution = STARTING_STACK - opp_stack
         
+        '''
         self.opponent_contribution_total = np.append(self.opponent_contribution_total, [opp_contribution])
 
         if my_delta > 0:
             self.opponent_contribution_we_won = np.append(self.opponent_contribution_total, [opp_contribution])
         elif my_delta < 0:
             self.opponent_contribution_they_won = np.append(self.opponent_contribution_total, [opp_contribution])
+        '''
         #test
 
         # Someone folded
@@ -164,7 +166,7 @@ class Player(Bot):
         print(f"     normalized_pot_odds= {pot_odds+0.1*my_bankroll/self.winning_bankroll}")
 
         if round_num >= 20:
-            std_dev = (opp_contribution - self.opp_mean) / self.opp_std
+            std_dev = (continue_cost - self.opp_mean) / self.opp_std
             print(f"std dev is {std_dev}")
             if std_dev > 2.5 and strength <= 0.9:
                 print("FOLD because standard deviation was too high")
@@ -313,7 +315,7 @@ class Player(Bot):
         print(f"     normalized_pot_odds= {pot_odds+0.1*my_bankroll/self.winning_bankroll}")
         
         if round_num >= 20:
-            std_dev = (opp_contribution - self.opp_mean) / self.opp_std
+            std_dev = (continue_cost - self.opp_mean) / self.opp_std
             print(f"std dev is {std_dev}")
             if std_dev > 2.5 and strength <= 0.9:
                 print("FOLD because standard deviation was too high")
@@ -463,6 +465,9 @@ class Player(Bot):
             min_raise, max_raise = round_state.raise_bounds()  # the smallest and largest numbers of chips for a legal bet/raise
             min_cost = min_raise - my_pip  # the cost of a minimum bet/raise
             max_cost = max_raise - my_pip  # the cost of a maximum bet/raise
+        
+        if continue_cost > 0:
+            self.opponent_contribution_total = np.append(self.opponent_contribution_total, [continue_cost])
         
         if self.prev_street != street:
             self.diff_phase = True
