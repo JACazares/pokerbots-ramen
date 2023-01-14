@@ -162,6 +162,14 @@ class Player(Bot):
         print(f"     pot_total={pot_total}")
         print(f"     pot_odds= {pot_odds}")
         print(f"     normalized_pot_odds= {pot_odds+0.1*my_bankroll/self.winning_bankroll}")
+
+        if round_num >= 20:
+            std_dev = (opp_contribution - self.opp_mean) / self.opp_std
+            print(f"std dev is {std_dev}")
+            if std_dev > 2.5 and strength <= 0.9:
+                print("FOLD because standard deviation was too high")
+                return CheckFold(legal_actions)
+
         # You play first
         if not big_blind:
             if opp_pip == 2:
@@ -306,7 +314,9 @@ class Player(Bot):
         
         if round_num >= 20:
             std_dev = (opp_contribution - self.opp_mean) / self.opp_std
-            if std_dev > 4 and strength <= 0.9:
+            print(f"std dev is {std_dev}")
+            if std_dev > 2.5 and strength <= 0.9:
+                print("FOLD because standard deviation was too high")
                 return CheckFold(legal_actions)
 
         if big_blind:
