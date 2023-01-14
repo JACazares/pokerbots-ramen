@@ -11,7 +11,6 @@ from montecarlo import *
 from helper_functions import *
 import eval7
 import random
-import numpy as np
 
 class Player(Bot):
     '''
@@ -38,7 +37,6 @@ class Player(Bot):
         self.actions = []
         self.prev_street = 0
         self.diff_phase = False
-        self.opponent_contribution_total = np.array([])
                 
     def handle_new_round(self, game_state, round_state, active):
         '''
@@ -100,27 +98,7 @@ class Player(Bot):
         street = previous_state.street  # int of street representing when this round ended
         my_cards = previous_state.hands[active]  # your cards
         opp_cards = previous_state.hands[1-active]  # opponent's cards or [] if not revealed
-
-        my_stack = previous_state.stacks[active]
-        opp_stack = previous_state.stacks[1-active]
-        my_contribution = STARTING_STACK - my_stack
-        opp_contribution = STARTING_STACK - opp_stack
-        
-        self.opponent_contribution_total = np.append(self.opponent_contribution_total, [opp_contribution])
-
-        if my_delta > 0:
-            self.opponent_contribution_we_won = np.append(self.opponent_contribution_total, [opp_contribution])
-        elif my_delta < 0:
-            self.opponent_contribution_they_won = np.append(self.opponent_contribution_total, [opp_contribution])
-
-        # Someone folded
-        if opp_cards == []:
-            
-            pass
-        # Got to showdown
-        else:
-            
-            pass
+        # hola como estas
         pass
 
     def preflop_strategy(self, legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
@@ -301,7 +279,7 @@ class Player(Bot):
             if opp_pip==0:
                 if strength<0.5:
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
-                                        0, 0.995, (1-strength)*pot_total/strength)
+                                        0, 0.995, 2*pot_total)
                 elif strength<0.85:
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
                                         0, 0.8, pot_total)
@@ -327,7 +305,7 @@ class Player(Bot):
             if opp_pip==0:
                 if strength<0.5:
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
-                                        0, 0.9, (1-strength)*pot_total/strength)
+                                        0, 0.9, 2*pot_total)
                 elif strength<0.85:
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
                                         0, 0.5, pot_total)
