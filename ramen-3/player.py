@@ -11,6 +11,7 @@ from montecarlo import *
 from helper_functions import *
 import eval7
 import random
+import numpy as np
 
 class Player(Bot):
     '''
