@@ -27,9 +27,11 @@ def read_gamelog(filename):
 if __name__ == "__main__":
     scoreA, scoreB = read_gamelog("gamelog.txt")
     print(f"Final, A ({scoreA[-1]}), B ({scoreB[-1]})")
+    delta = [scoreA[i] - scoreA[i - 1] for i in range(1, len(scoreA))]
 
-    plt.plot(list(range(1, len(scoreA)+1)), scoreA, marker='o', linestyle='-', markersize=2, color="red")
     plt.title("Player A")
+    plt.plot(list(range(1, len(scoreA)+1)), scoreA, marker='o', linestyle='-', markersize=2, color="red")
+    plt.plot(list(range(1, len(delta)+1)), delta, marker='o', linestyle='-', markersize=2, color="blue")
     #plt.plot(list(range(1, len(scoreB)+1)), scoreB, marker='o', linestyle='-', markersize=2, color="blue")
-    #plt.show()
+    plt.show()
     pass
