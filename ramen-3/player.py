@@ -306,7 +306,7 @@ class Player(Bot):
         
         if round_num >= 20:
             std_dev = (opp_contribution - self.opp_mean) / self.opp_std
-            if std_dev > 4:
+            if std_dev > 4 and strength <= 0.9:
                 return CheckFold(legal_actions)
 
         if big_blind:
