@@ -304,33 +304,33 @@ class Player(Bot):
             if opp_pip==0:
                 if strength<0.5:
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
-                                        0, 0.995, min_raise)
-                elif strength<0.85:
+                                        0, 1-(strength**2)*0.02, min_raise)
+                elif strength<0.9:
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
                                         0, 0.8, pot_total)
                 else: 
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
-                                        0, 0.6, 8*pot_total)
+                                        0, 0.4, 8*pot_total)
             else:
                 if strength<pot_odds+max(0.2*my_bankroll/self.winning_bankroll, 0):
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
-                                        0.9, 0.95, min_raise)
+                                        0.99, 0.995, min_raise)
                 elif strength<0.65:
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
                                         0.7, 1, 0)
-                elif strength<0.85:
+                elif strength<0.9:
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
                                         0.05, 0.9, pot_total)
                 elif my_pip<STARTING_STACK/4:
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
-                                        0, 0.1, 8*pot_total)
+                                        0, 0.4, 8*pot_total)
                 else:
                     return CheckCall(legal_actions)
         else: 
             if opp_pip==0:
                 if strength<0.5:
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
-                                        0, 0.9, min_raise)
+                                        0, 1-(strength**2)*0.2, min_raise)
                 elif strength<0.75:
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
                                         0, 0.5, pot_total)
@@ -340,7 +340,7 @@ class Player(Bot):
             else:
                 if strength<pot_odds+max(0.2*my_bankroll/self.winning_bankroll, 0):
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
-                                        0.98, 1, 2*min_raise)
+                                        1-(strength**2)*0.01, 1, 2*min_raise)
                 elif strength<0.6:
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
                                         0.7, 1, 0)
