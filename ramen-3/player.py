@@ -112,6 +112,7 @@ class Player(Bot):
             self.opponent_contribution_we_won = np.append(self.opponent_contribution_total, [opp_contribution])
         elif my_delta < 0:
             self.opponent_contribution_they_won = np.append(self.opponent_contribution_total, [opp_contribution])
+        #test
 
         # Someone folded
         if opp_cards == []:
