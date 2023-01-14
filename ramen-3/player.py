@@ -82,6 +82,9 @@ class Player(Bot):
             else:
                 self.PLAYABLE_THRESHOLD = 0.45
                 self.RAISEABLE_THRESHOLD = 0.55
+        
+        self.opp_std = np.std(self.opponent_contribution_total)
+        self.opp_mean = np.mean(self.opponent_contribution_total)
 
         print(f"Round {round_num}: I have {my_bankroll} and need {self.winning_bankroll} to win")
 
@@ -128,7 +131,7 @@ class Player(Bot):
 
     def preflop_strategy(self, legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
                         opp_stack, continue_cost, my_contribution, opp_contribution, min_raise,\
-                        max_raise, min_cost, max_cost, big_blind, my_bankroll):
+                        max_raise, min_cost, max_cost, big_blind, my_bankroll, round_num):
         '''
         Returns an action for the pre-flop phase
         
@@ -283,7 +286,7 @@ class Player(Bot):
 
     def flop_strategy(self, legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
                         opp_stack, continue_cost, my_contribution, opp_contribution, min_raise,\
-                        max_raise, min_cost, max_cost, big_blind, my_bankroll):
+                        max_raise, min_cost, max_cost, big_blind, my_bankroll, round_num):
         '''
         Returns an action for the flop phase
         
@@ -300,6 +303,12 @@ class Player(Bot):
         print(f"     pot_total={pot_total}")
         print(f"     pot_odds= {pot_odds}")
         print(f"     normalized_pot_odds= {pot_odds+0.1*my_bankroll/self.winning_bankroll}")
+        
+        if round_num >= 20:
+            std_dev = (opp_contribution - self.opp_mean) / self.opp_std
+            if std_dev > 4:
+                return CheckFold(legal_actions)
+
         if big_blind:
             if opp_pip==0:
                 if strength<0.5:
@@ -355,7 +364,7 @@ class Player(Bot):
 
     def turn_strategy(self, legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
                         opp_stack, continue_cost, my_contribution, opp_contribution, min_raise,\
-                        max_raise, min_cost, max_cost, big_blind, my_bankroll):
+                        max_raise, min_cost, max_cost, big_blind, my_bankroll, round_num):
         '''
         Returns an action for the turn phase
         
@@ -368,11 +377,11 @@ class Player(Bot):
 
         return self.flop_strategy(legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
                         opp_stack, continue_cost, my_contribution, opp_contribution, min_raise,\
-                        max_raise, min_cost, max_cost, big_blind, my_bankroll)
+                        max_raise, min_cost, max_cost, big_blind, my_bankroll, round_num)
 
     def river_strategy(self, legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
                         opp_stack, continue_cost, my_contribution, opp_contribution, min_raise,\
-                        max_raise, min_cost, max_cost, big_blind, my_bankroll):
+                        max_raise, min_cost, max_cost, big_blind, my_bankroll, round_num):
         '''
         Returns an action for the river phase
         
@@ -385,11 +394,11 @@ class Player(Bot):
 
         return self.flop_strategy(legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
                         opp_stack, continue_cost, my_contribution, opp_contribution, min_raise,\
-                        max_raise, min_cost, max_cost, big_blind, my_bankroll)
+                        max_raise, min_cost, max_cost, big_blind, my_bankroll, round_num)
 
     def run_strategy(self, legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
                         opp_stack, continue_cost, my_contribution, opp_contribution, min_raise,\
-                        max_raise, min_cost, max_cost, big_blind, my_bankroll):
+                        max_raise, min_cost, max_cost, big_blind, my_bankroll, round_num):
         '''
         Returns an action for the run phase
         
@@ -402,7 +411,7 @@ class Player(Bot):
 
         return self.flop_strategy(legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
                         opp_stack, continue_cost, my_contribution, opp_contribution, min_raise,\
-                        max_raise, min_cost, max_cost, big_blind, my_bankroll)
+                        max_raise, min_cost, max_cost, big_blind, my_bankroll, round_num)
 
     def get_action(self, game_state, round_state, active):
         '''
@@ -439,6 +448,7 @@ class Player(Bot):
         max_cost = 0
         big_blind = bool(active)
         my_bankroll = game_state.bankroll
+        round_num = game_state.round_num
         if RaiseAction in legal_actions:
             min_raise, max_raise = round_state.raise_bounds()  # the smallest and largest numbers of chips for a legal bet/raise
             min_cost = min_raise - my_pip  # the cost of a minimum bet/raise
@@ -455,31 +465,31 @@ class Player(Bot):
             print(f"    preflop:")
             action = self.preflop_strategy(legal_actions, my_cards, board_cards, my_pip ,opp_pip, my_stack,
                 opp_stack, continue_cost, my_contribution, opp_contribution, min_raise, max_raise, min_cost,
-                max_cost, big_blind, my_bankroll)
+                max_cost, big_blind, my_bankroll, round_num)
         # Flop strategy
         elif street == 3:
             print(f"    flop:")
             action = self.flop_strategy(legal_actions, my_cards, board_cards, my_pip ,opp_pip, my_stack,
                 opp_stack, continue_cost, my_contribution, opp_contribution, min_raise, max_raise, min_cost,
-                max_cost, big_blind, my_bankroll)
+                max_cost, big_blind, my_bankroll, round_num)
         # Turn strategy
         elif street == 4:
             print(f"    turn:")
             action = self.turn_strategy(legal_actions, my_cards, board_cards, my_pip ,opp_pip, my_stack,
                 opp_stack, continue_cost, my_contribution, opp_contribution, min_raise, max_raise, min_cost,
-                max_cost, big_blind, my_bankroll)
+                max_cost, big_blind, my_bankroll, round_num)
         # River strategy
         elif street == 5:
             print(f"    river:")
             action = self.river_strategy(legal_actions, my_cards, board_cards, my_pip ,opp_pip, my_stack,
                 opp_stack, continue_cost, my_contribution, opp_contribution, min_raise, max_raise, min_cost,
-                max_cost, big_blind, my_bankroll)
+                max_cost, big_blind, my_bankroll, round_num)
         # Run strategy
         else:
             print(f"    run:")
             action = self.run_strategy(legal_actions, my_cards, board_cards, my_pip ,opp_pip, my_stack,
                 opp_stack, continue_cost, my_contribution, opp_contribution, min_raise, max_raise, min_cost,
-                max_cost, big_blind, my_bankroll)
+                max_cost, big_blind, my_bankroll, round_num)
 
         self.prev_street = street
 
