@@ -301,7 +301,7 @@ class Player(Bot):
             if opp_pip==0:
                 if strength<0.5:
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
-                                        0, 0.995, 2*pot_total)
+                                        0, 0.995, min_raise)
                 elif strength<0.85:
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
                                         0, 0.8, pot_total)
@@ -311,7 +311,7 @@ class Player(Bot):
             else:
                 if strength<pot_odds+max(0.2*my_bankroll/self.winning_bankroll, 0):
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
-                                        0.9, 0.95, 2*min_raise)
+                                        0.9, 0.95, min_raise)
                 elif strength<0.65:
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
                                         0.7, 1, 0)
@@ -327,8 +327,8 @@ class Player(Bot):
             if opp_pip==0:
                 if strength<0.5:
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
-                                        0, 0.9, 2*pot_total)
-                elif strength<0.85:
+                                        0, 0.9, min_raise)
+                elif strength<0.75:
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
                                         0, 0.5, pot_total)
                 else: 
@@ -338,10 +338,10 @@ class Player(Bot):
                 if strength<pot_odds+max(0.2*my_bankroll/self.winning_bankroll, 0):
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
                                         0.98, 1, 2*min_raise)
-                elif strength<0.65:
+                elif strength<0.6:
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
                                         0.7, 1, 0)
-                elif strength<0.85:
+                elif strength<0.8:
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
                                         0.2, 0.95, pot_total)
                 elif my_pip<STARTING_STACK/4:
