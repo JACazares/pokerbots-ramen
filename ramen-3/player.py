@@ -11,7 +11,6 @@ from montecarlo import *
 from helper_functions import *
 import eval7
 import random
-import numpy as np
 
 class Player(Bot):
     '''
@@ -38,7 +37,6 @@ class Player(Bot):
         self.actions = []
         self.prev_street = 0
         self.diff_phase = False
-        self.opponent_contribution_total = np.array([])
                 
     def handle_new_round(self, game_state, round_state, active):
         '''
@@ -328,7 +326,7 @@ class Player(Bot):
             if opp_pip==0:
                 if strength<0.5:
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
-                                        0, 0.9, (1-strength)*pot_total/strength)
+                                        0, 0.9, 2*pot_total)
                 elif strength<0.85:
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
                                         0, 0.5, pot_total)
