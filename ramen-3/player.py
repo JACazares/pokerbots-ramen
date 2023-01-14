@@ -38,6 +38,9 @@ class Player(Bot):
         self.actions = []
         self.prev_street = 0
         self.diff_phase = False
+        self.opponent_contribution_total=np.array([])
+        self.opponent_contribution_we_won =np.array([])
+        self.opponent_contribution_they_won =np.array([])
                 
     def handle_new_round(self, game_state, round_state, active):
         '''
