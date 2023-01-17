@@ -83,9 +83,6 @@ class Player(Bot):
                 self.PLAYABLE_THRESHOLD = 0.45
                 self.RAISEABLE_THRESHOLD = 0.55
         
-        self.opp_std = np.std(self.opponent_contribution_total)
-        self.opp_mean = np.mean(self.opponent_contribution_total)
-
         print(f"Round {round_num}: I have {my_bankroll} and need {self.winning_bankroll} to win")
 
     def handle_round_over(self, game_state, terminal_state, active):
@@ -164,13 +161,6 @@ class Player(Bot):
         print(f"     pot_total={pot_total}")
         print(f"     pot_odds= {pot_odds}")
         print(f"     normalized_pot_odds= {pot_odds+0.1*my_bankroll/self.winning_bankroll}")
-
-        if round_num >= 20:
-            std_dev = (continue_cost - self.opp_mean) / self.opp_std
-            print(f"std dev is {std_dev}")
-            if std_dev > 2.5 and strength <= 0.9:
-                print("FOLD because standard deviation was too high")
-                return CheckFold(legal_actions)
 
         # You play first
         if not big_blind:
@@ -314,13 +304,6 @@ class Player(Bot):
         print(f"     pot_odds= {pot_odds}")
         print(f"     normalized_pot_odds= {pot_odds+0.1*my_bankroll/self.winning_bankroll}")
         
-        if round_num >= 20:
-            std_dev = (continue_cost - self.opp_mean) / self.opp_std
-            print(f"std dev is {std_dev}")
-            if std_dev > 2.5 and strength <= 0.9:
-                print("FOLD because standard deviation was too high")
-                return CheckFold(legal_actions)
-
         if big_blind:
             if opp_pip==0:
                 if strength<0.5:
@@ -468,6 +451,22 @@ class Player(Bot):
         
         if continue_cost > 0:
             self.opponent_contribution_total = np.append(self.opponent_contribution_total, [continue_cost])
+
+        if len(self.opponent_contribution_total) >= 1:
+            self.opp_std = np.std(self.opponent_contribution_total)
+            self.opp_mean = np.mean(self.opponent_contribution_total)
+
+            if len(self.opponent_contribution_total) >= 20:
+                std_dev = (continue_cost - self.opp_mean) / self.opp_std
+                print(f"std dev is {std_dev}")
+                if street == 0:
+                    strength = get_strength(self.prob_table, my_cards)
+                else:
+                    strength = monte_carlo_sim(my_cards, board_cards, iters=100)
+
+                if std_dev > 1.5 and strength <= 0.9:
+                    print("FOLD because standard deviation was too high")
+                    return CheckFold(legal_actions)
         
         if self.prev_street != street:
             self.diff_phase = True
