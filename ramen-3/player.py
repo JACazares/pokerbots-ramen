@@ -131,6 +131,7 @@ class Player(Bot):
             pass
         pass
 
+    # TODO: move all arguments to a class, for easier calling
     def preflop_strategy(self, legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
                         opp_stack, continue_cost, my_contribution, opp_contribution, min_raise,\
                         max_raise, min_cost, max_cost, big_blind, my_bankroll, round_num):
