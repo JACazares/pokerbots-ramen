@@ -61,6 +61,8 @@ class Player(Bot):
         big_blind = bool(active)  # True if you are the big blind
         self.prev_street = -1
         self.diff_phase = True
+        self.opp_range=[1, 2, 3, 4, 5, 6, 7, 8]
+        self.betting_round=0
 
         print(round_num, active)
 
@@ -173,9 +175,9 @@ class Player(Bot):
                 return CheckFold(legal_actions)
 
         # You play first
+        self.betting_round=1
         if not big_blind:
             if opp_pip == 2:
-                print("this")
                 # Fold bad hands most of the time
                 if strength < self.PLAYABLE_THRESHOLD:
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
@@ -198,8 +200,12 @@ class Player(Bot):
                                         min(2*min_raise, max_raise))
             else:
                 # Opponent raised!!
-                # TODO: update opponent's range
-
+                if my_pip==2:
+                    self.opp_range.remove(8)
+                else:
+                    for i in range(4, 9):
+                        self.opp_range.remove(i)
+                #TODO recalculate strength using ranges
                 if strength < (pot_odds + max(0.1*my_bankroll/self.winning_bankroll, 0)): 
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
                                         0.9, 1, 0)
@@ -219,7 +225,11 @@ class Player(Bot):
         # You play second
         else:
             if opp_pip == 2:
-                print("that")
+                self.opp_range.remove(1)
+                self.opp_range.remove(2)
+                self.opp_range.remove(3)
+                self.opp_range.remove(8)
+                #TODO update strength
                 if(strength<self.PLAYABLE_THRESHOLD):
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
                                         0, 0.7, min(4*min_raise, max_raise))
@@ -230,6 +240,18 @@ class Player(Bot):
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
                                         0, 0.6, min(2*min_raise, max_raise))
             else:
+                if my_pip==2:
+                    self.opp_range.remove(5)
+                    self.opp_range.remove(6)
+                    self.opp_range.remove(7)
+                    self.opp_range.remove(8)
+                #TODO update strength
+                else:
+                    if 6 in self.opp_range:
+                        self.opp_range=[3, 4]
+                    else:
+                        self.opp_range=[1, 2]
+
                 if(strength<pot_odds+max(0.2*my_bankroll/self.winning_bankroll, 0)):
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
                                         0.9, 1, 0)
@@ -314,6 +336,20 @@ class Player(Bot):
         print(f"     pot_odds= {pot_odds}")
         print(f"     normalized_pot_odds= {pot_odds+0.1*my_bankroll/self.winning_bankroll}")
         
+        if self.betting_round==1:
+            if not big_blind and my_contribution==2:
+                self.opp_range=[5, 6, 7, 8]
+            elif not big_blind and my_contribution>2:
+                self.opp_range=[4, 5, 6]
+            elif big_blind and my_contribution==2:
+                self.opp_range=[4, 5, 6, 7]
+            elif big_blind and 6 in self.opp_range:
+                self.opp_range=[4, 5]
+            elif big_blind and 4 in self.opp_range:
+                self.opp_range=[2, 3, 4]
+            self.betting_round=2
+        print(self.opp_range)
+
         if round_num >= 20:
             std_dev = (continue_cost - self.opp_mean) / self.opp_std
             print(f"std dev is {std_dev}")
