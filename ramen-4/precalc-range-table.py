@@ -1,5 +1,7 @@
 import eval7
 
+
+#aaaaaaaaaaaaaaaaaa ifelsebot
 def range_table():
     deck = eval7.Deck()
     hand_range = {}
