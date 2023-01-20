@@ -3,6 +3,7 @@ import eval7
 def range_table():
     deck = eval7.Deck()
     hand_range = {}
+    num_range = [[] for _ in range(9)]
     for i in range(52):
         for j in range(i, 52):
             if i == j:
@@ -183,11 +184,14 @@ def range_table():
 
             hand_range[(str(deck.cards[i]), str(deck.cards[j]))] = ans
             hand_range[(str(deck.cards[j]), str(deck.cards[i]))] = ans
+
+            num_range[ans].append((str(deck.cards[i]), str(deck.cards[j])))
     
-    return hand_range
+    return hand_range, num_range
 
 
 if __name__ == "__main__":
-    hand_range = range_table()
-    print(hand_range)
+    hand_range, num_range = range_table()
+    # print(hand_range)
+    print(num_range)
     pass
