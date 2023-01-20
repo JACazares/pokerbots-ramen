@@ -34,6 +34,9 @@ class Player(Bot):
         with open('prob_table.txt') as f:
             hand_data = f.read()
         self.prob_table = eval(hand_data)
+        with open('num_range.txt') as f:
+            num_range = f.read()
+        self.num_range = eval(num_range)
         self.iwon = False
         self.actions = []
         self.prev_street = 0
@@ -161,24 +164,25 @@ class Player(Bot):
 
         pot_total = my_contribution + opp_contribution
         pot_odds = continue_cost/(pot_total + continue_cost)
-        strength = get_strength(self.prob_table, my_cards)
+        strength = monte_carlo_sim(self.num_range, my_cards, board_cards, 100, self.opp_range)
         print(f"     my_strength={strength}")
         print(f"     pot_total={pot_total}")
         print(f"     pot_odds= {pot_odds}")
         print(f"     normalized_pot_odds= {pot_odds+0.1*my_bankroll/self.winning_bankroll}")
 
-        if round_num >= 20:
-            std_dev = (continue_cost - self.opp_mean) / self.opp_std
-            print(f"std dev is {std_dev}")
-            if std_dev > 2.5 and strength <= 0.9:
-                print("FOLD because standard deviation was too high")
-                return CheckFold(legal_actions)
+        #if round_num >= 20:
+        #    std_dev = (continue_cost - self.opp_mean) / self.opp_std
+        #    print(f"std dev is {std_dev}")
+        #    if std_dev > 2.5 and strength <= 0.9:
+        #        print("FOLD because standard deviation was too high")
+        #        return CheckFold(legal_actions)
 
         # You play first
         self.betting_round=1
         if not big_blind:
             if opp_pip == 2:
                 # Fold bad hands most of the time
+                strength = monte_carlo_sim(self.num_range, my_cards, board_cards, 100, self.opp_range)
                 if strength < self.PLAYABLE_THRESHOLD:
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
                                         0.95,
@@ -206,6 +210,7 @@ class Player(Bot):
                     for i in range(4, 9):
                         self.opp_range.remove(i)
                 #TODO recalculate strength using ranges
+                strength = monte_carlo_sim(self.num_range, my_cards, board_cards, 100, self.opp_range)
                 if strength < (pot_odds + max(0.1*my_bankroll/self.winning_bankroll, 0)): 
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
                                         0.9, 1, 0)
@@ -230,6 +235,7 @@ class Player(Bot):
                 self.opp_range.remove(3)
                 self.opp_range.remove(8)
                 #TODO update strength
+                strength = monte_carlo_sim(self.num_range, my_cards, board_cards, 100, self.opp_range)
                 if(strength<self.PLAYABLE_THRESHOLD):
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
                                         0, 0.7, min(4*min_raise, max_raise))
@@ -252,7 +258,7 @@ class Player(Bot):
                         self.opp_range=[1, 2]
 
                 #TODO update strength
-
+                strength = monte_carlo_sim(self.num_range, my_cards, board_cards, 100, self.opp_range)
                 if(strength<pot_odds+max(0.2*my_bankroll/self.winning_bankroll, 0)):
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
                                         0.9, 1, 0)
@@ -329,14 +335,6 @@ class Player(Bot):
         Returns:
         One of FoldAction(), CheckAction(), CallAction() or RaiseAction(amount)
         '''
-        strength = monte_carlo_sim(my_cards, board_cards, iters=100)
-        pot_total = my_contribution+opp_contribution
-        pot_odds = continue_cost/(pot_total + continue_cost)
-        print(f"     my_strength={strength}")
-        print(f"     pot_total={pot_total}")
-        print(f"     pot_odds= {pot_odds}")
-        print(f"     normalized_pot_odds= {pot_odds+0.1*my_bankroll/self.winning_bankroll}")
-        
         if self.betting_round==1:
             if not big_blind and my_contribution==2:
                 self.opp_range=[5, 6, 7, 8]
@@ -349,7 +347,15 @@ class Player(Bot):
             elif big_blind and 4 in self.opp_range:
                 self.opp_range=[2, 3, 4]
             self.betting_round=2
-        print(self.opp_range)
+
+        print(f"    opp_range: {self.opp_range}")
+        strength = monte_carlo_sim(self.num_range, my_cards, board_cards, 100, self.opp_range)
+        pot_total = my_contribution+opp_contribution
+        pot_odds = continue_cost/(pot_total + continue_cost)
+        print(f"     my_strength={strength}")
+        print(f"     pot_total={pot_total}")
+        print(f"     pot_odds= {pot_odds}")
+        print(f"     normalized_pot_odds= {pot_odds+0.1*my_bankroll/self.winning_bankroll}")
 
         if round_num >= 20:
             std_dev = (continue_cost - self.opp_mean) / self.opp_std

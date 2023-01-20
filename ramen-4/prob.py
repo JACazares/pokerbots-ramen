@@ -1,8 +1,8 @@
 import eval7
 import pandas as pd
 
-def get_strength(prob_table, hole):
-    return prob_table[(hole[0], hole[1])]
+#def get_strength(prob_table, hole):
+#    return prob_table[(hole[0], hole[1])]
     
 def get_opp_range(hole, board, opp_contribution, ):
     '''
