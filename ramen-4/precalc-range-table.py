@@ -7,7 +7,7 @@ def range_table():
     hand_range = {}
     num_range = [[] for _ in range(9)]
     for i in range(52):
-        for j in range(i, 52):
+        for j in range(i+1, 52):
             if i == j:
                 pass
             r = (str(deck.cards[i])[0], str(deck.cards[j])[0])
