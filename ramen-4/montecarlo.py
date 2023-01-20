@@ -24,7 +24,6 @@ def monte_carlo_sim(num_range, hole, board=[], iters=1000, opp_range=[1, 2, 3, 4
         deck.shuffle()
         opp_cards = random.choice(opp_deck)
         for card in opp_cards:
-            print(card)
             deck.cards.remove(card)
 
         # CHECK THIS

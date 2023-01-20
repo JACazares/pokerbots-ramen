@@ -345,7 +345,7 @@ class Player(Bot):
             elif big_blind and 6 in self.opp_range:
                 self.opp_range=[4, 5]
             elif big_blind and 4 in self.opp_range:
-                self.opp_range=[2, 3, 4]
+                self.opp_range=[1, 2, 3, 4]
             self.betting_round=2
 
         print(f"    opp_range: {self.opp_range}")
@@ -360,7 +360,7 @@ class Player(Bot):
         if round_num >= 20:
             std_dev = (continue_cost - self.opp_mean) / self.opp_std
             print(f"std dev is {std_dev}")
-            if std_dev > 2.5 and strength <= 0.9:
+            if std_dev > 2.5 and strength <= 0.95:
                 print("FOLD because standard deviation was too high")
                 return CheckFold(legal_actions)
 
