@@ -245,12 +245,13 @@ class Player(Bot):
                     self.opp_range.remove(6)
                     self.opp_range.remove(7)
                     self.opp_range.remove(8)
-                #TODO update strength
                 else:
                     if 6 in self.opp_range:
                         self.opp_range=[3, 4]
                     else:
                         self.opp_range=[1, 2]
+
+                #TODO update strength
 
                 if(strength<pot_odds+max(0.2*my_bankroll/self.winning_bankroll, 0)):
                     return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
