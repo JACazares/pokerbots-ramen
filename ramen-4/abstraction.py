@@ -2,6 +2,33 @@ import eval7
 import copy
 import random
 
+def get_preflop_abstraction(hole=[]):
+    '''
+        input: hole (string format of hole cards)
+        output: 5 digits: 
+            ABBCC
+            A=suited or not suited (2 or 1)
+            B=rank of first card (high)
+            C=rank of second card (low)
+    '''
+    hole_cards = [eval7.Card(s) for s in hole]
+    hand_id=0
+    if hole_cards[0].suit==hole_cards[1].suit:
+        hand_id+=20000
+    else: 
+        hand_id+=10000
+    if hole_cards[0]<=hole_cards[1]:
+        low=hole_cards[0]
+        high=hole_cards[1]
+    else: 
+        low=hole_cards[1]
+        high=hole_cards[0]
+    hand_id+=high.rank*100
+    hand_id+=low.rank
+    return hand_id
+
+
+
 def get_abstraction(hole=[], board=[]):    
     hole_cards = [eval7.Card(s) for s in hole]
     board_cards = [eval7.Card(s) for s in board]
@@ -207,7 +234,6 @@ def get_abstraction(hole=[], board=[]):
                     hand_id+=200
                 else:
                     hand_id+=100
-
     #YOU HAVE FLUSH__________________________________________________________
     elif(max([len(x) for x in suits])>=5):
         hand_id+=600000
@@ -561,20 +587,27 @@ def get_abstraction(hole=[], board=[]):
     return hand_id
     
 if __name__=="__main__":
+    abstractions=[]
     for i in range(1000):
         deck=eval7.Deck()
         deck.shuffle()
         b=random.randint(3, 10)
         hole_cards=deck.deal(2)
-        board_cards=deck.deal(b)
+        
+        #board_cards=deck.deal(b)
         hole=list(map(str, hole_cards))
-        board=list(map(str, board_cards))
+        #board=list(map(str, board_cards))
         print(f"iteration {i}")
         print(f"hole: {hole}")
-        print(f"board: {board}")
-        hand_id=get_abstraction(hole, board)
+        #print(f"board: {board}")
+        #hand_id=get_abstraction(hole, board)
+        hand_id=get_preflop_abstraction(hole)
         print(f"hand_id: {hand_id}")
         print(" ")
+        if hand_id not in abstractions:
+            abstractions.append(hand_id)
+    print(f"there are {len(abstractions)} abstractions")
+
         
 
 
