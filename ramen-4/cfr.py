@@ -4,6 +4,7 @@ import sys
 import numpy as np
 import eval7
 import copy
+from abstraction import *
 
 #                          10,  50, 100, 150, 200, 350
 Actions = ['F', 'P', 'C', 'a', 'b', 'c', 'd', 'e', 'f']
@@ -38,8 +39,8 @@ class InformationSet():
         self.strategy_sum += reach_probability * strategy
         return strategy
 
-    def get_average_strategy(self, legal: np.array) -> np.array:
-        return self.normalize(self.strategy_sum.copy(), legal)
+    def get_average_strategy(self) -> np.array:
+        return self.normalize(self.strategy_sum.copy(), np.ones(len(Actions)))
 
 class HistoryNode():
     def __init__(self):
@@ -48,7 +49,22 @@ class HistoryNode():
         self.round = 0
         self.hole = []
         self.board = []
-        #self.abstracted = 
+
+    def __deepcopy__(self, memo):
+        cls = self.__class__
+        result = cls.__new__(cls)
+        memo[id(self)] = result
+        for k, v in self.__dict__.items():
+            setattr(result, k, copy.deepcopy(v, memo))
+        return result
+    pass
+
+class InfoNode():
+    def __init__(self):
+        self.history = ['' for _ in range(20)]
+        self.bb = 0
+        self.round = 0
+        self.abstraction = 0
 
     def __deepcopy__(self, memo):
         cls = self.__class__
@@ -120,7 +136,7 @@ class Poker():
         '''
         Returns a tuple of the minimum and maximum legal raises.
         '''
-        print(contribution, pips, active)
+        # print(contribution, pips, active)
         continue_cost = pips[1-active] - pips[active]
         max_contribution = min(400 - contribution[active], 400 - contribution[1-active] + continue_cost)
         min_contribution = min(max_contribution, continue_cost + max(continue_cost, 2))
@@ -141,17 +157,17 @@ class Poker():
             legal[1] = 1
             if bets_allowed:
                 minim, maxim = Poker.raise_bounds(contribution, pips, active)
-                print(minim, maxim)
-                if minim <= 10 and 10 <= maxim:
-                    legal[3] = 1
-                if minim <= 50 and 50 <= maxim:
-                    legal[4] = 1
-                if minim <= 100 and 100 <= maxim:
-                    legal[5] = 1
-                if minim <= 150 and 150 <= maxim:
-                    legal[6] = 1
-                if minim <= 200 and 200 <= maxim:
-                    legal[7] = 1
+                # print(minim, maxim)
+                # if minim <= 10 and 10 <= maxim:
+                #     legal[3] = 1
+                # if minim <= 50 and 50 <= maxim:
+                #     legal[4] = 1
+                # if minim <= 100 and 100 <= maxim:
+                #     legal[5] = 1
+                # if minim <= 150 and 150 <= maxim:
+                #     legal[6] = 1
+                # if minim <= 200 and 200 <= maxim:
+                #     legal[7] = 1
                 if minim <= 350 and 350 <= maxim:
                     legal[8] = 1
         else:
@@ -162,17 +178,17 @@ class Poker():
             raises_forbidden = (continue_cost == 400 - contribution[active] or 400 - contribution[1-active] == 0)
             if not raises_forbidden:
                 minim, maxim = Poker.raise_bounds(contribution, pips, active)
-                print(minim, maxim)
-                if minim <= 10 and 10 <= maxim:
-                    legal[3] = 1
-                if minim <= 50 and 50 <= maxim:
-                    legal[4] = 1
-                if minim <= 100 and 100 <= maxim:
-                    legal[5] = 1
-                if minim <= 150 and 150 <= maxim:
-                    legal[6] = 1
-                if minim <= 200 and 200 <= maxim:
-                    legal[7] = 1
+                # print(minim, maxim)
+                # if minim <= 10 and 10 <= maxim:
+                #     legal[3] = 1
+                # if minim <= 50 and 50 <= maxim:
+                #     legal[4] = 1
+                # if minim <= 100 and 100 <= maxim:
+                #     legal[5] = 1
+                # if minim <= 150 and 150 <= maxim:
+                #     legal[6] = 1
+                # if minim <= 200 and 200 <= maxim:
+                #     legal[7] = 1
                 if minim <= 350 and 350 <= maxim:
                     legal[8] = 1
         
@@ -181,10 +197,16 @@ class Poker():
 
 class CFRTrainer:
     def __init__(self):
-        self.infoset_map: Dict[HistoryNode, InformationSet] = {}
+        self.infoset_map: Dict[InfoNode, InformationSet] = {}
 
     def get_information_set(self, actions: HistoryNode) -> InformationSet:
         """add if needed and return"""
+        aux = InfoNode()
+        aux.bb = copy.deepcopy(actions.bb)
+        aux.history = copy.deepcopy(actions.history)
+        aux.round = copy.deepcopy(actions.round)
+        aux.abstraction = get_abstraction(actions.hole, actions.board)
+
         if actions not in self.infoset_map:
             self.infoset_map[actions] = InformationSet()
         return self.infoset_map[actions]
@@ -193,7 +215,7 @@ class CFRTrainer:
         if Poker.is_terminal(actions, run):
             return Poker.get_payoff(actions, cards, contributions)
         
-        print(actions.round, actions.history[actions.round][-3:])
+        # print(actions.round, actions.history[actions.round][-3:])
 
         info_set = self.get_information_set(actions)
         legal = np.array(Poker.get_legal_actions(contributions, pips, active_player))
@@ -202,7 +224,7 @@ class CFRTrainer:
         opponent = (active_player + 1) % 2
         counterfactual_values = np.zeros(len(Actions))
 
-        print(legal)
+        # print(legal)
 
         for ix, action in enumerate(Actions):
             if not legal[ix]:
@@ -240,7 +262,7 @@ class CFRTrainer:
             
             aux_actions = copy.deepcopy(actions)
             aux_actions.history[aux_actions.round] += action
-            print(aux_actions.history[aux_actions.round][-3:])
+            # print(aux_actions.history[aux_actions.round][-3:])
             if aux_actions.round == 0:
                 if (aux_actions.history[aux_actions.round][-1:] == 'C' and len(aux_actions.history[aux_actions.round]) > 1) \
                     or (aux_actions.history[aux_actions.round][-1:] == 'P'):
@@ -259,7 +281,7 @@ class CFRTrainer:
             else:
                 aux_actions.hole = copy.deepcopy(cards[2:4])
             
-            print(aux_contributions, aux_pips)
+            # print(aux_contributions, aux_pips)
 
             # recursively call cfr method, next player to act is the opponent
             counterfactual_values[ix] = -self.cfr(cards, aux_actions, run, new_reach_probabilities, opponent, aux_contributions, aux_pips)
@@ -287,13 +309,14 @@ class CFRTrainer:
             while cards[run - 1][1] == 'd' or cards[run - 1][1] == 'h':
                 run += 1
 
-            actions = HistoryNode()
-            actions.hole = cards[0:2]
-            reach_probabilities = np.ones(2)
-            contributions = np.zeros(2)
-            pips = np.zeros(2)
-            print(cards[:run])
-            util += self.cfr(cards[:run], actions, run - 4, reach_probabilities, 0, contributions, pips)
+            for __ in range(5):
+                actions = HistoryNode()
+                actions.hole = cards[0:2]
+                reach_probabilities = np.ones(2)
+                contributions = np.zeros(2)
+                pips = np.zeros(2)
+                util += self.cfr(cards[:run], actions, run - 4, reach_probabilities, 0, contributions, pips)
+                print(_, cards[:run], util)
 
         return util
 
@@ -309,11 +332,11 @@ if __name__ == "__main__":
 
     print(f"\nRunning Poker chance sampling CFR for {num_iterations} iterations")
     print(f"\nExpected average game value (for player 1): {(-1./18):.3f}")
-    print(f"Computed average game value               : {(util / num_iterations):.3f}\n")
+    print(f"Computed average game value               : {(util / num_iterations / 5):.3f}\n")
 
     print("We expect the bet frequency for a Jack to be between 0 and 1/3")
     print("The bet frequency of a King should be three times the one for a Jack\n")
 
     print(f"History  Bet  Pass")
-    for name, info_set in sorted(cfr_trainer.infoset_map.items(), key=lambda s: len(s[0])):
-        print(f"{name:3}:    {info_set.get_average_strategy()}")
+    # for name, info_set in cfr_trainer.infoset_map.items():
+    #     print(f"{name}:    {info_set.get_average_strategy()}")
