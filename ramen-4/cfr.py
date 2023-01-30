@@ -207,9 +207,9 @@ class CFRTrainer:
         aux.round = copy.deepcopy(actions.round)
         aux.abstraction = get_abstraction(actions.hole, actions.board)
 
-        if actions not in self.infoset_map:
-            self.infoset_map[actions] = InformationSet()
-        return self.infoset_map[actions]
+        if aux not in self.infoset_map:
+            self.infoset_map[aux] = InformationSet()
+        return self.infoset_map[aux]
     
     def cfr(self, cards: List[str], actions: HistoryNode, run: int, reach_probabilities: np.array, active_player: int, contributions: np.array, pips: np.array):
         if Poker.is_terminal(actions, run):
