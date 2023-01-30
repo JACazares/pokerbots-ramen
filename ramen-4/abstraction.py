@@ -2,6 +2,31 @@ import eval7
 import copy
 import random
 
+def get_preflop_abstraction(hole=[]):
+    '''
+        input: hole (string format of hole cards)
+        output: 5 digits: 
+            ABBCC
+            A=suited or not suited (2 or 1)
+            B=rank of first card (high)
+            C=rank of second card (low)
+    '''
+    hole_cards = [eval7.Card(s) for s in hole]
+    hand_id=0
+    if hole_cards[0].suit==hole_cards[1].suit:
+        hand_id+=20000
+    else: 
+        hand_id+=10000
+    if hole_cards[0]<=hole_cards[1]:
+        low=hole_cards[0]
+        high=hole_cards[1]
+    else: 
+        low=hole_cards[1]
+        high=hole_cards[0]
+    hand_id+=high.rank*100
+    hand_id+=low.rank
+    return hand_id
+
 def get_abstraction(hole=[], board=[]):    
     hole_cards = [eval7.Card(s) for s in hole]
     board_cards = [eval7.Card(s) for s in board]
