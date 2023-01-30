@@ -25,7 +25,7 @@ def get_abstraction(hole=[], board=[]):
             hand_id+=20000
         else: 
             hand_id+=10000
-        if hole_cards[0]<=hole_cards[1]:
+        if hole_cards[0].rank<=hole_cards[1].rank:
             low=hole_cards[0]
             high=hole_cards[1]
         else: 
@@ -598,7 +598,7 @@ if __name__=="__main__":
         deck.shuffle()
         b=random.randint(3, 10)
         hole_cards=deck.deal(2)
-        board_cards=deck.deal(b)
+        board_cards=deck.deal(0)
         hole=list(map(str, hole_cards))
         board=list(map(str, board_cards))
         print(f"iteration {i}")
