@@ -1,38 +1,28 @@
-0 ['Td', '8s'] ['9c', '8c'] ['4d', '2d', '4c', '4s', 'Jh', '5d', 'Qd', 'Tc']
-<__main__.InformationSet object at 0x7f7e4e52bbe0>
-<__main__.InformationSet object at 0x7f7e4e52bbe0>
-<__main__.InformationSet object at 0x7f7e4e52bbe0>
+0 ['Kh', '3d'] ['5h', 'Qd'] ['7s', '6s', '9d', 'Ah', 'Ks']
+<__main__.InformationSet object at 0x7fa8104bc550>
 [0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 1.00]
-0 ['Td', '8s', '9c', '8c', '4d', '2d', '4c', '4s', 'Jh', '5d', 'Qd', 'Tc'] 174.9786376953125
-0 ['Td', '8s'] ['9c', '8c'] ['4d', '2d', '4c', '4s', 'Jh', '5d', 'Qd', 'Tc']
-<__main__.InformationSet object at 0x7f7e4e52bbe0>
-<__main__.InformationSet object at 0x7f7e4e52bbe0>
-<__main__.InformationSet object at 0x7f7e4e52bbe0>
+0 ['Kh', '3d', '5h', 'Qd', '7s', '6s', '9d', 'Ah', 'Ks'] 173.6328125
+0 ['Kh', '3d'] ['5h', 'Qd'] ['7s', '6s', '9d', 'Ah', 'Ks']
+<__main__.InformationSet object at 0x7fa8104bc550>
 [0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 1.00]
-0 ['Td', '8s', '9c', '8c', '4d', '2d', '4c', '4s', 'Jh', '5d', 'Qd', 'Tc'] 174.9786376953125
-0 ['Td', '8s'] ['9c', '8c'] ['4d', '2d', '4c', '4s', 'Jh', '5d', 'Qd', 'Tc']
-<__main__.InformationSet object at 0x7f7e4e52bbe0>
-<__main__.InformationSet object at 0x7f7e4e52bbe0>
-<__main__.InformationSet object at 0x7f7e4e52bbe0>
+0 ['Kh', '3d', '5h', 'Qd', '7s', '6s', '9d', 'Ah', 'Ks'] 173.6328125
+0 ['Kh', '3d'] ['5h', 'Qd'] ['7s', '6s', '9d', 'Ah', 'Ks']
+<__main__.InformationSet object at 0x7fa8104bc550>
 [0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 1.00]
-0 ['Td', '8s', '9c', '8c', '4d', '2d', '4c', '4s', 'Jh', '5d', 'Qd', 'Tc'] 174.9786376953125
-0 ['Td', '8s'] ['9c', '8c'] ['4d', '2d', '4c', '4s', 'Jh', '5d', 'Qd', 'Tc']
-<__main__.InformationSet object at 0x7f7e4e52bbe0>
-<__main__.InformationSet object at 0x7f7e4e52bbe0>
-<__main__.InformationSet object at 0x7f7e4e52bbe0>
+0 ['Kh', '3d', '5h', 'Qd', '7s', '6s', '9d', 'Ah', 'Ks'] 173.6328125
+0 ['Kh', '3d'] ['5h', 'Qd'] ['7s', '6s', '9d', 'Ah', 'Ks']
+<__main__.InformationSet object at 0x7fa8104bc550>
 [0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 1.00]
-0 ['Td', '8s', '9c', '8c', '4d', '2d', '4c', '4s', 'Jh', '5d', 'Qd', 'Tc'] 174.9786376953125
-0 ['Td', '8s'] ['9c', '8c'] ['4d', '2d', '4c', '4s', 'Jh', '5d', 'Qd', 'Tc']
-<__main__.InformationSet object at 0x7f7e4e52bbe0>
-<__main__.InformationSet object at 0x7f7e4e52bbe0>
-<__main__.InformationSet object at 0x7f7e4e52bbe0>
+0 ['Kh', '3d', '5h', 'Qd', '7s', '6s', '9d', 'Ah', 'Ks'] 173.6328125
+0 ['Kh', '3d'] ['5h', 'Qd'] ['7s', '6s', '9d', 'Ah', 'Ks']
+<__main__.InformationSet object at 0x7fa8104bc550>
 [0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 1.00]
-0 ['Td', '8s', '9c', '8c', '4d', '2d', '4c', '4s', 'Jh', '5d', 'Qd', 'Tc'] 174.9786376953125
+0 ['Kh', '3d', '5h', 'Qd', '7s', '6s', '9d', 'Ah', 'Ks'] 173.6328125
 
 Running Poker chance sampling CFR for 1 iterations
 
 Expected average game value (for player 1): -0.056
-Computed average game value               : 34.996
+Computed average game value               : 34.727
 
 We expect the bet frequency for a Jack to be between 0 and 1/3
 The bet frequency of a King should be three times the one for a Jack
