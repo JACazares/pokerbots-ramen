@@ -318,18 +318,17 @@ class CFRTrainer:
             while cards[run - 1][1] == 'd' or cards[run - 1][1] == 'h':
                 run += 1
 
-            for __ in range(5):
-                actions = HistoryNode()
-                actions.hole = cards[0:2]
-                reach_probabilities = np.ones(2)
-                contributions = np.zeros(2)
-                pips = np.zeros(2)
-                print(_, cards[:2], cards[2:4], cards[4:run])
-                aux = self.get_information_set(actions)
-                util += self.cfr(cards[:run], actions, run - 4, reach_probabilities, 0, contributions, pips)
-                print(aux)
-                print(aux.get_strategy(1, legal=np.ones(9)))
-                print(_, cards[:run], util)
+            actions = HistoryNode()
+            actions.hole = cards[0:2]
+            reach_probabilities = np.ones(2)
+            contributions = np.zeros(2)
+            pips = np.zeros(2)
+            # print(_, cards[:2], cards[2:4], cards[4:run])
+            aux = self.get_information_set(actions)
+            util += self.cfr(cards[:run], actions, run - 4, reach_probabilities, 0, contributions, pips)
+            # print(aux)
+            # print(aux.get_strategy(1, legal=np.ones(9)))
+            # print(_, cards[:run], util)
 
         return util
 
@@ -345,11 +344,7 @@ if __name__ == "__main__":
 
     print(f"\nRunning Poker chance sampling CFR for {num_iterations} iterations")
     print(f"\nExpected average game value (for player 1): {(-1./18):.3f}")
-    print(f"Computed average game value               : {(util / num_iterations / 5):.3f}\n")
-
-    print("We expect the bet frequency for a Jack to be between 0 and 1/3")
-    print("The bet frequency of a King should be three times the one for a Jack\n")
 
     print(f"History  Bet  Pass")
-    # for name, info_set in cfr_trainer.infoset_map.items():
-    #     print(f"{name}:    {info_set.get_average_strategy()}")
+    for name, info_set in cfr_trainer.infoset_map.items():
+        print(f"{name}:    {info_set.get_average_strategy()}")
