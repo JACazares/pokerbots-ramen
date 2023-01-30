@@ -15,36 +15,41 @@ class InformationSet():
         self.cumulative_regrets = np.zeros(shape=len(Actions))
         self.strategy_sum = np.zeros(shape=len(Actions))
         self.num_actions = len(Actions)
+        self.legal = np.ones(shape=len(Actions))
     
     # def __str__(self):
     #     return "cum reg: " + str(self.cumulative_regrets) + "\nstr sum: " + str(self.strategy_sum)
 
-    def normalize(self, strategy: np.array, legal: np.array) -> np.array:
+    def normalize(self, strategy: np.array) -> np.array:
         """Normalize a strategy. If there are no positive regrets,
         use a uniform random strategy"""
         tot_sum = 0
         num_actions = 0
-        for i in range(len(legal)):
-            if legal[i]:
+        for i in range(self.num_actions):
+            if self.legal[i]:
                 tot_sum += strategy[i]
                 num_actions += 1
 
         if tot_sum > 0:
             strategy /= tot_sum
         else:
-            strategy = np.array([1.0 / num_actions] * self.num_actions)
+            for i in range(self.num_actions):
+                if not self.legal[i]:
+                    strategy[i] = 0
+                else:
+                    strategy[i] = 1.0 / num_actions
         return strategy
 
-    def get_strategy(self, reach_probability: float, legal: np.array) -> np.array:
+    def get_strategy(self, reach_probability: float) -> np.array:
         """Return regret-matching strategy"""
         strategy = np.maximum(0, self.cumulative_regrets)
-        strategy = self.normalize(strategy, legal)
+        strategy = self.normalize(strategy)
 
         self.strategy_sum += reach_probability * strategy
         return strategy
 
     def get_average_strategy(self) -> np.array:
-        return self.normalize(self.strategy_sum.copy(), np.ones(len(Actions)))
+        return self.normalize(self.strategy_sum.copy())
 
 class HistoryNode():
     def __init__(self):
@@ -166,8 +171,8 @@ class Poker():
             if bets_allowed:
                 minim, maxim = Poker.raise_bounds(contribution, pips, active)
                 # print(minim, maxim)
-                # if minim <= 10 and 10 <= maxim:
-                #     legal[3] = 1
+                if minim <= 10 and 10 <= maxim:
+                    legal[3] = 1
                 # if minim <= 50 and 50 <= maxim:
                 #     legal[4] = 1
                 # if minim <= 100 and 100 <= maxim:
@@ -187,8 +192,8 @@ class Poker():
             if not raises_forbidden:
                 minim, maxim = Poker.raise_bounds(contribution, pips, active)
                 # print(minim, maxim)
-                # if minim <= 10 and 10 <= maxim:
-                #     legal[3] = 1
+                if minim <= 10 and 10 <= maxim:
+                    legal[3] = 1
                 # if minim <= 50 and 50 <= maxim:
                 #     legal[4] = 1
                 # if minim <= 100 and 100 <= maxim:
@@ -222,8 +227,9 @@ class CFRTrainer:
 
         info_set = self.get_information_set(actions)
         legal = np.array(Poker.get_legal_actions(contributions, pips, active_player))
+        info_set.legal = legal
 
-        strategy = info_set.get_strategy(reach_probabilities[active_player], legal)
+        strategy = info_set.get_strategy(reach_probabilities[active_player])
         opponent = (active_player + 1) % 2
         counterfactual_values = np.zeros(len(Actions))
 
@@ -300,7 +306,7 @@ class CFRTrainer:
 
             info_set.cumulative_regrets[ix] += reach_probabilities[opponent] * (counterfactual_values[ix] - node_value)
         
-        strategy = info_set.get_strategy(reach_probabilities[active_player], legal)
+        strategy = info_set.get_strategy(reach_probabilities[active_player])
         # print(strategy)
 
         return node_value
@@ -309,9 +315,13 @@ class CFRTrainer:
         util = 0
         deck = eval7.Deck()
 
+        deck.cards.remove(eval7.Card('Jh'))
+        deck.cards.remove(eval7.Card('Js'))
+
         for _ in range(num_iterations):
             deck.shuffle()
-            cards = list(map(str, deck))
+            cards = ['Jh', 'Js']
+            cards.extend(list(map(str, deck)))
             
             # Increase the run until the last card is black (river of blood)
             run = 9
@@ -321,10 +331,10 @@ class CFRTrainer:
             actions = HistoryNode()
             actions.hole = cards[0:2]
             reach_probabilities = np.ones(2)
-            contributions = np.zeros(2)
-            pips = np.zeros(2)
-            # print(_, cards[:2], cards[2:4], cards[4:run])
-            aux = self.get_information_set(actions)
+            contributions = np.array([1, 2])
+            pips = np.array([1, 2])
+            print(_, cards[:2], cards[2:4], cards[4:run])
+            # aux = self.get_information_set(actions)
             util += self.cfr(cards[:run], actions, run - 4, reach_probabilities, 0, contributions, pips)
             # print(aux)
             # print(aux.get_strategy(1, legal=np.ones(9)))
@@ -343,8 +353,9 @@ if __name__ == "__main__":
     util = cfr_trainer.train(num_iterations)
 
     print(f"\nRunning Poker chance sampling CFR for {num_iterations} iterations")
-    print(f"\nExpected average game value (for player 1): {(-1./18):.3f}")
+    print(f"Computed average game value               : {(util / num_iterations):.3f}\n")
 
     print(f"History  Bet  Pass")
     for name, info_set in cfr_trainer.infoset_map.items():
         print(f"{name}:    {info_set.get_average_strategy()}")
+        break
