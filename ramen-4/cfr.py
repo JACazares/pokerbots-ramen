@@ -1,3 +1,4 @@
+from collections import namedtuple
 from typing import List, Dict, Tuple
 import random
 import sys
@@ -14,6 +15,9 @@ class InformationSet():
         self.cumulative_regrets = np.zeros(shape=len(Actions))
         self.strategy_sum = np.zeros(shape=len(Actions))
         self.num_actions = len(Actions)
+    
+    # def __str__(self):
+    #     return "cum reg: " + str(self.cumulative_regrets) + "\nstr sum: " + str(self.strategy_sum)
 
     def normalize(self, strategy: np.array, legal: np.array) -> np.array:
         """Normalize a strategy. If there are no positive regrets,
@@ -59,21 +63,25 @@ class HistoryNode():
         return result
     pass
 
-class InfoNode():
-    def __init__(self):
-        self.history = ['' for _ in range(20)]
-        self.bb = 0
-        self.round = 0
-        self.abstraction = 0
+InfoNode = namedtuple('InfoNode', ['history', 'bb', 'round', 'abstractions'])
+# class InfoNode():
+#     def __init__(self):
+#         self.history = ['' for _ in range(20)]
+#         self.bb = 0
+#         self.round = 0
+#         self.abstraction = 0
 
-    def __deepcopy__(self, memo):
-        cls = self.__class__
-        result = cls.__new__(cls)
-        memo[id(self)] = result
-        for k, v in self.__dict__.items():
-            setattr(result, k, copy.deepcopy(v, memo))
-        return result
-    pass
+#     def __deepcopy__(self, memo):
+#         cls = self.__class__
+#         result = cls.__new__(cls)
+#         memo[id(self)] = result
+#         for k, v in self.__dict__.items():
+#             setattr(result, k, copy.deepcopy(v, memo))
+#         return result
+    
+#     def __str__(self):
+#         return str(self.history) + "\n" + str(self.bb) + "\n" + str(self.round) + "\n" + str(self.abstraction)
+#     pass
 
 class Poker():
     @staticmethod
@@ -194,19 +202,14 @@ class Poker():
         
         return legal
 
-
 class CFRTrainer:
     def __init__(self):
         self.infoset_map: Dict[InfoNode, InformationSet] = {}
 
     def get_information_set(self, actions: HistoryNode) -> InformationSet:
         """add if needed and return"""
-        aux = InfoNode()
-        aux.bb = copy.deepcopy(actions.bb)
-        aux.history = copy.deepcopy(actions.history)
-        aux.round = copy.deepcopy(actions.round)
-        aux.abstraction = get_abstraction(actions.hole, actions.board)
-
+        aux = InfoNode(tuple(actions.history), actions.bb, actions.round, get_abstraction(actions.hole, actions.board))
+        
         if aux not in self.infoset_map:
             self.infoset_map[aux] = InformationSet()
         return self.infoset_map[aux]
@@ -225,7 +228,8 @@ class CFRTrainer:
         counterfactual_values = np.zeros(len(Actions))
 
         # print(legal)
-        print(strategy)
+        # print(info_set)
+        # print(strategy)
 
         for ix, action in enumerate(Actions):
             if not legal[ix]:
@@ -295,6 +299,9 @@ class CFRTrainer:
                 continue
 
             info_set.cumulative_regrets[ix] += reach_probabilities[opponent] * (counterfactual_values[ix] - node_value)
+        
+        strategy = info_set.get_strategy(reach_probabilities[active_player], legal)
+        # print(strategy)
 
         return node_value
 
@@ -317,7 +324,11 @@ class CFRTrainer:
                 reach_probabilities = np.ones(2)
                 contributions = np.zeros(2)
                 pips = np.zeros(2)
+                print(_, cards[:2], cards[2:4], cards[4:run])
+                aux = self.get_information_set(actions)
                 util += self.cfr(cards[:run], actions, run - 4, reach_probabilities, 0, contributions, pips)
+                print(aux)
+                print(aux.get_strategy(1, legal=np.ones(9)))
                 print(_, cards[:run], util)
 
         return util
