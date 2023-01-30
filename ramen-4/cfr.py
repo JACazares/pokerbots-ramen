@@ -225,6 +225,7 @@ class CFRTrainer:
         counterfactual_values = np.zeros(len(Actions))
 
         # print(legal)
+        print(strategy)
 
         for ix, action in enumerate(Actions):
             if not legal[ix]:
@@ -285,6 +286,7 @@ class CFRTrainer:
 
             # recursively call cfr method, next player to act is the opponent
             counterfactual_values[ix] = -self.cfr(cards, aux_actions, run, new_reach_probabilities, opponent, aux_contributions, aux_pips)
+        
 
         # Value of the current game state is just counterfactual values weighted by action probabilities
         node_value = counterfactual_values.dot(strategy)
