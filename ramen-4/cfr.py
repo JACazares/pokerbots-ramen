@@ -188,7 +188,7 @@ class Poker():
             # similarly, re-raising is only allowed if both players can afford it
             legal[0] = 1
             legal[2] = 1
-            raises_forbidden = (continue_cost == 400 - contribution[active] or 400 - contribution[1-active] == 0)
+            raises_forbidden = (continue_cost == 400 - contribution[active] or 400 - contribution[1-active] == 0) or pips[active]>0
             if not raises_forbidden:
                 minim, maxim = Poker.raise_bounds(contribution, pips, active)
                 # print(minim, maxim)
@@ -348,7 +348,6 @@ if __name__ == "__main__":
     else:
         num_iterations = int(sys.argv[1])
     np.set_printoptions(precision=2, floatmode='fixed', suppress=True)
-
     cfr_trainer = CFRTrainer()
     util = cfr_trainer.train(num_iterations)
 
@@ -358,7 +357,9 @@ if __name__ == "__main__":
     print(f"History  Bet  Pass")
     it = 1
     for name, info_set in cfr_trainer.infoset_map.items():
-        print(f"{name}:    {info_set.get_average_strategy()}")
-        if it > 10:
-            break
+        h=''.join(filter(None, name.history))
+        r=str(name.round)
+        abstr=str(name.abstractions)
+        strat=info_set.get_average_strategy()
+        print(f"{h}{r} {abstr}: {strat}")
         it += 1
