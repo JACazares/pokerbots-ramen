@@ -171,18 +171,18 @@ class Poker():
             if bets_allowed:
                 minim, maxim = Poker.raise_bounds(contribution, pips, active)
                 # print(minim, maxim)
-                if minim <= 10 and 10 <= maxim:
+                if minim <= sum(contribution) and sum(contribution) <= maxim:
                     legal[3] = 1
-                # if minim <= 50 and 50 <= maxim:
-                #     legal[4] = 1
-                # if minim <= 100 and 100 <= maxim:
-                #     legal[5] = 1
+                if minim <= 2*sum(contribution) and 2*sum(contribution) <= maxim:
+                    legal[4] = 1
+                if minim <= 3*sum(contribution) and 3*sum(contribution) <= maxim:
+                    legal[5] = 1
                 # if minim <= 150 and 150 <= maxim:
                 #     legal[6] = 1
                 # if minim <= 200 and 200 <= maxim:
                 #     legal[7] = 1
-                if minim <= 350 and 350 <= maxim:
-                    legal[8] = 1
+                # if minim <= 350 and 350 <= maxim:
+                #     legal[8] = 1
         else:
             # continue_cost > 0
             # similarly, re-raising is only allowed if both players can afford it
@@ -192,18 +192,18 @@ class Poker():
             if not raises_forbidden:
                 minim, maxim = Poker.raise_bounds(contribution, pips, active)
                 # print(minim, maxim)
-                if minim <= 10 and 10 <= maxim:
+                if minim <= sum(contribution) and sum(contribution) <= maxim:
                     legal[3] = 1
-                # if minim <= 50 and 50 <= maxim:
-                #     legal[4] = 1
-                # if minim <= 100 and 100 <= maxim:
-                #     legal[5] = 1
+                if minim <= 2*sum(contribution) and 2*sum(contribution) <= maxim:
+                    legal[4] = 1
+                if minim <= 3*sum(contribution) and 3*sum(contribution) <= maxim:
+                    legal[5] = 1
                 # if minim <= 150 and 150 <= maxim:
                 #     legal[6] = 1
                 # if minim <= 200 and 200 <= maxim:
                 #     legal[7] = 1
-                if minim <= 350 and 350 <= maxim:
-                    legal[8] = 1
+                # if minim <= 350 and 350 <= maxim:
+                #     legal[8] = 1
         
         return legal
 
@@ -253,14 +253,14 @@ class CFRTrainer:
                 aux_contributions[active_player] = aux_contributions[opponent]
                 aux_pips[active_player] = aux_pips[opponent]
                 if action == 'a':
-                    aux_pips[active_player] += 10
-                    aux_contributions[active_player] += 10
+                    aux_pips[active_player] += sum(contributions)
+                    aux_contributions[active_player] += sum(contributions)
                 if action == 'b':
-                    aux_pips[active_player] += 50
-                    aux_contributions[active_player] += 50
+                    aux_pips[active_player] += 2*sum(contributions)
+                    aux_contributions[active_player] += 2*sum(contributions)
                 if action == 'c':
-                    aux_pips[active_player] += 100
-                    aux_contributions[active_player] += 100
+                    aux_pips[active_player] += 3*sum(contributions)
+                    aux_contributions[active_player] += 3*sum(contributions)
                 if action == 'd':
                     aux_pips[active_player] += 150
                     aux_contributions[active_player] += 150
@@ -315,12 +315,12 @@ class CFRTrainer:
         util = 0
         deck = eval7.Deck()
 
-        deck.cards.remove(eval7.Card('Jh'))
-        deck.cards.remove(eval7.Card('Js'))
+        deck.cards.remove(eval7.Card('Qh'))
+        deck.cards.remove(eval7.Card('Qd'))
 
         for _ in range(num_iterations):
             deck.shuffle()
-            cards = ['Jh', 'Js']
+            cards = ['Qh', 'Qd']
             cards.extend(list(map(str, deck)))
             
             # Increase the run until the last card is black (river of blood)
@@ -333,9 +333,9 @@ class CFRTrainer:
             reach_probabilities = np.ones(2)
             contributions = np.array([1, 2])
             pips = np.array([1, 2])
-            print(_, cards[:2], cards[2:4], cards[4:run])
             # aux = self.get_information_set(actions)
             util += self.cfr(cards[:run], actions, run - 4, reach_probabilities, 0, contributions, pips)
+            print(_, cards[:2], cards[2:4], cards[4:run], util)
             # print(aux)
             # print(aux.get_strategy(1, legal=np.ones(9)))
             # print(_, cards[:run], util)
@@ -356,6 +356,9 @@ if __name__ == "__main__":
     print(f"Computed average game value               : {(util / num_iterations):.3f}\n")
 
     print(f"History  Bet  Pass")
+    it = 1
     for name, info_set in cfr_trainer.infoset_map.items():
         print(f"{name}:    {info_set.get_average_strategy()}")
-        break
+        if it > 10:
+            break
+        it += 1
