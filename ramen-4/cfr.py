@@ -355,11 +355,16 @@ if __name__ == "__main__":
     print(f"Computed average game value               : {(util / num_iterations):.3f}\n")
 
     print(f"History  Bet  Pass")
-    it = 1
+    it = 0
+    print('{', end='')
     for name, info_set in cfr_trainer.infoset_map.items():
         h=''.join(filter(None, name.history))
         r=str(name.round)
         abstr=str(name.abstractions)
         strat=info_set.get_average_strategy()
-        print(f"{h}{r} {abstr}: {strat}")
+        if it == 0:
+            print(f"({h},{r},{abstr}): {strat}")
+        else:
+            print(f",({h},{r},{abstr}): {strat}")
         it += 1
+    print('}', end='')
