@@ -214,19 +214,19 @@ class CFRTrainer:
         try:
             with open('m-cumulative_reg.txt') as f:
                 regrets = eval(f.read())
+            for aux, reg in regrets.items():
+                self.infoset_map[InfoNode(aux[0], aux[1], aux[2])] = InformationSet()
+                self.infoset_map[InfoNode(aux[0], aux[1], aux[2])].cumulative_regrets = np.array(reg)
         except:
-            regrets = {}
+            pass
         
         try:
             with open('m-strategy_sum.txt') as f:
                 strategy_sum = eval(f.read())
+            for aux, strat in strategy_sum.items():
+                self.infoset_map[InfoNode(aux[0], aux[1], aux[2])].strategy_sum = np.array(strat)
         except:
-            strategy_sum = {}
-
-        for aux, reg in regrets.items():
-            self.infoset_map[aux].cumulative_regrets = reg
-        for aux, strat in strategy_sum.items():
-            self.infoset_map[aux].strategy_sum = strat
+            pass
 
     def get_information_set(self, actions: HistoryNode) -> InformationSet:
         """add if needed and return"""
@@ -398,7 +398,8 @@ if __name__ == "__main__":
             h = str(name.history)
             r = str(name.round)
             abstr = str(name.abstractions)
-            strat = ','.join(list(filter(lambda x: x != '', (str(info_set.cumulative_regrets).split(' ')))))
+            # strat = ','.join(str(info_set.cumulative_regrets).split())
+            strat = list(map(float, list(map(lambda x : "%0.2f" % x, list(info_set.cumulative_regrets)))))
             if it == 0:
                 print(f"('{h}',{r},{abstr}):{strat}", end='', file=f)
             else:
@@ -413,11 +414,11 @@ if __name__ == "__main__":
             h = str(name.history)
             r = str(name.round)
             abstr = str(name.abstractions)
-            # strat = ','.join(list(filter(lambda x: x != '', (str(info_set.strategy_sum).split(' ')))))
-            strat = info_set.strategy_sum
+            # strat = ','.join(str(info_set.strategy_sum).split())
+            strat = list(map(float, list(map(lambda x : "%0.2f" % x, list(info_set.strategy_sum)))))
             if it == 0:
-                print(f"(\"{h}\",{r},{abstr}):{strat}", end='', file=f)
+                print(f"('{h}',{r},{abstr}):{strat}", end='', file=f)
             else:
-                print(f",(\"{h}\",{r},{abstr}):{strat}", end='', file=f)
+                print(f",('{h}',{r},{abstr}):{strat}", end='', file=f)
             it += 1
         print('}', end='', file=f)

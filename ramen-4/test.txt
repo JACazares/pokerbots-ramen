@@ -1,6 +1,6 @@
-0 ['Qh', 'Qd'] ['3d', '7c'] ['4c', '7d', 'Ad', '6d', 'Jc'] 18.499630314705303
+0 ['Qh', 'Qd'] ['Th', 'Kh'] ['4h', '8c', 'Tc', 'Ks', 'Kd', 'Kc'] -160.07389504968023
 
 Running Poker chance sampling CFR for 1 iterations
-Computed average game value               : 18.500
+Computed average game value               : -160.074
 
 History  Bet  Pass
