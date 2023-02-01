@@ -1,4 +1,4 @@
-0 ['Qh', 'Qd'] ['6s', '3c'] ['Td', '8d', '2d', 'Qc', '8s'] 18.499630314705303
+0 ['Qh', 'Qd'] ['3d', '7c'] ['4c', '7d', 'Ad', '6d', 'Jc'] 18.499630314705303
 
 Running Poker chance sampling CFR for 1 iterations
 Computed average game value               : 18.500

@@ -385,9 +385,9 @@ if __name__ == "__main__":
             abstr = str(name.abstractions)
             strat = ','.join(str(info_set.get_average_strategy()).split(' '))
             if it == 0:
-                print(f"('{h}',{r},{abstr}):{strat}", end='', file=f)
+                print(f"(\"{h}\",{r},{abstr}):{strat}", end='', file=f)
             else:
-                print(f",('{h}',{r},{abstr}):{strat}", end='', file=f)
+                print(f",(\"{h}\",{r},{abstr}):{strat}", end='', file=f)
             it += 1
         print('}', end='', file=f)
     
