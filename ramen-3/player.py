@@ -293,6 +293,8 @@ class Player(Bot):
                     return RaiseAction(raise_amount)
                 else: 
                     return Check_Call(legal_actions)
+
+    
         '''
 
     def flop_strategy(self, legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\

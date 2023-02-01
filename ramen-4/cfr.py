@@ -7,8 +7,8 @@ import eval7
 import copy
 from abstraction import *
 
-#                          10,  50, 100, 150, 200, 350
-Actions = ['F', 'P', 'C', 'a', 'b', 'c', 'd', 'e', 'f']
+#                           1,   3,   5, All
+Actions = ['F', 'P', 'C', 'a', 'b', 'c', 'd']
 
 class InformationSet():
     def __init__(self):
@@ -156,29 +156,29 @@ class Poker():
         return (min_contribution, max_contribution)
         # return (pips[active] + min_contribution, pips[active] + max_contribution)
     
-    # Actions = ['F', 'P', 'C', 'a', 'b', 'c', 'd', 'e', 'f']
+    #                             1,   3,   5, All
+    # Actions = ['F', 'P', 'C', 'a', 'b', 'c', 'd']
     @staticmethod
-    def get_legal_actions(contribution, pips, active):
+    def get_legal_actions(contribution, pips, active, round):
         '''
         Returns a set which corresponds to the active player's legal moves.
         '''
-        legal = [0 for _ in range(9)]
+        legal = [0 for _ in range(len(Actions))]
         continue_cost = pips[1-active] - pips[active]
         if continue_cost == 0:
             # we can only raise the stakes if both players can afford it
-            bets_allowed = (max(contribution) < 400)
+            bets_allowed = (max(contribution) < 400) and ((round == 0 and pips[active] <= 2) or (round > 0 and pips[active] == 0))
             legal[1] = 1
             if bets_allowed:
                 minim, maxim = Poker.raise_bounds(contribution, pips, active)
                 # print(minim, maxim)
                 if minim <= sum(contribution) and sum(contribution) <= maxim:
                     legal[3] = 1
-                if minim <= 2*sum(contribution) and 2*sum(contribution) <= maxim:
-                    legal[4] = 1
                 if minim <= 3*sum(contribution) and 3*sum(contribution) <= maxim:
+                    legal[4] = 1
+                if minim <= 5*sum(contribution) and 5*sum(contribution) <= maxim:
                     legal[5] = 1
-                # if minim <= 150 and 150 <= maxim:
-                #     legal[6] = 1
+                legal[6] = 1
                 # if minim <= 200 and 200 <= maxim:
                 #     legal[7] = 1
                 # if minim <= 350 and 350 <= maxim:
@@ -188,16 +188,17 @@ class Poker():
             # similarly, re-raising is only allowed if both players can afford it
             legal[0] = 1
             legal[2] = 1
-            raises_forbidden = (continue_cost == 400 - contribution[active] or 400 - contribution[1-active] == 0) or pips[active]>0
+            raises_forbidden = (continue_cost == 400 - contribution[active] or 400 - contribution[1-active] == 0) or ((round > 0 and pips[active] > 0) or (round == 0 and pips[active] > 2))
             if not raises_forbidden:
                 minim, maxim = Poker.raise_bounds(contribution, pips, active)
                 # print(minim, maxim)
                 if minim <= sum(contribution) and sum(contribution) <= maxim:
                     legal[3] = 1
-                if minim <= 2*sum(contribution) and 2*sum(contribution) <= maxim:
-                    legal[4] = 1
                 if minim <= 3*sum(contribution) and 3*sum(contribution) <= maxim:
+                    legal[4] = 1
+                if minim <= 5*sum(contribution) and 5*sum(contribution) <= maxim:
                     legal[5] = 1
+                legal[6] = 1
                 # if minim <= 150 and 150 <= maxim:
                 #     legal[6] = 1
                 # if minim <= 200 and 200 <= maxim:
@@ -211,22 +212,23 @@ class CFRTrainer:
     def __init__(self):
         self.infoset_map: Dict[InfoNode, InformationSet] = {}
 
+        print("init")
         try:
             with open('m-cumulative_reg.txt') as f:
                 regrets = eval(f.read())
+            for aux, reg in regrets.items():
+                self.infoset_map[InfoNode(aux[0], aux[1], aux[2])] = InformationSet()
+                self.infoset_map[InfoNode(aux[0], aux[1], aux[2])].cumulative_regrets = np.array(reg)
         except:
-            regrets = {}
+            pass
         
         try:
             with open('m-strategy_sum.txt') as f:
                 strategy_sum = eval(f.read())
+            for aux, strat in strategy_sum.items():
+                self.infoset_map[InfoNode(aux[0], aux[1], aux[2])].strategy_sum = np.array(strat)
         except:
-            strategy_sum = {}
-
-        for aux, reg in regrets.items():
-            self.infoset_map[aux].cumulative_regrets = reg
-        for aux, strat in strategy_sum.items():
-            self.infoset_map[aux].strategy_sum = strat
+            pass
 
     def get_information_set(self, actions: HistoryNode) -> InformationSet:
         """add if needed and return"""
@@ -247,7 +249,7 @@ class CFRTrainer:
         # print(actions.round, actions.history[actions.round][-3:])
 
         info_set = self.get_information_set(actions)
-        legal = np.array(Poker.get_legal_actions(contributions, pips, active_player))
+        legal = np.array(Poker.get_legal_actions(contributions, pips, active_player, actions.round))
         info_set.legal = legal
 
         strategy = info_set.get_strategy(reach_probabilities[active_player])
@@ -276,21 +278,15 @@ class CFRTrainer:
                 if action == 'a':
                     aux_pips[active_player] += sum(contributions)
                     aux_contributions[active_player] += sum(contributions)
-                if action == 'b':
+                elif action == 'b':
                     aux_pips[active_player] += 2*sum(contributions)
                     aux_contributions[active_player] += 2*sum(contributions)
-                if action == 'c':
+                elif action == 'c':
                     aux_pips[active_player] += 3*sum(contributions)
                     aux_contributions[active_player] += 3*sum(contributions)
-                if action == 'd':
-                    aux_pips[active_player] += 150
-                    aux_contributions[active_player] += 150
-                if action == 'e':
-                    aux_pips[active_player] += 200
-                    aux_contributions[active_player] += 200
-                if action == 'f':
-                    aux_pips[active_player] += 350
-                    aux_contributions[active_player] += 350
+                elif action == 'd':
+                    aux_pips[active_player] += 400 - aux_contributions[active_player]
+                    aux_contributions[active_player] = 400
             
             aux_actions = copy.deepcopy(actions)
             aux_actions.history[aux_actions.round] += action
@@ -336,12 +332,13 @@ class CFRTrainer:
         util = 0
         deck = eval7.Deck()
 
-        deck.cards.remove(eval7.Card('Qh'))
-        deck.cards.remove(eval7.Card('Qd'))
+        # deck.cards.remove(eval7.Card('Qh'))
+        # deck.cards.remove(eval7.Card('Qd'))
 
         for _ in range(num_iterations):
             deck.shuffle()
-            cards = ['Qh', 'Qd']
+            # cards = ['Qh', 'Qd']
+            cards = []
             cards.extend(list(map(str, deck)))
             
             # Increase the run until the last card is black (river of blood)
@@ -355,17 +352,35 @@ class CFRTrainer:
             contributions = np.array([1, 2])
             pips = np.array([1, 2])
             # aux = self.get_information_set(actions)
+            print(_, cards[:2], cards[2:4], cards[4:run])
             util += self.cfr(cards[:run], actions, run - 4, reach_probabilities, 0, contributions, pips)
             print(_, cards[:2], cards[2:4], cards[4:run], util)
             # print(aux)
             # print(aux.get_strategy(1, legal=np.ones(9)))
             # print(_, cards[:run], util)
 
+            if (_ % 50 == 0) and (_ > 0):
+                print("Saving")
+                it = 0
+                with open('strategy.txt', 'w') as f:
+                    print('{', end='', file=f)
+                    for name, info_set in cfr_trainer.infoset_map.items():
+                        h = str(name.history)
+                        r = str(name.round)
+                        abstr = str(name.abstractions)
+                        strat = ','.join(str(info_set.get_average_strategy()).split(' '))
+                        if it == 0:
+                            print(f"(\"{h}\",{r},{abstr}):{strat}", end='', file=f)
+                        else:
+                            print(f",(\"{h}\",{r},{abstr}):{strat}", end='', file=f)
+                        it += 1
+                    print('}', end='', file=f)
+
         return util
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        num_iterations = 100000
+        num_iterations = 100
     else:
         num_iterations = int(sys.argv[1])
     np.set_printoptions(precision=2, floatmode='fixed', suppress=True)
@@ -375,7 +390,7 @@ if __name__ == "__main__":
     print(f"\nRunning Poker chance sampling CFR for {num_iterations} iterations")
     print(f"Computed average game value               : {(util / num_iterations):.3f}\n")
 
-    print(f"History  Bet  Pass")
+    print("Printing")
     it = 0
     with open('strategy.txt', 'w') as f:
         print('{', end='', file=f)
@@ -398,7 +413,8 @@ if __name__ == "__main__":
             h = str(name.history)
             r = str(name.round)
             abstr = str(name.abstractions)
-            strat = ','.join(list(filter(lambda x: x != '', (str(info_set.cumulative_regrets).split(' ')))))
+            # strat = ','.join(str(info_set.cumulative_regrets).split())
+            strat = list(map(float, list(map(lambda x : "%0.2f" % x, list(info_set.cumulative_regrets)))))
             if it == 0:
                 print(f"('{h}',{r},{abstr}):{strat}", end='', file=f)
             else:
@@ -413,11 +429,13 @@ if __name__ == "__main__":
             h = str(name.history)
             r = str(name.round)
             abstr = str(name.abstractions)
-            # strat = ','.join(list(filter(lambda x: x != '', (str(info_set.strategy_sum).split(' ')))))
-            strat = info_set.strategy_sum
+            # strat = ','.join(str(info_set.strategy_sum).split())
+            strat = list(map(float, list(map(lambda x : "%0.2f" % x, list(info_set.strategy_sum)))))
             if it == 0:
-                print(f"(\"{h}\",{r},{abstr}):{strat}", end='', file=f)
+                print(f"('{h}',{r},{abstr}):{strat}", end='', file=f)
             else:
-                print(f",(\"{h}\",{r},{abstr}):{strat}", end='', file=f)
+                print(f",('{h}',{r},{abstr}):{strat}", end='', file=f)
             it += 1
         print('}', end='', file=f)
+
+    print("Done")
