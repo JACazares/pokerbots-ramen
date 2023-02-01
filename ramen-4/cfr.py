@@ -68,7 +68,7 @@ class HistoryNode():
         return result
     pass
 
-InfoNode = namedtuple('InfoNode', ['history', 'bb', 'round', 'abstractions'])
+InfoNode = namedtuple('InfoNode', ['history', 'round', 'abstractions'])
 # class InfoNode():
 #     def __init__(self):
 #         self.history = ['' for _ in range(20)]
@@ -211,13 +211,30 @@ class CFRTrainer:
     def __init__(self):
         self.infoset_map: Dict[InfoNode, InformationSet] = {}
 
+        try:
+            with open('m-cumulative_reg.txt') as f:
+                regrets = eval(f.read())
+        except:
+            regrets = {}
+        
+        try:
+            with open('m-strategy_sum.txt') as f:
+                strategy_sum = eval(f.read())
+        except:
+            strategy_sum = {}
+
+        for aux, reg in regrets.items():
+            self.infoset_map[aux].cumulative_regrets = reg
+        for aux, strat in strategy_sum.items():
+            self.infoset_map[aux].strategy_sum = strat
+
     def get_information_set(self, actions: HistoryNode) -> InformationSet:
         """add if needed and return"""
         real_history = actions.history
         if actions.round >= 7:
             real_history = actions.history[actions.round-4:]
         
-        aux = InfoNode(''.join(real_history), actions.bb, actions.round, get_abstraction(actions.hole, actions.board))
+        aux = InfoNode(''.join(real_history), actions.round, get_abstraction(actions.hole, actions.board))
         
         if aux not in self.infoset_map:
             self.infoset_map[aux] = InformationSet()
@@ -366,10 +383,41 @@ if __name__ == "__main__":
             h = str(name.history)
             r = str(name.round)
             abstr = str(name.abstractions)
-            strat = ','.join((str(info_set.get_average_strategy()).split(' ')))
+            strat = ','.join(str(info_set.get_average_strategy()).split(' '))
+            if it == 0:
+                print(f"(\"{h}\",{r},{abstr}):{strat}", end='', file=f)
+            else:
+                print(f",(\"{h}\",{r},{abstr}):{strat}", end='', file=f)
+            it += 1
+        print('}', end='', file=f)
+    
+    it = 0
+    with open('m-cumulative_reg.txt', 'w') as f:
+        print('{', end='', file=f)
+        for name, info_set in cfr_trainer.infoset_map.items():
+            h = str(name.history)
+            r = str(name.round)
+            abstr = str(name.abstractions)
+            strat = ','.join(list(filter(lambda x: x != '', (str(info_set.cumulative_regrets).split(' ')))))
             if it == 0:
                 print(f"('{h}',{r},{abstr}):{strat}", end='', file=f)
             else:
                 print(f",('{h}',{r},{abstr}):{strat}", end='', file=f)
+            it += 1
+        print('}', end='', file=f)
+
+    it = 0
+    with open('m-strategy_sum.txt', 'w') as f:
+        print('{', end='', file=f)
+        for name, info_set in cfr_trainer.infoset_map.items():
+            h = str(name.history)
+            r = str(name.round)
+            abstr = str(name.abstractions)
+            # strat = ','.join(list(filter(lambda x: x != '', (str(info_set.strategy_sum).split(' ')))))
+            strat = info_set.strategy_sum
+            if it == 0:
+                print(f"(\"{h}\",{r},{abstr}):{strat}", end='', file=f)
+            else:
+                print(f",(\"{h}\",{r},{abstr}):{strat}", end='', file=f)
             it += 1
         print('}', end='', file=f)
