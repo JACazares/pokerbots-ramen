@@ -213,7 +213,11 @@ class CFRTrainer:
 
     def get_information_set(self, actions: HistoryNode) -> InformationSet:
         """add if needed and return"""
-        aux = InfoNode(tuple(actions.history), actions.bb, actions.round, get_abstraction(actions.hole, actions.board))
+        real_history = actions.history
+        if actions.round >= 7:
+            real_history = actions.history[actions.round-4:]
+        
+        aux = InfoNode(''.join(real_history), actions.bb, actions.round, get_abstraction(actions.hole, actions.board))
         
         if aux not in self.infoset_map:
             self.infoset_map[aux] = InformationSet()
@@ -358,13 +362,13 @@ if __name__ == "__main__":
     it = 0
     print('{', end='')
     for name, info_set in cfr_trainer.infoset_map.items():
-        h=''.join(filter(None, name.history))
-        r=str(name.round)
-        abstr=str(name.abstractions)
-        strat=info_set.get_average_strategy()
+        h = str(name.history)
+        r = str(name.round)
+        abstr = str(name.abstractions)
+        strat = ','.join((str(info_set.get_average_strategy()).split(' ')))
         if it == 0:
-            print(f"({h},{r},{abstr}): {strat}")
+            print(f"('{h}',{r},{abstr}):{strat}", end='')
         else:
-            print(f",({h},{r},{abstr}): {strat}")
+            print(f",('{h}',{r},{abstr}):{strat}", end='')
         it += 1
     print('}', end='')
