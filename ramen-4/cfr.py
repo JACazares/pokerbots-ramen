@@ -360,15 +360,16 @@ if __name__ == "__main__":
 
     print(f"History  Bet  Pass")
     it = 0
-    print('{', end='')
-    for name, info_set in cfr_trainer.infoset_map.items():
-        h = str(name.history)
-        r = str(name.round)
-        abstr = str(name.abstractions)
-        strat = ','.join((str(info_set.get_average_strategy()).split(' ')))
-        if it == 0:
-            print(f"('{h}',{r},{abstr}):{strat}", end='')
-        else:
-            print(f",('{h}',{r},{abstr}):{strat}", end='')
-        it += 1
-    print('}', end='')
+    with open('strategy.txt', 'w') as f:
+        print('{', end='', file=f)
+        for name, info_set in cfr_trainer.infoset_map.items():
+            h = str(name.history)
+            r = str(name.round)
+            abstr = str(name.abstractions)
+            strat = ','.join((str(info_set.get_average_strategy()).split(' ')))
+            if it == 0:
+                print(f"('{h}',{r},{abstr}):{strat}", end='', file=f)
+            else:
+                print(f",('{h}',{r},{abstr}):{strat}", end='', file=f)
+            it += 1
+        print('}', end='', file=f)
