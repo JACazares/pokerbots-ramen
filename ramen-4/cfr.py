@@ -1,4 +1,5 @@
 from collections import namedtuple
+import pickle
 from typing import List, Dict, Tuple
 import random
 import sys
@@ -214,21 +215,17 @@ class CFRTrainer:
 
         print("init")
         try:
-            with open('m-cumulative_reg.txt') as f:
-                regrets = eval(f.read())
-            for aux, reg in regrets.items():
+            with open('m-infoset.pickle', 'rb') as f:
+                info = pickle.load(f)
+            for aux, reg in info.items():
                 self.infoset_map[InfoNode(aux[0], aux[1], aux[2])] = InformationSet()
-                self.infoset_map[InfoNode(aux[0], aux[1], aux[2])].cumulative_regrets = np.array(reg)
+                self.infoset_map[InfoNode(aux[0], aux[1], aux[2])].cumulative_regrets = np.array(reg[0])
+                self.infoset_map[InfoNode(aux[0], aux[1], aux[2])].strategy_sum = np.array(reg[1])
+                self.infoset_map[InfoNode(aux[0], aux[1], aux[2])].legal = np.array(reg[2])
         except:
             pass
-        
-        try:
-            with open('m-strategy_sum.txt') as f:
-                strategy_sum = eval(f.read())
-            for aux, strat in strategy_sum.items():
-                self.infoset_map[InfoNode(aux[0], aux[1], aux[2])].strategy_sum = np.array(strat)
-        except:
-            pass
+            
+        print(len(self.infoset_map))
 
     def get_information_set(self, actions: HistoryNode) -> InformationSet:
         """add if needed and return"""
@@ -345,6 +342,9 @@ class CFRTrainer:
             run = 9
             while cards[run - 1][1] == 'd' or cards[run - 1][1] == 'h':
                 run += 1
+            
+            if run > 12:
+                continue
 
             actions = HistoryNode()
             actions.hole = cards[0:2]
@@ -361,20 +361,18 @@ class CFRTrainer:
 
             if (_ % 50 == 0) and (_ > 0):
                 print("Saving")
-                it = 0
-                with open('strategy.txt', 'w') as f:
-                    print('{', end='', file=f)
-                    for name, info_set in cfr_trainer.infoset_map.items():
-                        h = str(name.history)
-                        r = str(name.round)
-                        abstr = str(name.abstractions)
-                        strat = ','.join(str(info_set.get_average_strategy()).split(' '))
-                        if it == 0:
-                            print(f"(\"{h}\",{r},{abstr}):{strat}", end='', file=f)
-                        else:
-                            print(f",(\"{h}\",{r},{abstr}):{strat}", end='', file=f)
-                        it += 1
-                    print('}', end='', file=f)
+                output_strat = {}
+                for name, info_set in self.infoset_map.items():
+                    h = str(name.history)
+                    r = int(name.round)
+                    abstr = int(name.abstractions)
+                    strat = list(map(float, list(map(lambda x : "%0.2f" % x, list(info_set.get_average_strategy())))))
+                    output_strat[(h, r, abstr)] = list(strat)
+                
+                print(output_strat.items())
+                with open('strategy.pickle', 'wb') as f:
+                    # Pickle the 'data' dictionary using the highest protocol available.
+                    pickle.dump(output_strat, f)
 
         return util
 
@@ -391,51 +389,62 @@ if __name__ == "__main__":
     print(f"Computed average game value               : {(util / num_iterations):.3f}\n")
 
     print("Printing")
-    it = 0
-    with open('strategy.txt', 'w') as f:
-        print('{', end='', file=f)
-        for name, info_set in cfr_trainer.infoset_map.items():
-            h = str(name.history)
-            r = str(name.round)
-            abstr = str(name.abstractions)
-            strat = ','.join(str(info_set.get_average_strategy()).split(' '))
-            if it == 0:
-                print(f"(\"{h}\",{r},{abstr}):{strat}", end='', file=f)
-            else:
-                print(f",(\"{h}\",{r},{abstr}):{strat}", end='', file=f)
-            it += 1
-        print('}', end='', file=f)
+    output_strat = {}
+    for name, info_set in cfr_trainer.infoset_map.items():
+        h = str(name.history)
+        r = int(name.round)
+        abstr = int(name.abstractions)
+        strat = list(map(float, list(map(lambda x : "%0.2f" % x, list(info_set.get_average_strategy())))))
+        output_strat[(h, r, abstr)] = list(strat)
     
-    it = 0
-    with open('m-cumulative_reg.txt', 'w') as f:
-        print('{', end='', file=f)
-        for name, info_set in cfr_trainer.infoset_map.items():
-            h = str(name.history)
-            r = str(name.round)
-            abstr = str(name.abstractions)
-            # strat = ','.join(str(info_set.cumulative_regrets).split())
-            strat = list(map(float, list(map(lambda x : "%0.2f" % x, list(info_set.cumulative_regrets)))))
-            if it == 0:
-                print(f"('{h}',{r},{abstr}):{strat}", end='', file=f)
-            else:
-                print(f",('{h}',{r},{abstr}):{strat}", end='', file=f)
-            it += 1
-        print('}', end='', file=f)
+    with open('strategy.pickle', 'wb') as f:
+        # Pickle the 'data' dictionary using the highest protocol available.
+        pickle.dump(output_strat, f)
 
-    it = 0
-    with open('m-strategy_sum.txt', 'w') as f:
-        print('{', end='', file=f)
-        for name, info_set in cfr_trainer.infoset_map.items():
-            h = str(name.history)
-            r = str(name.round)
-            abstr = str(name.abstractions)
-            # strat = ','.join(str(info_set.strategy_sum).split())
-            strat = list(map(float, list(map(lambda x : "%0.2f" % x, list(info_set.strategy_sum)))))
-            if it == 0:
-                print(f"('{h}',{r},{abstr}):{strat}", end='', file=f)
-            else:
-                print(f",('{h}',{r},{abstr}):{strat}", end='', file=f)
-            it += 1
-        print('}', end='', file=f)
+    output_info = {}
+    for name, info_set in cfr_trainer.infoset_map.items():
+        h = str(name.history)
+        r = int(name.round)
+        abstr = int(name.abstractions)
+        cum_reg = list(map(float, list(map(lambda x : "%0.2f" % x, list(info_set.cumulative_regrets)))))
+        str_sum = list(map(float, list(map(lambda x : "%0.2f" % x, list(info_set.strategy_sum)))))
+        leg = list(info_set.legal)
+        output_info[(h, r, abstr)] = (cum_reg, str_sum, leg)
+    
+    with open('m-infoset.pickle', 'wb') as f:
+        # Pickle the 'data' dictionary using the highest protocol available.
+        pickle.dump(output_info, f)
+
+    # it = 0
+    # with open('m-cumulative_reg.txt', 'w') as f:
+    #     print('{', end='', file=f)
+    #     for name, info_set in cfr_trainer.infoset_map.items():
+    #         h = str(name.history)
+    #         r = str(name.round)
+    #         abstr = str(name.abstractions)
+    #         # strat = ','.join(str(info_set.cumulative_regrets).split())
+    #         strat = list(map(float, list(map(lambda x : "%0.2f" % x, list(info_set.cumulative_regrets)))))
+    #         if it == 0:
+    #             print(f"('{h}',{r},{abstr}):{strat}", end='', file=f)
+    #         else:
+    #             print(f",('{h}',{r},{abstr}):{strat}", end='', file=f)
+    #         it += 1
+    #     print('}', end='', file=f)
+
+    # it = 0
+    # with open('m-strategy_sum.txt', 'w') as f:
+    #     print('{', end='', file=f)
+    #     for name, info_set in cfr_trainer.infoset_map.items():
+    #         h = str(name.history)
+    #         r = str(name.round)
+    #         abstr = str(name.abstractions)
+    #         # strat = ','.join(str(info_set.strategy_sum).split())
+    #         strat = list(map(float, list(map(lambda x : "%0.2f" % x, list(info_set.strategy_sum)))))
+    #         if it == 0:
+    #             print(f"('{h}',{r},{abstr}):{strat}", end='', file=f)
+    #         else:
+    #             print(f",('{h}',{r},{abstr}):{strat}", end='', file=f)
+    #         it += 1
+    #     print('}', end='', file=f)
 
     print("Done")
