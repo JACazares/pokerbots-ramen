@@ -1,34 +1,3 @@
-/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/numpy/core/_methods.py:269: RuntimeWarning: Degrees of freedom <= 0 for slice
-  ret = _var(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
-/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/numpy/core/_methods.py:226: RuntimeWarning: invalid value encountered in divide
-  arrmean = um.true_divide(arrmean, div, out=arrmean,
-/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/numpy/core/_methods.py:261: RuntimeWarning: invalid value encountered in scalar divide
-  ret = ret.dtype.type(ret / rcount)
-/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/numpy/core/fromnumeric.py:3464: RuntimeWarning: Mean of empty slice.
-  return _methods._mean(a, axis=axis, dtype=dtype,
-/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/numpy/core/_methods.py:192: RuntimeWarning: invalid value encountered in scalar divide
-  ret = ret.dtype.type(ret / rcount)
-1 0
-Round 1: I have 0 and need 1503 to win
-    preflop:
-Traceback (most recent call last):
-  File "/Users/tomascantur/Documents/MIT/Pokerbots/pokerbots-ramen/ramen-4/player.py", line 353, in preflop_strategy
-    probabilities=self.strategy[(self.history_string, 0, abstraction)]
-TypeError: unhashable type: 'list'
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/Users/tomascantur/Documents/MIT/Pokerbots/pokerbots-ramen/ramen-4/player.py", line 741, in <module>
-    run_bot(Player(), parse_args())
-  File "/Users/tomascantur/Documents/MIT/Pokerbots/pokerbots-ramen/ramen-4/skeleton/runner.py", line 130, in run_bot
-    runner.run()
-  File "/Users/tomascantur/Documents/MIT/Pokerbots/pokerbots-ramen/ramen-4/skeleton/runner.py", line 105, in run
-    action = self.pokerbot.get_action(game_state, round_state, active)
-  File "/Users/tomascantur/Documents/MIT/Pokerbots/pokerbots-ramen/ramen-4/player.py", line 703, in get_action
-    action = self.preflop_strategy(legal_actions, my_cards, board_cards, my_pip ,opp_pip, my_stack,
-  File "/Users/tomascantur/Documents/MIT/Pokerbots/pokerbots-ramen/ramen-4/player.py", line 355, in preflop_strategy
-    action=self.non_cfr_preflop(legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
-  File "/Users/tomascantur/Documents/MIT/Pokerbots/pokerbots-ramen/ramen-4/player.py", line 175, in non_cfr_preflop
-    strength = get_strength(self.prob_table, my_cards)
-NameError: name 'get_strength' is not defined
+version https://git-lfs.github.com/spec/v1
+oid sha256:6b4249b912374f96ff4c1778134d26b462fc5063dadf16384f0a548db88ccf64
+size 379

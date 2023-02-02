@@ -30,11 +30,13 @@ class Player(Bot):
         Nothing.
         hola
         '''
-        try:
-            with open('strategy.txt') as f:
-                self.strategy = eval(f.read())
-        except:
-            self.strategy = {}
+        with open('strategy.txt') as f:
+            print("start")
+            s=f.read()
+            s.rstrip(' \t\r\n\0')
+            self.strategy = eval(s)
+            print("end")
+            print(self.strategy[("", 0, 11010)])
         self.PLAYABLE_THRESHOLD=0.4
         self.RAISEABLE_THRESHOLD=0.55
         with open('prob_table.txt') as f:
@@ -269,7 +271,7 @@ class Player(Bot):
                 else: #all-in
                     self.history_string.append("d")
         else: 
-            if opp_pip>2:
+            if opp_pip>2 and my_pip==1:
                 if continue_cost<=self.previous_pot: #1-betting
                     self.history_string[-1]+="a"
                 elif continue_cost<=3*self.previous_pot: #3-betting
@@ -278,161 +280,82 @@ class Player(Bot):
                     self.history_string[-1]+="c" 
                 else: #all-in
                     self.history_string[-1]+="d"
+            elif opp_pip>2:
+                self.history_string=[]
+                if continue_cost<=self.previous_pot: #1-betting
+                    self.history_string.append("a")
+                elif continue_cost<=3*self.previous_pot: #3-betting
+                    self.history_string.append("b") 
+                elif continue_cost<=5*self.previous_pot: #5-betting
+                    self.history_string.append("c") 
+                else: #all-in
+                    self.history_string.append("d")
             else: 
                 self.history_string.append("")
         abstraction=get_abstraction(my_cards)
-        try: 
-            probabilities=self.strategy[(self.history_string, 0, abstraction)]
-        except:
-            action=self.non_cfr_preflop(legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
+        try:
+            h=""
+            for item in self.history_string:
+                h+=item
+            print(h, 0, abstraction)
+            probabilities=self.strategy[(h, 0, abstraction)]
+            raise_amount=[0,0,0, 0, 0, 0, 0]
+            raise_amount[3]=random.uniform(pot_total/2, pot_total)
+            raise_amount[4]=random.uniform(2*pot_total, 3*pot_total)
+            raise_amount[5]=random.uniform(4*pot_total, 5*pot_total)
+            raise_amount[6]=random.uniform(5*pot_total, max_raise)
+            all_actions=[0, 1, 2, 3, 4, 5, 6]
+            action=np.random.choice(all_actions, probabilities)
+            if action==0:
+                if FoldAction in legal_actions:
+                    self.history_string[-1]+="F"
+                    return FoldAction()
+                else:
+                    self.history_string[-1]+="P" 
+                    return CheckAction()
+            elif action==1:
+                if CheckAction in legal_actions:
+                    self.history_string[-1]+="P"
+                    return CheckAction()
+                else: 
+                    self.history_string[-1]+="C"
+                    return CallAction()
+            elif action==2:
+                if CallAction in legal_actions:
+                    self.history_string[-1]+="C"
+                    return CallAction()
+                else: 
+                    self.history_string[-1]+="P"
+                    return CheckAction()
+            else:
+                if RaiseAction in legal_actions:
+                    if action==3:
+                        self.history_string[-1]+="a"
+                    if action==4:
+                        self.history_string[-1]+="b"
+                    if action==5:
+                        self.history_string[-1]+="c"
+                    if action==6:
+                        self.history_string[-1]+="d"
+                    amount=raise_amount[action]
+                    if amount>max_raise:
+                        amount=max_raise
+                    if amount<min_raise:
+                        amount=min_raise
+                    return RaiseAction(amount)
+                else: 
+                    self.history_string[-1]+="C"
+                    return CallAction()    
+        except KeyError:
+            print("f")
+            return self.non_cfr_preflop(legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
                         opp_stack, continue_cost, my_contribution, opp_contribution, min_raise,\
                         max_raise, min_cost, max_cost, big_blind, my_bankroll, round_num)
-        raise_amount=[0,0,0, 0, 0, 0, 0]
-        raise_amount[3]=random.uniform(pot_total/2, pot_total)
-        raise_amount[4]=random.uniform(2*pot_total, 3*pot_total)
-        raise_amount[5]=random.uniform(4*pot_total, 5*pot_total)
-        raise_amount[6]=random.uniform(5*pot_total, max_raise)
-        all_actions=[0, 1, 2, 3, 4, 5, 6]
-        action=np.random.choice(all_actions, probabilities)
-        if action==0:
-            if FoldAction in legal_actions:
-                self.history_string[-1]+="F"
-                return FoldAction()
-            else:
-                self.history_string[-1]+="P" 
-                return CheckAction()
-        elif action==1:
-            if CheckAction in legal_actions:
-                self.history_string[-1]+="P"
-                return CheckAction()
-            else: 
-                self.history_string[-1]+="C"
-                return CallAction()
-        elif action==2:
-            if CallAction in legal_actions:
-                self.history_string[-1]+="C"
-                return CallAction()
-            else: 
-                self.history_string[-1]+="P"
-                return CheckAction()
-        else:
-            if RaiseAction in legal_actions:
-                if action==3:
-                    self.history_string[-1]+="a"
-                if action==4:
-                    self.history_string[-1]+="b"
-                if action==5:
-                    self.history_string[-1]+="c"
-                if action==6:
-                    self.history_string[-1]+="d"
-                amount=raise_amount[action]
-                if amount>max_raise:
-                    amount=max_raise
-                if amount<min_raise:
-                    amount=min_raise
-                return RaiseAction(amount)
-            else: 
-                self.history_string[-1]+="C"
-                return CallAction()    
-    
+
     def non_cfr_flop(self, legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
                         opp_stack, continue_cost, my_contribution, opp_contribution, min_raise,\
                         max_raise, min_cost, max_cost, big_blind, my_bankroll, round_num):
-        '''
-        Returns an action for the flop phase
-        
-        Arguments:
-        TODO
 
-        Returns:
-        One of FoldAction(), CheckAction(), CallAction() or RaiseAction(amount)
-        '''
-        if self.betting_round==1:
-            if not big_blind and my_contribution==2:
-                self.opp_range=[5, 6, 7, 8]
-            elif not big_blind and my_contribution>2:
-                self.opp_range=[4, 5, 6]
-            elif big_blind and my_contribution==2:
-                self.opp_range=[4, 5, 6, 7]
-            elif big_blind and 6 in self.opp_range:
-                self.opp_range=[4, 5]
-            elif big_blind and 4 in self.opp_range:
-                self.opp_range=[1, 2, 3, 4]
-            self.betting_round=2
-
-        print(f"    opp_range: {self.opp_range}")
-        strength = monte_carlo_sim(self.num_range, my_cards, board_cards, 100, self.opp_range)
-        pot_total = my_contribution+opp_contribution
-        pot_odds = continue_cost/(pot_total + continue_cost)
-        print(f"     my_strength={strength}")
-        print(f"     pot_total={pot_total}")
-        print(f"     pot_odds= {pot_odds}")
-        print(f"     normalized_pot_odds= {pot_odds+0.1*my_bankroll/self.winning_bankroll}")
-
-        if round_num >= 20:
-            std_dev = (continue_cost - self.opp_mean) / self.opp_std
-            print(f"std dev is {std_dev}")
-            if std_dev > 2.5 and strength <= 0.95:
-                print("FOLD because standard deviation was too high")
-                return CheckFold(legal_actions)
-
-        if big_blind:
-            if opp_pip==0:
-                if strength<0.5:
-                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
-                                        0, 1-(strength**2)*0.02, min_raise)
-                elif strength<0.9:
-                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
-                                        0, 0.8, pot_total)
-                else: 
-                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
-                                        0, 0.4, 8*pot_total)
-            else:
-                if strength<pot_odds+max(0.2*my_bankroll/self.winning_bankroll, 0):
-                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
-                                        0.99, 0.995, min_raise)
-                elif strength<0.65:
-                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
-                                        0.7, 1, 0)
-                elif strength<0.9:
-                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
-                                        0.05, 0.9, pot_total)
-                elif my_pip<STARTING_STACK/4:
-                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
-                                        0, 0.4, 8*pot_total)
-                else:
-                    return CheckCall(legal_actions)
-        else: 
-            if opp_pip==0:
-                if strength<0.5:
-                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
-                                        0, 1-(strength**2)*0.2, min_raise)
-                elif strength<0.75:
-                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
-                                        0, 0.5, pot_total)
-                else: 
-                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
-                                        0, 0.3, pot_total)
-            else:
-                if strength<pot_odds+max(0.2*my_bankroll/self.winning_bankroll, 0):
-                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
-                                        1-(strength**2)*0.01, 1, 2*min_raise)
-                elif strength<0.6:
-                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
-                                        0.7, 1, 0)
-                elif strength<0.8:
-                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
-                                        0.2, 0.95, pot_total)
-                elif my_pip<STARTING_STACK/4:
-                    return RandomAction(legal_actions, my_stack, min_raise, max_raise,\
-                                        0, 0.5, 8*pot_total)
-                else:
-                    return CheckCall(legal_actions)
-
-
-    def flop_strategy(self, legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
-                        opp_stack, continue_cost, my_contribution, opp_contribution, min_raise,\
-                        max_raise, min_cost, max_cost, big_blind, my_bankroll, round_num):
         strength = monte_carlo_sim(my_cards, board_cards, iters=100)
         pot_total = my_contribution+opp_contribution
         pot_odds = continue_cost/(pot_total + continue_cost)
@@ -493,9 +416,110 @@ class Player(Bot):
                 else:
                     return CheckCall(legal_actions)
 
+    def flop_strategy(self, legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
+                        opp_stack, continue_cost, my_contribution, opp_contribution, min_raise,\
+                        max_raise, min_cost, max_cost, big_blind, my_bankroll, round_num, street):
+        if self.iwon:
+            return CheckFold(legal_actions)
+        pot_total=my_contribution+opp_contribution
+        if big_blind:
+            if opp_pip==0:
+                self.history_string.append("C")
+            else: 
+                #TODO quitar y reemplazar (lista)
+                self.history_string=[]
+                if continue_cost<=self.previous_pot: #1-betting
+                    self.history_string.append("a")
+                elif continue_cost<=3*self.previous_pot: #3-betting
+                    self.history_string.append("b") 
+                elif continue_cost<=5*self.previous_pot: #5-betting
+                    self.history_string.append("c") 
+                else: #all-in
+                    self.history_string.append("d")
+        else: 
+            if opp_pip>0 and my_pip==0:
+                if continue_cost<=self.previous_pot: #1-betting
+                    self.history_string[-1]+="a"
+                elif continue_cost<=3*self.previous_pot: #3-betting
+                    self.history_string[-1]+="b" 
+                elif continue_cost<=5*self.previous_pot: #5-betting
+                    self.history_string[-1]+="c" 
+                else: #all-in
+                    self.history_string[-1]+="d"
+            elif opp_pip>0:
+                self.history_string=[]
+                if continue_cost<=self.previous_pot: #1-betting
+                    self.history_string.append("a")
+                elif continue_cost<=3*self.previous_pot: #3-betting
+                    self.history_string.append("b") 
+                elif continue_cost<=5*self.previous_pot: #5-betting
+                    self.history_string.append("c") 
+                else: #all-in
+                    self.history_string.append("d")
+            else: 
+                self.history_string.append("")
+        abstraction=get_abstraction(my_cards, board_cards)
+        try: 
+            h=""
+            for item in self.history_string:
+                h+=item
+            probabilities=self.strategy[(h, street, abstraction)]
+            raise_amount=[0,0,0, 0, 0, 0, 0]
+            raise_amount[3]=random.uniform(pot_total/2, pot_total)
+            raise_amount[4]=random.uniform(2*pot_total, 3*pot_total)
+            raise_amount[5]=random.uniform(4*pot_total, 5*pot_total)
+            raise_amount[6]=random.uniform(5*pot_total, max_raise)
+            all_actions=[0, 1, 2, 3, 4, 5, 6]
+            action=np.random.choice(all_actions, probabilities)
+            if action==0:
+                if FoldAction in legal_actions:
+                    self.history_string[-1]+="F"
+                    return FoldAction()
+                else:
+                    self.history_string[-1]+="P" 
+                    return CheckAction()
+            elif action==1:
+                if CheckAction in legal_actions:
+                    self.history_string[-1]+="P"
+                    return CheckAction()
+                else: 
+                    self.history_string[-1]+="C"
+                    return CallAction()
+            elif action==2:
+                if CallAction in legal_actions:
+                    self.history_string[-1]+="C"
+                    return CallAction()
+                else: 
+                    self.history_string[-1]+="P"
+                    return CheckAction()
+            else:
+                if RaiseAction in legal_actions:
+                    if action==3:
+                        self.history_string[-1]+="a"
+                    if action==4:
+                        self.history_string[-1]+="b"
+                    if action==5:
+                        self.history_string[-1]+="c"
+                    if action==6:
+                        self.history_string[-1]+="d"
+                    amount=raise_amount[action]
+                    if amount>max_raise:
+                        amount=max_raise
+                    if amount<min_raise:
+                        amount=min_raise
+                    return RaiseAction(amount)
+                else: 
+                    self.history_string[-1]+="C"
+                    return CallAction()    
+        except KeyError:
+            print("f")
+            return self.non_cfr_flop(legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
+                        opp_stack, continue_cost, my_contribution, opp_contribution, min_raise,\
+                        max_raise, min_cost, max_cost, big_blind, my_bankroll, round_num)
+
     def turn_strategy(self, legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
                         opp_stack, continue_cost, my_contribution, opp_contribution, min_raise,\
-                        max_raise, min_cost, max_cost, big_blind, my_bankroll, round_num):
+                        max_raise, min_cost, max_cost, big_blind, my_bankroll, round_num, street):
         '''
         Returns an action for the turn phase
         
@@ -508,11 +532,11 @@ class Player(Bot):
 
         return self.flop_strategy(legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
                         opp_stack, continue_cost, my_contribution, opp_contribution, min_raise,\
-                        max_raise, min_cost, max_cost, big_blind, my_bankroll, round_num)
+                        max_raise, min_cost, max_cost, big_blind, my_bankroll, round_num, street)
 
     def river_strategy(self, legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
                         opp_stack, continue_cost, my_contribution, opp_contribution, min_raise,\
-                        max_raise, min_cost, max_cost, big_blind, my_bankroll, round_num):
+                        max_raise, min_cost, max_cost, big_blind, my_bankroll, round_num, street):
         '''
         Returns an action for the river phase
         
@@ -525,11 +549,11 @@ class Player(Bot):
 
         return self.flop_strategy(legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
                         opp_stack, continue_cost, my_contribution, opp_contribution, min_raise,\
-                        max_raise, min_cost, max_cost, big_blind, my_bankroll, round_num)
+                        max_raise, min_cost, max_cost, big_blind, my_bankroll, round_num, street)
 
     def run_strategy(self, legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
                         opp_stack, continue_cost, my_contribution, opp_contribution, min_raise,\
-                        max_raise, min_cost, max_cost, big_blind, my_bankroll, round_num):
+                        max_raise, min_cost, max_cost, big_blind, my_bankroll, round_num, street):
         '''
         Returns an action for the run phase
         
@@ -542,7 +566,7 @@ class Player(Bot):
 
         return self.flop_strategy(legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
                         opp_stack, continue_cost, my_contribution, opp_contribution, min_raise,\
-                        max_raise, min_cost, max_cost, big_blind, my_bankroll, round_num)
+                        max_raise, min_cost, max_cost, big_blind, my_bankroll, round_num, street)
 
     def get_action(self, game_state, round_state, active):
         '''
@@ -605,25 +629,25 @@ class Player(Bot):
             print(f"    flop:")
             action = self.flop_strategy(legal_actions, my_cards, board_cards, my_pip ,opp_pip, my_stack,
                 opp_stack, continue_cost, my_contribution, opp_contribution, min_raise, max_raise, min_cost,
-                max_cost, big_blind, my_bankroll, round_num)
+                max_cost, big_blind, my_bankroll, round_num, street)
         # Turn strategy
         elif street == 4:
             print(f"    turn:")
             action = self.turn_strategy(legal_actions, my_cards, board_cards, my_pip ,opp_pip, my_stack,
                 opp_stack, continue_cost, my_contribution, opp_contribution, min_raise, max_raise, min_cost,
-                max_cost, big_blind, my_bankroll, round_num)
+                max_cost, big_blind, my_bankroll, round_num, street)
         # River strategy
         elif street == 5:
             print(f"    river:")
             action = self.river_strategy(legal_actions, my_cards, board_cards, my_pip ,opp_pip, my_stack,
                 opp_stack, continue_cost, my_contribution, opp_contribution, min_raise, max_raise, min_cost,
-                max_cost, big_blind, my_bankroll, round_num)
+                max_cost, big_blind, my_bankroll, round_num, street)
         # Run strategy
         else:
             print(f"    run:")
             action = self.run_strategy(legal_actions, my_cards, board_cards, my_pip ,opp_pip, my_stack,
                 opp_stack, continue_cost, my_contribution, opp_contribution, min_raise, max_raise, min_cost,
-                max_cost, big_blind, my_bankroll, round_num)
+                max_cost, big_blind, my_bankroll, round_num, street)
 
         self.prev_street = street
         pot_total=my_contribution+opp_contribution
