@@ -13,6 +13,7 @@ import eval7
 import random
 import numpy as np
 from abstraction import*
+import pickle
 
 class Player(Bot):
     '''
@@ -30,13 +31,16 @@ class Player(Bot):
         Nothing.
         hola
         '''
-        with open('strategy.txt') as f:
-            print("start")
-            s=f.read()
-            s.rstrip(' \t\r\n\0')
-            self.strategy = eval(s)
-            print("end")
-            print(self.strategy[("", 0, 11210)])
+        #with open('strategy.txt') as f:
+        #    print("start")
+        #    s=f.read()
+        #    s.rstrip(' \t\r\n\0')
+        #    self.strategy = eval(s)
+        #    print("end")
+        #    print(self.strategy[("", 0, 11210)])
+        with open('strategy.pickle', 'rb') as f:
+            self.strategy=pickle.load(f)
+
         self.PLAYABLE_THRESHOLD=0.4
         self.RAISEABLE_THRESHOLD=0.55
         with open('prob_table.txt') as f:
@@ -300,8 +304,19 @@ class Player(Bot):
             print(h, 0, abstraction)
             probabilities=self.strategy[(h, 0, abstraction)][0:7]
             print(probabilities)
-            if sum(probabilities) is not 1:
-                probabilities[1]+=1-sum(probabilities)
+            print(sum(probabilities))
+            if sum(probabilities) < 1:
+                for i in range(len(probabilities)):
+                    if probabilities[i]<1:
+                        probabilities[i]+=1-sum(probabilities)
+                        break
+            elif sum(probabilities)>1:
+                for i in range(len(probabilities)):
+                    if probabilities[i]>0:
+                        probabilities[i]+=1-sum(probabilities)
+                        break
+            print(probabilities)
+            print(sum(probabilities))
             raise_amount=[0,0,0, 0, 0, 0, 0]
             raise_amount[3]=random.uniform(pot_total/2, pot_total)
             raise_amount[4]=random.uniform(2*pot_total, 3*pot_total)
@@ -468,6 +483,19 @@ class Player(Bot):
             for item in self.history_string:
                 h+=item
             probabilities=self.strategy[(h, street, abstraction)][0:7]
+            print(probabilities)
+            print(sum(probabilities))
+            if sum(probabilities) < 1:
+                for i in range(len(probabilities)):
+                    if probabilities[i]<1:
+                        probabilities[i]+=1-sum(probabilities)
+                        break
+            elif sum(probabilities)>1:
+                for i in range(len(probabilities)):
+                    if probabilities[i]>0:
+                        probabilities[i]+=1-sum(probabilities)
+                        break
+            print(sum(probabilities))
             raise_amount=[0,0,0, 0, 0, 0, 0]
             raise_amount[3]=random.uniform(pot_total/2, pot_total)
             raise_amount[4]=random.uniform(2*pot_total, 3*pot_total)
