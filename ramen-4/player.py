@@ -38,7 +38,7 @@ class Player(Bot):
         #    self.strategy = eval(s)
         #    print("end")
         #    print(self.strategy[("", 0, 11210)])
-        with open('strategy.pickle', 'rb') as f:
+        with open('low_mem.pickle', 'rb') as f:
             self.strategy=pickle.load(f)
 
         self.PLAYABLE_THRESHOLD=0.4
@@ -307,21 +307,21 @@ class Player(Bot):
             print(sum(probabilities))
             if sum(probabilities) < 1:
                 for i in range(len(probabilities)):
-                    if probabilities[i]<1:
+                    if probabilities[i]<=1-sum(probabilities):
                         probabilities[i]+=1-sum(probabilities)
                         break
             elif sum(probabilities)>1:
                 for i in range(len(probabilities)):
-                    if probabilities[i]>0:
+                    if probabilities[i]>=sum(probabilities)-1:
                         probabilities[i]+=1-sum(probabilities)
                         break
             print(probabilities)
             print(sum(probabilities))
             raise_amount=[0,0,0, 0, 0, 0, 0]
-            raise_amount[3]=random.uniform(pot_total/2, pot_total)
-            raise_amount[4]=random.uniform(2*pot_total, 3*pot_total)
-            raise_amount[5]=random.uniform(4*pot_total, 5*pot_total)
-            raise_amount[6]=random.uniform(5*pot_total, max_raise)
+            raise_amount[3]=int(random.uniform(pot_total/2, pot_total))
+            raise_amount[4]=int(random.uniform(2*pot_total, 3*pot_total))
+            raise_amount[5]=int(random.uniform(4*pot_total, 5*pot_total))
+            raise_amount[6]=int(random.uniform(5*pot_total, max_raise))
             all_actions=[0, 1, 2, 3, 4, 5, 6]
             action=np.random.choice(all_actions, p=probabilities)
             print("used cfr")
@@ -487,20 +487,20 @@ class Player(Bot):
             print(sum(probabilities))
             if sum(probabilities) < 1:
                 for i in range(len(probabilities)):
-                    if probabilities[i]<1:
+                    if probabilities[i]<=1-sum(probabilities):
                         probabilities[i]+=1-sum(probabilities)
                         break
             elif sum(probabilities)>1:
                 for i in range(len(probabilities)):
-                    if probabilities[i]>0:
+                    if probabilities[i]>=sum(probabilities)-1:
                         probabilities[i]+=1-sum(probabilities)
                         break
             print(sum(probabilities))
             raise_amount=[0,0,0, 0, 0, 0, 0]
-            raise_amount[3]=random.uniform(pot_total/2, pot_total)
-            raise_amount[4]=random.uniform(2*pot_total, 3*pot_total)
-            raise_amount[5]=random.uniform(4*pot_total, 5*pot_total)
-            raise_amount[6]=random.uniform(5*pot_total, max_raise)
+            raise_amount[3]=int(random.uniform(pot_total/2, pot_total))
+            raise_amount[4]=int(random.uniform(2*pot_total, 3*pot_total))
+            raise_amount[5]=int(random.uniform(4*pot_total, 5*pot_total))
+            raise_amount[6]=int(random.uniform(5*pot_total, max_raise))
             all_actions=[0, 1, 2, 3, 4, 5, 6]
             action=np.random.choice(all_actions,p=probabilities)
             print("used cfr")
@@ -580,9 +580,9 @@ class Player(Bot):
         One of FoldAction(), CheckAction(), CallAction() or RaiseAction(amount)
         '''
 
-        return self.flop_strategy(legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
+        return self.non_cfr_flop(legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
                         opp_stack, continue_cost, my_contribution, opp_contribution, min_raise,\
-                        max_raise, min_cost, max_cost, big_blind, my_bankroll, round_num, street)
+                        max_raise, min_cost, max_cost, big_blind, my_bankroll, round_num)
 
     def run_strategy(self, legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
                         opp_stack, continue_cost, my_contribution, opp_contribution, min_raise,\
@@ -597,9 +597,9 @@ class Player(Bot):
         One of FoldAction(), CheckAction(), CallAction() or RaiseAction(amount)
         '''
 
-        return self.flop_strategy(legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
+        return self.non_cfr_flop(legal_actions, my_cards, board_cards, my_pip, opp_pip, my_stack,\
                         opp_stack, continue_cost, my_contribution, opp_contribution, min_raise,\
-                        max_raise, min_cost, max_cost, big_blind, my_bankroll, round_num, street)
+                        max_raise, min_cost, max_cost, big_blind, my_bankroll, round_num)
 
     def get_action(self, game_state, round_state, active):
         '''
